@@ -3,14 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DEA922EA2C746404FC2EC990CBA6216 /* SapgvCoreData-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 47511E09CDBC5E70A9E2AE9DB689E594 /* SapgvCoreData-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DEA922EA2C746404FC2EC990CBA6216 /* SapgvCoreData-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EE2148E2B48F4C48C689CB8CD0C2516 /* SapgvCoreData-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		108E88B12D21943200EE24D0 /* PersistentStoreCoordinatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E88B02D21943200EE24D0 /* PersistentStoreCoordinatorError.swift */; };
+		108E88B32D21970F00EE24D0 /* NSPersistentStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E88B22D21970F00EE24D0 /* NSPersistentStoreCoordinator.swift */; };
+		108E88B72D21A2D100EE24D0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E88B62D21A2D100EE24D0 /* Store.swift */; };
+		108E88D82D21ACC200EE24D0 /* InMemoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E88D72D21ACC200EE24D0 /* InMemoryStore.swift */; };
+		108E88DA2D21ACD400EE24D0 /* SQLStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E88D92D21ACD400EE24D0 /* SQLStore.swift */; };
+		108E88DC2D21AD0000EE24D0 /* StoreOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E88DB2D21AD0000EE24D0 /* StoreOptions.swift */; };
+		1A2F522FD592A25B5815762F3BFFCC03 /* SapgvCoreData-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B91A45D991CD206F5C5BDE5F5B210A47 /* SapgvCoreData-dummy.m */; };
 		584C589C65BE0D8F974E0BCD0086A5CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
-		64956471A763628764DBC656AF3B6A96 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AA086DD783CBA5C6BEF508C454584D /* ReplaceMe.swift */; };
-		6E5B52A7618B4518283929570073EF6C /* SapgvCoreData-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F1C505C84850676E4A7DB5FA95FF /* SapgvCoreData-dummy.m */; };
+		7DD729E7396ACCFCA7101713A38A03E1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8C27EB1A48A28EA4930EB07E526105 /* CoreDataStack.swift */; };
 		8D4A13B446D939999DEFF2B24767A529 /* Pods-SapgvCoreData_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 453C1A3AF57E1CA12E6A822C31195626 /* Pods-SapgvCoreData_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95DE44CF36A07EBB51D7D4776E273B4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		AB6A35510F640EF1D9A7FA018B7A45F2 /* Pods-SapgvCoreData_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E007315AA6E766E5B86298483E4BCC96 /* Pods-SapgvCoreData_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,37 +45,43 @@
 /* Begin PBXFileReference section */
 		01D54A43B755BDDDB46D3EDDE492046C /* Pods-SapgvCoreData_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SapgvCoreData_Example-Info.plist"; sourceTree = "<group>"; };
 		06C61E518FB2A2A819F2AA325B4819A4 /* Pods-SapgvCoreData_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SapgvCoreData_Example.release.xcconfig"; sourceTree = "<group>"; };
-		11C9F1C505C84850676E4A7DB5FA95FF /* SapgvCoreData-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SapgvCoreData-dummy.m"; sourceTree = "<group>"; };
-		122853638950D66C0816591C4CE670D7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		106C683528EB9C3861CA7A3AD7277ABE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		108E88B02D21943200EE24D0 /* PersistentStoreCoordinatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersistentStoreCoordinatorError.swift; path = SapgvCoreData/Classes/PersistentStoreCoordinatorError.swift; sourceTree = "<group>"; };
+		108E88B22D21970F00EE24D0 /* NSPersistentStoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSPersistentStoreCoordinator.swift; path = SapgvCoreData/Classes/NSPersistentStoreCoordinator.swift; sourceTree = "<group>"; };
+		108E88B62D21A2D100EE24D0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		108E88D72D21ACC200EE24D0 /* InMemoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStore.swift; sourceTree = "<group>"; };
+		108E88D92D21ACD400EE24D0 /* SQLStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLStore.swift; sourceTree = "<group>"; };
+		108E88DB2D21AD0000EE24D0 /* StoreOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOptions.swift; sourceTree = "<group>"; };
 		122BC42A9DB4BC2253DEE4F00BD4145C /* Pods-SapgvCoreData_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SapgvCoreData_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		151C2918138D8760384F0FC45E129F81 /* Pods-SapgvCoreData_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SapgvCoreData_Tests-Info.plist"; sourceTree = "<group>"; };
-		1ED87AB72EFF2F6093426D22EBBB9F04 /* SapgvCoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SapgvCoreData.debug.xcconfig; sourceTree = "<group>"; };
-		30105274D92C875439B60DDD2D9FF83C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1A29A276C9BF15636A99F944D7B6CEF3 /* SapgvCoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SapgvCoreData.debug.xcconfig; sourceTree = "<group>"; };
+		1B44BEECD5B22D4C016A873423248A14 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		373F52ADE39C1D5E196F09DE9F8388B2 /* Pods-SapgvCoreData_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SapgvCoreData_Tests-dummy.m"; sourceTree = "<group>"; };
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		453C1A3AF57E1CA12E6A822C31195626 /* Pods-SapgvCoreData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SapgvCoreData_Tests-umbrella.h"; sourceTree = "<group>"; };
-		47511E09CDBC5E70A9E2AE9DB689E594 /* SapgvCoreData-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SapgvCoreData-umbrella.h"; sourceTree = "<group>"; };
-		59F201C86C9DDECEF92790521FF33583 /* SapgvCoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SapgvCoreData.release.xcconfig; sourceTree = "<group>"; };
-		6C25CB2632BEC62AE05544D5F8AF9864 /* SapgvCoreData.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SapgvCoreData.modulemap; sourceTree = "<group>"; };
+		5773FDAD1EF88C048616FE0A1C9856F7 /* SapgvCoreData.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SapgvCoreData.modulemap; sourceTree = "<group>"; };
+		5D8C27EB1A48A28EA4930EB07E526105 /* CoreDataStack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = SapgvCoreData/Classes/CoreDataStack.swift; sourceTree = "<group>"; };
+		5EE2148E2B48F4C48C689CB8CD0C2516 /* SapgvCoreData-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SapgvCoreData-umbrella.h"; sourceTree = "<group>"; };
 		71F5AB50E9251533902E97CD85E9FAF5 /* Pods-SapgvCoreData_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SapgvCoreData_Example-frameworks.sh"; sourceTree = "<group>"; };
-		74575408954631A1B724BD15A0B3EAE2 /* SapgvCoreData-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SapgvCoreData-Info.plist"; sourceTree = "<group>"; };
+		7FAF4DB8EEB37C4E378E6638375435E7 /* SapgvCoreData-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SapgvCoreData-prefix.pch"; sourceTree = "<group>"; };
 		830A08A7E6E29F4FFB174E759CE1D073 /* Pods-SapgvCoreData_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SapgvCoreData_Example.modulemap"; sourceTree = "<group>"; };
 		8686A46916094C1226EA4010BB32624B /* Pods-SapgvCoreData_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SapgvCoreData_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		96AA086DD783CBA5C6BEF508C454584D /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = SapgvCoreData/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		87F829F89F24626A6328A50CC73234BE /* SapgvCoreData.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SapgvCoreData.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9B628E479922E3EEC2C4809AA8093748 /* SapgvCoreData */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SapgvCoreData; path = SapgvCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B91A45D991CD206F5C5BDE5F5B210A47 /* SapgvCoreData-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SapgvCoreData-dummy.m"; sourceTree = "<group>"; };
 		B9DBEDE414436690FEE6F783B02C0917 /* Pods-SapgvCoreData_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SapgvCoreData_Example"; path = Pods_SapgvCoreData_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC5E5BB24BCCDCF0BA660BF1543E4749 /* Pods-SapgvCoreData_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SapgvCoreData_Example-dummy.m"; sourceTree = "<group>"; };
+		C03892BD272A79E2F49409CB81C01DB2 /* SapgvCoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SapgvCoreData.release.xcconfig; sourceTree = "<group>"; };
 		C39666017F13209C54C607DDCE324BE7 /* Pods-SapgvCoreData_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SapgvCoreData_Tests"; path = Pods_SapgvCoreData_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D7BA180DCADC581FA5F903448CB1CD /* Pods-SapgvCoreData_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SapgvCoreData_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		D4DD08FC2C6E0FEC5E99513F7F4FB78A /* Pods-SapgvCoreData_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SapgvCoreData_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6830F4E7E5F9636310A0095C52EAB4E /* Pods-SapgvCoreData_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SapgvCoreData_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D6C4195B88AFB178FFC608F2915DC885 /* SapgvCoreData-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SapgvCoreData-Info.plist"; sourceTree = "<group>"; };
 		DE60CABD269B961A45AE60A130273EF5 /* Pods-SapgvCoreData_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SapgvCoreData_Tests.modulemap"; sourceTree = "<group>"; };
 		E007315AA6E766E5B86298483E4BCC96 /* Pods-SapgvCoreData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SapgvCoreData_Example-umbrella.h"; sourceTree = "<group>"; };
-		E3A1472545686D6FF034A5A84EE969BF /* SapgvCoreData.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SapgvCoreData.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		E9D7C1826655144E7EE24DBD482EEA85 /* Pods-SapgvCoreData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SapgvCoreData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		FB29AC553BF4028F571759A265473BEB /* Pods-SapgvCoreData_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SapgvCoreData_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FBED50AF9892BFFEF65B79E8A053685D /* SapgvCoreData-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SapgvCoreData-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,21 +121,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		17F12379B6211567BBB368AE87E3746D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6C25CB2632BEC62AE05544D5F8AF9864 /* SapgvCoreData.modulemap */,
-				11C9F1C505C84850676E4A7DB5FA95FF /* SapgvCoreData-dummy.m */,
-				74575408954631A1B724BD15A0B3EAE2 /* SapgvCoreData-Info.plist */,
-				FBED50AF9892BFFEF65B79E8A053685D /* SapgvCoreData-prefix.pch */,
-				47511E09CDBC5E70A9E2AE9DB689E594 /* SapgvCoreData-umbrella.h */,
-				1ED87AB72EFF2F6093426D22EBBB9F04 /* SapgvCoreData.debug.xcconfig */,
-				59F201C86C9DDECEF92790521FF33583 /* SapgvCoreData.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SapgvCoreData";
-			sourceTree = "<group>";
-		};
 		1F33EF95C623777C223617C187BC205E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,16 +129,6 @@
 				9B628E479922E3EEC2C4809AA8093748 /* SapgvCoreData */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		2D536AD91E78A7EF58E3FA8E52B6B33B /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				30105274D92C875439B60DDD2D9FF83C /* LICENSE */,
-				122853638950D66C0816591C4CE670D7 /* README.md */,
-				E3A1472545686D6FF034A5A84EE969BF /* SapgvCoreData.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		41BDEA0BFE9E7C0689EBEA7A3C89F2FA /* Pods-SapgvCoreData_Tests */ = {
@@ -160,23 +147,27 @@
 			path = "Target Support Files/Pods-SapgvCoreData_Tests";
 			sourceTree = "<group>";
 		};
-		4C7D4306EF6918849DB7859DBA896190 /* SapgvCoreData */ = {
-			isa = PBXGroup;
-			children = (
-				96AA086DD783CBA5C6BEF508C454584D /* ReplaceMe.swift */,
-				2D536AD91E78A7EF58E3FA8E52B6B33B /* Pod */,
-				17F12379B6211567BBB368AE87E3746D /* Support Files */,
-			);
-			name = SapgvCoreData;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		AD56D6EC89E4F7C5F292AD722274E851 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4C7D4306EF6918849DB7859DBA896190 /* SapgvCoreData */,
+				FC1A7A7FF68BE4D5300889EBA65301A6 /* SapgvCoreData */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		B049CA3FDB26BE4E692E6EA08973BE49 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5773FDAD1EF88C048616FE0A1C9856F7 /* SapgvCoreData.modulemap */,
+				B91A45D991CD206F5C5BDE5F5B210A47 /* SapgvCoreData-dummy.m */,
+				D6C4195B88AFB178FFC608F2915DC885 /* SapgvCoreData-Info.plist */,
+				7FAF4DB8EEB37C4E378E6638375435E7 /* SapgvCoreData-prefix.pch */,
+				5EE2148E2B48F4C48C689CB8CD0C2516 /* SapgvCoreData-umbrella.h */,
+				1A29A276C9BF15636A99F944D7B6CEF3 /* SapgvCoreData.debug.xcconfig */,
+				C03892BD272A79E2F49409CB81C01DB2 /* SapgvCoreData.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SapgvCoreData";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -188,6 +179,16 @@
 				1F33EF95C623777C223617C187BC205E /* Products */,
 				03D842CCE38101774A382564DFED8388 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		CFB4EBD71DC48F88841788FFFC89E00E /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				1B44BEECD5B22D4C016A873423248A14 /* LICENSE */,
+				106C683528EB9C3861CA7A3AD7277ABE /* README.md */,
+				87F829F89F24626A6328A50CC73234BE /* SapgvCoreData.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -221,6 +222,23 @@
 				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		FC1A7A7FF68BE4D5300889EBA65301A6 /* SapgvCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5D8C27EB1A48A28EA4930EB07E526105 /* CoreDataStack.swift */,
+				108E88B02D21943200EE24D0 /* PersistentStoreCoordinatorError.swift */,
+				108E88B22D21970F00EE24D0 /* NSPersistentStoreCoordinator.swift */,
+				108E88B62D21A2D100EE24D0 /* Store.swift */,
+				108E88D72D21ACC200EE24D0 /* InMemoryStore.swift */,
+				108E88D92D21ACD400EE24D0 /* SQLStore.swift */,
+				108E88DB2D21AD0000EE24D0 /* StoreOptions.swift */,
+				CFB4EBD71DC48F88841788FFFC89E00E /* Pod */,
+				B049CA3FDB26BE4E692E6EA08973BE49 /* Support Files */,
+			);
+			name = SapgvCoreData;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +276,7 @@
 			buildConfigurationList = B09C8C032EB355AAC2B127A405AC0CB7 /* Build configuration list for PBXNativeTarget "SapgvCoreData" */;
 			buildPhases = (
 				D5FB64BFE5834518C8CDBCC445F6993E /* Headers */,
-				AC66F0CE578175F7D719EF25706CB143 /* Sources */,
+				B1E5AEC2A9E9DC2DFACAD7FDDB01B825 /* Sources */,
 				956B09175EE7DF2F64825BAC3D4268F7 /* Frameworks */,
 				E1767032474C2CCACAC793BB7D432298 /* Resources */,
 			);
@@ -319,7 +337,7 @@
 				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -371,12 +389,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC66F0CE578175F7D719EF25706CB143 /* Sources */ = {
+		B1E5AEC2A9E9DC2DFACAD7FDDB01B825 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64956471A763628764DBC656AF3B6A96 /* ReplaceMe.swift in Sources */,
-				6E5B52A7618B4518283929570073EF6C /* SapgvCoreData-dummy.m in Sources */,
+				108E88B72D21A2D100EE24D0 /* Store.swift in Sources */,
+				108E88DC2D21AD0000EE24D0 /* StoreOptions.swift in Sources */,
+				108E88DA2D21ACD400EE24D0 /* SQLStore.swift in Sources */,
+				108E88B32D21970F00EE24D0 /* NSPersistentStoreCoordinator.swift in Sources */,
+				108E88D82D21ACC200EE24D0 /* InMemoryStore.swift in Sources */,
+				7DD729E7396ACCFCA7101713A38A03E1 /* CoreDataStack.swift in Sources */,
+				1A2F522FD592A25B5815762F3BFFCC03 /* SapgvCoreData-dummy.m in Sources */,
+				108E88B12D21943200EE24D0 /* PersistentStoreCoordinatorError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,12 +430,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3B2B21EA0AA38CF5C24D68A9F87D174E /* Debug */ = {
+		01A1C281DAA91E0870BF07972CD3EBF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4DD08FC2C6E0FEC5E99513F7F4FB78A /* Pods-SapgvCoreData_Tests.debug.xcconfig */;
+			baseConfigurationReference = D6830F4E7E5F9636310A0095C52EAB4E /* Pods-SapgvCoreData_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -426,7 +449,90 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-SapgvCoreData_Tests/Pods-SapgvCoreData_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SapgvCoreData_Tests/Pods-SapgvCoreData_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3DB730AABB783AF8F1A941CAA2D51775 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A29A276C9BF15636A99F944D7B6CEF3 /* SapgvCoreData.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SapgvCoreData/SapgvCoreData-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SapgvCoreData/SapgvCoreData-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SapgvCoreData/SapgvCoreData.modulemap";
+				PRODUCT_MODULE_NAME = SapgvCoreData;
+				PRODUCT_NAME = SapgvCoreData;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		50DF1AD571C491FC89CA4F1FE0E1AF6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4DD08FC2C6E0FEC5E99513F7F4FB78A /* Pods-SapgvCoreData_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-SapgvCoreData_Tests/Pods-SapgvCoreData_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SapgvCoreData_Tests/Pods-SapgvCoreData_Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -441,43 +547,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		5A6CCBC11A490666617A2EB1834ADB88 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06C61E518FB2A2A819F2AA325B4819A4 /* Pods-SapgvCoreData_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = "Target Support Files/Pods-SapgvCoreData_Example/Pods-SapgvCoreData_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SapgvCoreData_Example/Pods-SapgvCoreData_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -545,85 +614,11 @@
 			};
 			name = Debug;
 		};
-		768FCEE7D4AE60A3AD160B806043EB94 /* Release */ = {
+		D18B3B4A6AB3BD38FA0B17C84C9F4CAC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59F201C86C9DDECEF92790521FF33583 /* SapgvCoreData.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/SapgvCoreData/SapgvCoreData-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Target Support Files/SapgvCoreData/SapgvCoreData-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SapgvCoreData/SapgvCoreData.modulemap";
-				PRODUCT_MODULE_NAME = SapgvCoreData;
-				PRODUCT_NAME = SapgvCoreData;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B768296FDDEC0EB3CFEAAF26A81D9B78 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ED87AB72EFF2F6093426D22EBBB9F04 /* SapgvCoreData.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/SapgvCoreData/SapgvCoreData-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Target Support Files/SapgvCoreData/SapgvCoreData-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SapgvCoreData/SapgvCoreData.modulemap";
-				PRODUCT_MODULE_NAME = SapgvCoreData;
-				PRODUCT_NAME = SapgvCoreData;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D082F4BCE5C869A7E04FAB49B3D86871 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 122BC42A9DB4BC2253DEE4F00BD4145C /* Pods-SapgvCoreData_Example.debug.xcconfig */;
+			baseConfigurationReference = 06C61E518FB2A2A819F2AA325B4819A4 /* Pods-SapgvCoreData_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -638,7 +633,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-SapgvCoreData_Example/Pods-SapgvCoreData_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SapgvCoreData_Example/Pods-SapgvCoreData_Example.modulemap";
 				OTHER_LDFLAGS = "";
@@ -649,10 +648,51 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		D957575EEB597B4C99B0D36973F7F3D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C03892BD272A79E2F49409CB81C01DB2 /* SapgvCoreData.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SapgvCoreData/SapgvCoreData-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SapgvCoreData/SapgvCoreData-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SapgvCoreData/SapgvCoreData.modulemap";
+				PRODUCT_MODULE_NAME = SapgvCoreData;
+				PRODUCT_NAME = SapgvCoreData;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		E873CA97BD124B21839AF13C9BE1CD18 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -709,18 +749,18 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		FF5517AD05F0772851C817AF4C690D19 /* Release */ = {
+		F0C7EC924335D629A04B006CACB5906C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6830F4E7E5F9636310A0095C52EAB4E /* Pods-SapgvCoreData_Tests.release.xcconfig */;
+			baseConfigurationReference = 122BC42A9DB4BC2253DEE4F00BD4145C /* Pods-SapgvCoreData_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -732,12 +772,16 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = "Target Support Files/Pods-SapgvCoreData_Tests/Pods-SapgvCoreData_Tests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SapgvCoreData_Example/Pods-SapgvCoreData_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SapgvCoreData_Tests/Pods-SapgvCoreData_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SapgvCoreData_Example/Pods-SapgvCoreData_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -746,11 +790,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -758,8 +801,8 @@
 		12D3C515F074C144B5DD8CBD3D6C0688 /* Build configuration list for PBXNativeTarget "Pods-SapgvCoreData_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3B2B21EA0AA38CF5C24D68A9F87D174E /* Debug */,
-				FF5517AD05F0772851C817AF4C690D19 /* Release */,
+				50DF1AD571C491FC89CA4F1FE0E1AF6F /* Debug */,
+				01A1C281DAA91E0870BF07972CD3EBF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -776,8 +819,8 @@
 		B09C8C032EB355AAC2B127A405AC0CB7 /* Build configuration list for PBXNativeTarget "SapgvCoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B768296FDDEC0EB3CFEAAF26A81D9B78 /* Debug */,
-				768FCEE7D4AE60A3AD160B806043EB94 /* Release */,
+				3DB730AABB783AF8F1A941CAA2D51775 /* Debug */,
+				D957575EEB597B4C99B0D36973F7F3D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -785,8 +828,8 @@
 		CD6F23E30C45278606C33E4B2221A720 /* Build configuration list for PBXNativeTarget "Pods-SapgvCoreData_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D082F4BCE5C869A7E04FAB49B3D86871 /* Debug */,
-				5A6CCBC11A490666617A2EB1834ADB88 /* Release */,
+				F0C7EC924335D629A04B006CACB5906C /* Debug */,
+				D18B3B4A6AB3BD38FA0B17C84C9F4CAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
