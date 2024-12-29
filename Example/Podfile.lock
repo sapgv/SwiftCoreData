@@ -1,0 +1,16 @@
+PODS:
+  - SapgvCoreData (0.1.0)
+
+DEPENDENCIES:
+  - SapgvCoreData (from `../`)
+
+EXTERNAL SOURCES:
+  SapgvCoreData:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SapgvCoreData: 90b8d99da69ac0b5ecbafaa5bc507b6a2a842c25
+
+PODFILE CHECKSUM: eef37a5b160d275553a2aefeee342aaeee5a3cac
+
+COCOAPODS: 1.16.2

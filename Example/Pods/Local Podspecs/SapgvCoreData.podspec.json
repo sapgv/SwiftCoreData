@@ -1,0 +1,22 @@
+{
+  "name": "SapgvCoreData",
+  "version": "0.1.0",
+  "summary": "A short description of SapgvCoreData.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/sapgv/SapgvCoreData",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "sapgv": "grisha.sapgv@mail.ru"
+  },
+  "source": {
+    "git": "https://github.com/sapgv/SapgvCoreData.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "17.0"
+  },
+  "source_files": "SapgvCoreData/Classes/**/*"
+}

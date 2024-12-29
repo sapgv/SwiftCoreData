@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '17.0'
 
 target 'SapgvCoreData_Example' do
   pod 'SapgvCoreData', :path => '../'
