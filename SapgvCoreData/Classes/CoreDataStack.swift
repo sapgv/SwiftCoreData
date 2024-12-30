@@ -11,25 +11,68 @@ public class CoreDataStack {
     
     public let modelName: String
 
-    public let container: NSPersistentContainer
+    public private(set) var isStoreLoaded: Bool = false
     
-    public let viewContext: NSManagedObjectContext
+    public private(set) lazy var container: PersistentContainer = {
+        
+        let container = PersistentContainer(modelName: self.modelName, managedObjectModel: self.managedObjectModel)
+        
+        container.persistentStoreDescriptions = self.persistentStoreDescriptions
+        
+        container.loadPersistentStores { [weak self] storeDescription, error in
+
+            defer {
+                self?.isStoreLoaded = error == nil
+                self?.storeDescription = storeDescription
+            }
+            
+            #if DEBUG
+            print(storeDescription)
+            #endif
+            
+            if let error = error as NSError? {
+                #if DEBUG
+                print(error.localizedDescription)
+                #endif
+                return
+            }
+            
+        }
+        
+        return container
+        
+    }()
     
-    public let persistentStoreCoordinator: NSPersistentStoreCoordinator
+    public private(set) lazy var viewContext: NSManagedObjectContext = {
+        let viewContext = self.container.viewContext
+        viewContext.automaticallyMergesChangesFromParent = viewContextSettings.automaticallyMergesChangesFromParent
+        viewContext.mergePolicy = viewContextSettings.mergePolicy
+        return viewContext
+    }()
+    
+    public private(set) lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        self.container.persistentStoreCoordinator
+    }()
     
     public var inMemory: Bool {
         self.storeDescription?.type == "InMemory"
     }
     
-    public private(set) var storeDescription: NSPersistentStoreDescription?
+    public private(set) lazy var storeDescription: NSPersistentStoreDescription? = {
+        self.container.persistentStoreDescriptions.first
+    }()
+    
+    private let viewContextSettings: ViewContextSettings
+    
+    private let managedObjectModel: NSManagedObjectModel?
+    
+    private let persistentStoreDescriptions: [PersistentStoreDescription]
     
     public convenience init(
         modelName: String,
         bundle: Bundle = .main,
         inMemory: Bool = false,
-        viewContextSettings: ViewContextSettings = .main,
-        completion: ((Error?) -> Void)? = nil
-    ) {
+        viewContextSettings: ViewContextSettings = .main) {
         
         let storeDescription = PersistentStoreDescription(modelName: modelName, inMemory: inMemory)
         
@@ -39,58 +82,20 @@ public class CoreDataStack {
             modelName: modelName,
             storeDescription: storeDescription,
             managedObjectModel: managedObjectModel,
-            viewContextSettings: viewContextSettings,
-            completion: completion
-        )
-        
+            viewContextSettings: viewContextSettings)
+            
     }
     
     public init(
         modelName: String,
         storeDescription: PersistentStoreDescription,
         managedObjectModel: NSManagedObjectModel? = nil,
-        viewContextSettings: ViewContextSettings = .main,
-        completion: ((Error?) -> Void)? = nil
-    ) {
-        
-        let container = PersistentContainer(modelName: modelName, managedObjectModel: managedObjectModel)
+        viewContextSettings: ViewContextSettings = .main) {
         
         self.modelName = modelName
-        self.container = container
-        self.viewContext = container.viewContext
-        self.persistentStoreCoordinator = container.persistentStoreCoordinator
-
-        container.persistentStoreDescriptions = [storeDescription]
-        
-        var loaded = false
-        
-        container.loadPersistentStores { [weak self] storeDescription, error in
-
-            defer {
-                self?.storeDescription = storeDescription
-                loaded = error == nil
-            }
-            
-            #if DEBUG
-            print(storeDescription)
-            #endif
-            
-            if let error = error as NSError? {
-                completion?(error)
-                return
-            }
-            
-            completion?(nil)
-            
-        }
-        
-        if !loaded {
-            completion?(PersistentContainerError.loadModelFailure)
-            return
-        }
-
-        self.viewContext.automaticallyMergesChangesFromParent = viewContextSettings.automaticallyMergesChangesFromParent
-        self.viewContext.mergePolicy = viewContextSettings.mergePolicy
+        self.managedObjectModel = managedObjectModel
+        self.viewContextSettings = viewContextSettings
+        self.persistentStoreDescriptions = [storeDescription]
         
     }
     
