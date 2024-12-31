@@ -40,22 +40,68 @@ final class CoreDataStackInitTests: XCTestCase {
         XCTAssertEqual(sut.viewContext, nil)
         XCTAssertEqual(sut.storeDescription, nil)
         
+        sut.loadPersistentStoreCompletion = { result in
+            XCTFail()
+        }
+        
     }
     
     func testCoreDataStackInitDefault() {
         
         let sut = CoreDataStack(modelName: "Model")
         
+        XCTAssertEqual(sut.modelName, "Model")
+        XCTAssertEqual(sut.isStoreLoaded, false)
+        
+        sut.loadPersistentStoreCompletion = { result in
+            XCTFail()
+        }
+        
+    }
+    
+    func testCoreDataStackInitContainer() {
+        
+        let sut = CoreDataStack(modelName: "Model")
+        
         XCTAssertNotEqual(sut.container, nil)
-        XCTAssertNotEqual(sut.persistentStoreCoordinator, nil)
-        XCTAssertNotEqual(sut.viewContext, nil)
-        XCTAssertNotEqual(sut.storeDescription, nil)
         
         XCTAssertEqual(sut.modelName, "Model")
         XCTAssertEqual(sut.isStoreLoaded, true)
         
+    }
+    
+    func testCoreDataStackInitViewContext() {
+        
+        let sut = CoreDataStack(modelName: "Model")
+        
+        XCTAssertNotEqual(sut.viewContext, nil)
+        
+        XCTAssertEqual(sut.modelName, "Model")
+        XCTAssertEqual(sut.isStoreLoaded, true)
         XCTAssertEqual(sut.viewContext.automaticallyMergesChangesFromParent, true)
         XCTAssertEqual(sut.viewContext.mergePolicy as! NSMergePolicy, .mergeByPropertyObjectTrump)
+        
+    }
+    
+    func testCoreDataStackInitCoordinator() {
+        
+        let sut = CoreDataStack(modelName: "Model")
+        
+        XCTAssertNotEqual(sut.persistentStoreCoordinator, nil)
+        
+        XCTAssertEqual(sut.modelName, "Model")
+        XCTAssertEqual(sut.isStoreLoaded, true)
+        
+    }
+    
+    func testCoreDataStackInitStoreDescription() {
+        
+        let sut = CoreDataStack(modelName: "Model")
+        
+        XCTAssertNotEqual(sut.storeDescription, nil)
+        
+        XCTAssertEqual(sut.modelName, "Model")
+        XCTAssertEqual(sut.isStoreLoaded, true)
         
         XCTAssertEqual(sut.storeDescription?.type, PersistentStoreDescription.sqlStoreType)
         XCTAssertEqual(sut.storeDescription?.url, PersistentStoreDescription.applicationSupportStoreURL(modelName: "Model"))
@@ -63,17 +109,42 @@ final class CoreDataStackInitTests: XCTestCase {
         XCTAssertEqual(sut.storeDescription?.shouldInferMappingModelAutomatically, true)
         XCTAssertEqual(sut.storeDescription?.shouldMigrateStoreAutomatically, true)
         
+        sut.loadPersistentStoreCompletion = { result in
+            
+            switch result {
+            case .failure:
+                XCTFail()
+            default:
+                break
+            }
+        }
+        
     }
     
-    func testCoreDataStackInitInMemory() {
+    func testCoreDataStackInitStoreInMemoryDescription() {
         
         let sut = CoreDataStack(modelName: "Model", inMemory: true)
         
-        XCTAssertEqual(sut.storeDescription?.type, PersistentStoreDescription.inMemoryStoreType)
-        XCTAssertEqual(sut.storeDescription?.url, PersistentStoreDescription.inMemoryStoreURL())
+        XCTAssertNotEqual(sut.storeDescription, nil)
         
         XCTAssertEqual(sut.modelName, "Model")
         XCTAssertEqual(sut.isStoreLoaded, true)
+        
+        XCTAssertEqual(sut.storeDescription?.type, PersistentStoreDescription.inMemoryStoreType)
+        XCTAssertEqual(sut.storeDescription?.url, PersistentStoreDescription.inMemoryStoreURL())
+        XCTAssertEqual(sut.storeDescription?.shouldAddStoreAsynchronously, false)
+        XCTAssertEqual(sut.storeDescription?.shouldInferMappingModelAutomatically, true)
+        XCTAssertEqual(sut.storeDescription?.shouldMigrateStoreAutomatically, true)
+        
+        sut.loadPersistentStoreCompletion = { result in
+            
+            switch result {
+            case .failure:
+                XCTFail()
+            default:
+                break
+            }
+        }
         
     }
     
@@ -83,11 +154,23 @@ final class CoreDataStackInitTests: XCTestCase {
         
         let sut = CoreDataStack(modelName: "ModelTest", bundle: bundle)
         
-        XCTAssertEqual(sut.storeDescription?.type, PersistentStoreDescription.sqlStoreType)
-        XCTAssertEqual(sut.storeDescription?.url, PersistentStoreDescription.applicationSupportStoreURL(modelName: "ModelTest"))
+        XCTAssertNotEqual(sut.storeDescription, nil)
         
         XCTAssertEqual(sut.modelName, "ModelTest")
         XCTAssertEqual(sut.isStoreLoaded, true)
+        
+        XCTAssertEqual(sut.storeDescription?.type, PersistentStoreDescription.sqlStoreType)
+        XCTAssertEqual(sut.storeDescription?.url, PersistentStoreDescription.applicationSupportStoreURL(modelName: "ModelTest"))
+        
+        sut.loadPersistentStoreCompletion = { result in
+            
+            switch result {
+            case .failure:
+                XCTFail()
+            default:
+                break
+            }
+        }
         
     }
     
@@ -99,11 +182,22 @@ final class CoreDataStackInitTests: XCTestCase {
         
         let sut = CoreDataStack(modelName: "Model", storeDescription: storeDescription)
         
+        XCTAssertNotEqual(sut.storeDescription, nil)
+        XCTAssertEqual(sut.modelName, "Model")
+        XCTAssertEqual(sut.isStoreLoaded, true)
+        
         XCTAssertEqual(sut.storeDescription?.type, PersistentStoreDescription.sqlStoreType)
         XCTAssertEqual(sut.storeDescription?.url, url)
         
-        XCTAssertEqual(sut.modelName, "Model")
-        XCTAssertEqual(sut.isStoreLoaded, true)
+        sut.loadPersistentStoreCompletion = { result in
+            
+            switch result {
+            case .failure:
+                XCTFail()
+            default:
+                break
+            }
+        }
         
     }
     

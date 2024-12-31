@@ -10,7 +10,9 @@ import CoreData
 public class CoreDataStack {
     
     public let modelName: String
-
+    
+    public var loadPersistentStoreCompletion: ((Swift.Result<NSPersistentStoreDescription, Error>) -> Void)?
+    
     public private(set) var isStoreLoaded: Bool = false
     
     public private(set) lazy var container: PersistentContainer = {
@@ -34,8 +36,11 @@ public class CoreDataStack {
                 #if DEBUG
                 print(error.localizedDescription)
                 #endif
+                self?.loadPersistentStoreCompletion?(.failure(error))
                 return
             }
+            
+            self?.loadPersistentStoreCompletion?(.success(storeDescription))
             
         }
         
