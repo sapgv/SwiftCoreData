@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08F97C70C0A49CDCC5165A15 /* Pods_SapgvCoreData_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BB92FB17746E3776FC62E6 /* Pods_SapgvCoreData_Tests.framework */; };
+		1057A86E2D23E1BC009206D3 /* CoreDataStackContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */; };
 		108E88832D21730A00EE24D0 /* CoreDataStackInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E88822D21730A00EE24D0 /* CoreDataStackInitTests.swift */; };
 		108E88AB2D217FAD00EE24D0 /* ModelTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 108E88A92D217FAD00EE24D0 /* ModelTest.xcdatamodeld */; };
 		108E88AF2D2180DD00EE24D0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 108E88AC2D2180C200EE24D0 /* Model.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		095B05BBF0ADF0A7B9975513 /* Pods-SapgvCoreData_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapgvCoreData_Tests.release.xcconfig"; path = "Target Support Files/Pods-SapgvCoreData_Tests/Pods-SapgvCoreData_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackContextTests.swift; sourceTree = "<group>"; };
 		108E88822D21730A00EE24D0 /* CoreDataStackInitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackInitTests.swift; sourceTree = "<group>"; };
 		108E88AA2D217FAD00EE24D0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		108E88AD2D2180C200EE24D0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				108E88822D21730A00EE24D0 /* CoreDataStackInitTests.swift */,
+				1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */,
 				108E88A92D217FAD00EE24D0 /* ModelTest.xcdatamodeld */,
 			);
 			path = Tests;
@@ -352,6 +355,7 @@
 			files = (
 				108E88832D21730A00EE24D0 /* CoreDataStackInitTests.swift in Sources */,
 				108E88AB2D217FAD00EE24D0 /* ModelTest.xcdatamodeld in Sources */,
+				1057A86E2D23E1BC009206D3 /* CoreDataStackContextTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

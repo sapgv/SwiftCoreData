@@ -104,4 +104,56 @@ public class CoreDataStack {
         
     }
     
+    public func createBackgroundContext(
+        automaticallyMergesChangesFromParent: Bool = true,
+        mergePolicy: NSMergePolicy = .mergeByPropertyObjectTrump
+    ) -> NSManagedObjectContext{
+        let privateContext = self.container.newBackgroundContext()
+        privateContext.automaticallyMergesChangesFromParent = automaticallyMergesChangesFromParent
+        privateContext.mergePolicy = mergePolicy
+        return privateContext
+    }
+    
+    public func performBackgroundTask(
+        automaticallyMergesChangesFromParent: Bool = true,
+        mergePolicy: NSMergePolicy = .mergeByPropertyObjectTrump,
+        _ perform: @escaping (NSManagedObjectContext) -> Void
+    ) {
+        
+        self.container.performBackgroundTask { privateContext in
+            privateContext.automaticallyMergesChangesFromParent = automaticallyMergesChangesFromParent
+            privateContext.mergePolicy = mergePolicy
+            perform(privateContext)
+        }
+        
+    }
+    
+    public func createContext(
+        concurrencyType: NSManagedObjectContextConcurrencyType,
+        automaticallyMergesChangesFromParent: Bool = true,
+        mergePolicy: NSMergePolicy = .mergeByPropertyObjectTrump
+    ) -> NSManagedObjectContext {
+        
+        let context = NSManagedObjectContext(concurrencyType: concurrencyType)
+        context.automaticallyMergesChangesFromParent = automaticallyMergesChangesFromParent
+        context.mergePolicy = mergePolicy
+        context.persistentStoreCoordinator = self.persistentStoreCoordinator
+        return context
+    }
+    
+    public func createChildContext(
+        concurrencyType: NSManagedObjectContextConcurrencyType,
+        fromContext parentContext: NSManagedObjectContext,
+        automaticallyMergesChangesFromParent: Bool = true,
+        mergePolicy: NSMergePolicy = .mergeByPropertyObjectTrump
+    ) -> NSManagedObjectContext {
+        
+        let context = NSManagedObjectContext(concurrencyType: concurrencyType)
+        context.automaticallyMergesChangesFromParent = automaticallyMergesChangesFromParent
+        context.mergePolicy = mergePolicy
+        context.parent = parentContext
+        return context
+        
+    }
+    
 }
