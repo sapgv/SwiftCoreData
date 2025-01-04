@@ -1,6 +1,5 @@
 # SwiftCoreData
 
-[![CI Status](https://img.shields.io/travis/sapgv/SwiftCoreData.svg?style=flat)](https://travis-ci.org/sapgv/SwiftCoreData)
 [![Version](https://img.shields.io/cocoapods/v/SwiftCoreData.svg?style=flat)](https://cocoapods.org/pods/SwiftCoreData)
 [![License](https://img.shields.io/cocoapods/l/SwiftCoreData.svg?style=flat)](https://cocoapods.org/pods/SwiftCoreData)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftCoreData.svg?style=flat)](https://cocoapods.org/pods/SwiftCoreData)
@@ -22,7 +21,7 @@ pod 'SwiftCoreData'
 
 ## Author
 
-sapgv, grisha.sapgv@mail.ru
+Grigory Sapogov, grisha.sapgv@mail.ru
 
 ## License
 
