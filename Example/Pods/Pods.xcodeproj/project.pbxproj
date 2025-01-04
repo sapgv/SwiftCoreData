@@ -13,6 +13,7 @@
 		1094B79F2D23144E001B0A41 /* ManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1094B79E2D23144E001B0A41 /* ManagedObjectModel.swift */; };
 		1094B7A12D2318C8001B0A41 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1094B7A02D2318C8001B0A41 /* PersistentContainer.swift */; };
 		1094B7A32D231D01001B0A41 /* ViewContextSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1094B7A22D231D01001B0A41 /* ViewContextSettings.swift */; };
+		10CC512B2D298EC5008ACD24 /* CoreDataStack.Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CC512A2D298EC5008ACD24 /* CoreDataStack.Log.swift */; };
 		1A2F522FD592A25B5815762F3BFFCC03 /* SapgvCoreData-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B91A45D991CD206F5C5BDE5F5B210A47 /* SapgvCoreData-dummy.m */; };
 		584C589C65BE0D8F974E0BCD0086A5CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		7DD729E7396ACCFCA7101713A38A03E1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8C27EB1A48A28EA4930EB07E526105 /* CoreDataStack.swift */; };
@@ -50,6 +51,7 @@
 		1094B79E2D23144E001B0A41 /* ManagedObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ManagedObjectModel.swift; path = SapgvCoreData/Classes/ManagedObjectModel.swift; sourceTree = "<group>"; };
 		1094B7A02D2318C8001B0A41 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersistentContainer.swift; path = SapgvCoreData/Classes/PersistentContainer.swift; sourceTree = "<group>"; };
 		1094B7A22D231D01001B0A41 /* ViewContextSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewContextSettings.swift; path = SapgvCoreData/Classes/ViewContextSettings.swift; sourceTree = "<group>"; };
+		10CC512A2D298EC5008ACD24 /* CoreDataStack.Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataStack.Log.swift; path = SapgvCoreData/Classes/CoreDataStack.Log.swift; sourceTree = "<group>"; };
 		122BC42A9DB4BC2253DEE4F00BD4145C /* Pods-SapgvCoreData_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SapgvCoreData_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		151C2918138D8760384F0FC45E129F81 /* Pods-SapgvCoreData_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SapgvCoreData_Tests-Info.plist"; sourceTree = "<group>"; };
 		1A29A276C9BF15636A99F944D7B6CEF3 /* SapgvCoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SapgvCoreData.debug.xcconfig; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				5D8C27EB1A48A28EA4930EB07E526105 /* CoreDataStack.swift */,
+				10CC512A2D298EC5008ACD24 /* CoreDataStack.Log.swift */,
 				1094B7A02D2318C8001B0A41 /* PersistentContainer.swift */,
 				1094B7982D2311C1001B0A41 /* PersistentContainerError.swift */,
 				1094B79A2D231287001B0A41 /* PersistentStoreDescription.swift */,
@@ -393,6 +396,7 @@
 				1094B7A32D231D01001B0A41 /* ViewContextSettings.swift in Sources */,
 				1094B7A12D2318C8001B0A41 /* PersistentContainer.swift in Sources */,
 				7DD729E7396ACCFCA7101713A38A03E1 /* CoreDataStack.swift in Sources */,
+				10CC512B2D298EC5008ACD24 /* CoreDataStack.Log.swift in Sources */,
 				1094B7992D2311C1001B0A41 /* PersistentContainerError.swift in Sources */,
 				1094B79F2D23144E001B0A41 /* ManagedObjectModel.swift in Sources */,
 				1A2F522FD592A25B5815762F3BFFCC03 /* SapgvCoreData-dummy.m in Sources */,

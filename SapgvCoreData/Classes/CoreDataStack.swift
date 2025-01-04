@@ -28,14 +28,10 @@ public class CoreDataStack {
                 self?.storeDescription = storeDescription
             }
             
-            #if DEBUG
-            print(storeDescription)
-            #endif
+            self?.log(storeDescription: storeDescription)
             
             if let error = error as NSError? {
-                #if DEBUG
-                print(error.localizedDescription)
-                #endif
+                self?.log(error: error)
                 self?.loadPersistentStoreCompletion?(.failure(error))
                 return
             }
