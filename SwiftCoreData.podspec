@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '17.0'
 
 #  s.source_files = 'SwiftCoreData/Classes/**/*.swift'
-  s.source_files = 'Classes/**/*.swift'
-#  s.source_files = 'SwiftCoreData/Classes/*.swift'
+#  s.source_files = 'Classes/**/*.swift'
+  s.source_files = 'SwiftCoreData/Classes/**/*.swift'
   
   # s.resource_bundles = {
   #   'SwiftCoreData' => ['SwiftCoreData/Assets/*.png']
