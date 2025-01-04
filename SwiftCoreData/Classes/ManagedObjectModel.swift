@@ -7,12 +7,6 @@
 
 import CoreData
 
-//public class ManagedObjectModel: NSManagedObjectModel {
-//    
-//    
-//    
-//}
-
 public
 extension NSManagedObjectModel {
     

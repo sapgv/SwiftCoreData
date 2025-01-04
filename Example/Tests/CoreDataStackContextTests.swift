@@ -26,7 +26,7 @@ final class CoreDataStackContextTests: XCTestCase {
     
     func testNewBackgroundContext() {
         
-        let privateContext = self.sut.createBackgroundContext(automaticallyMergesChangesFromParent: true, mergePolicy: .mergeByPropertyObjectTrump)
+        let privateContext = self.sut.createBackgroundContext(contextSettings: .default)
         XCTAssertEqual(privateContext.concurrencyType, .privateQueueConcurrencyType)
         XCTAssertEqual(privateContext.automaticallyMergesChangesFromParent, true)
         XCTAssertEqual(privateContext.mergePolicy as! NSMergePolicy, NSMergePolicy.mergeByPropertyObjectTrump)

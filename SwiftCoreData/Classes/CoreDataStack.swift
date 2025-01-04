@@ -46,8 +46,8 @@ public class CoreDataStack {
     
     public private(set) lazy var viewContext: NSManagedObjectContext = {
         let viewContext = self.container.viewContext
-        viewContext.automaticallyMergesChangesFromParent = viewContextSettings.automaticallyMergesChangesFromParent
-        viewContext.mergePolicy = viewContextSettings.mergePolicy
+        viewContext.automaticallyMergesChangesFromParent = contextSettings.automaticallyMergesChangesFromParent
+        viewContext.mergePolicy = contextSettings.mergePolicy
         return viewContext
     }()
     
@@ -63,7 +63,7 @@ public class CoreDataStack {
         self.container.persistentStoreDescriptions.first
     }()
     
-    private let viewContextSettings: ViewContextSettings
+    private let contextSettings: NSManagedObjectContext.Settings
     
     private let managedObjectModel: NSManagedObjectModel?
     
@@ -73,7 +73,7 @@ public class CoreDataStack {
         modelName: String,
         bundle: Bundle = .main,
         inMemory: Bool = false,
-        viewContextSettings: ViewContextSettings = .main) {
+        contextSettings: NSManagedObjectContext.Settings = .default) {
         
         let storeDescription = PersistentStoreDescription(modelName: modelName, inMemory: inMemory)
         
@@ -83,7 +83,7 @@ public class CoreDataStack {
             modelName: modelName,
             storeDescription: storeDescription,
             managedObjectModel: managedObjectModel,
-            viewContextSettings: viewContextSettings)
+            contextSettings: contextSettings)
             
     }
     
@@ -91,34 +91,32 @@ public class CoreDataStack {
         modelName: String,
         storeDescription: PersistentStoreDescription,
         managedObjectModel: NSManagedObjectModel? = nil,
-        viewContextSettings: ViewContextSettings = .main) {
+        contextSettings: NSManagedObjectContext.Settings = .default) {
         
         self.modelName = modelName
         self.managedObjectModel = managedObjectModel
-        self.viewContextSettings = viewContextSettings
+        self.contextSettings = contextSettings
         self.persistentStoreDescriptions = [storeDescription]
         
     }
     
     public func createBackgroundContext(
-        automaticallyMergesChangesFromParent: Bool = true,
-        mergePolicy: NSMergePolicy = .mergeByPropertyObjectTrump
+        contextSettings: NSManagedObjectContext.Settings = .default
     ) -> NSManagedObjectContext{
         let privateContext = self.container.newBackgroundContext()
-        privateContext.automaticallyMergesChangesFromParent = automaticallyMergesChangesFromParent
-        privateContext.mergePolicy = mergePolicy
+        privateContext.automaticallyMergesChangesFromParent = contextSettings.automaticallyMergesChangesFromParent
+        privateContext.mergePolicy = contextSettings.mergePolicy
         return privateContext
     }
     
     public func performBackgroundTask(
-        automaticallyMergesChangesFromParent: Bool = true,
-        mergePolicy: NSMergePolicy = .mergeByPropertyObjectTrump,
+        contextSettings: NSManagedObjectContext.Settings = .default,
         _ perform: @escaping (NSManagedObjectContext) -> Void
     ) {
         
         self.container.performBackgroundTask { privateContext in
-            privateContext.automaticallyMergesChangesFromParent = automaticallyMergesChangesFromParent
-            privateContext.mergePolicy = mergePolicy
+            privateContext.automaticallyMergesChangesFromParent = contextSettings.automaticallyMergesChangesFromParent
+            privateContext.mergePolicy = contextSettings.mergePolicy
             perform(privateContext)
         }
         
@@ -126,27 +124,25 @@ public class CoreDataStack {
     
     public func createContext(
         concurrencyType: NSManagedObjectContextConcurrencyType,
-        automaticallyMergesChangesFromParent: Bool = true,
-        mergePolicy: NSMergePolicy = .mergeByPropertyObjectTrump
+        contextSettings: NSManagedObjectContext.Settings = .default
     ) -> NSManagedObjectContext {
-        
-        let context = NSManagedObjectContext(concurrencyType: concurrencyType)
-        context.automaticallyMergesChangesFromParent = automaticallyMergesChangesFromParent
-        context.mergePolicy = mergePolicy
-        context.persistentStoreCoordinator = self.persistentStoreCoordinator
-        return context
-    }
+            
+            let context = NSManagedObjectContext(concurrencyType: concurrencyType)
+            context.automaticallyMergesChangesFromParent = contextSettings.automaticallyMergesChangesFromParent
+            context.mergePolicy = contextSettings.mergePolicy
+            context.persistentStoreCoordinator = self.persistentStoreCoordinator
+            return context
+        }
     
     public func createChildContext(
         concurrencyType: NSManagedObjectContextConcurrencyType,
         fromContext parentContext: NSManagedObjectContext,
-        automaticallyMergesChangesFromParent: Bool = true,
-        mergePolicy: NSMergePolicy = .mergeByPropertyObjectTrump
+        contextSettings: NSManagedObjectContext.Settings = .default
     ) -> NSManagedObjectContext {
         
         let context = NSManagedObjectContext(concurrencyType: concurrencyType)
-        context.automaticallyMergesChangesFromParent = automaticallyMergesChangesFromParent
-        context.mergePolicy = mergePolicy
+        context.automaticallyMergesChangesFromParent = contextSettings.automaticallyMergesChangesFromParent
+        context.mergePolicy = contextSettings.mergePolicy
         context.parent = parentContext
         return context
         
