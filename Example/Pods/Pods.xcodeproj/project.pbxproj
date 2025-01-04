@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10DDCBE62D29AB9B00486182 /* PersistentContainerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBE52D29AB9B00486182 /* PersistentContainerError.swift */; };
+		10DDCBEA2D29AD4000486182 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBE92D29AD4000486182 /* NSManagedObject.swift */; };
 		1317D293BC2E8A617CCCA10773B20B65 /* ManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F906BD5313B70080D9AA0709A47153 /* ManagedObjectModel.swift */; };
 		13F0894CFEFA5E00D7455BC7776C254E /* Pods-SwiftCoreData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DD0FA5779C8A6E0FE3828BA5E958F /* Pods-SwiftCoreData_Example-dummy.m */; };
 		228D4875392473B3F25CA670437EC993 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
@@ -46,6 +47,7 @@
 		0BF91C20DB9752DAFE7A3004C31BAA5B /* Pods-SwiftCoreData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Tests-umbrella.h"; sourceTree = "<group>"; };
 		0C147D77DA13764DFFDB5881B6C3FA1D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		10DDCBE52D29AB9B00486182 /* PersistentContainerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentContainerError.swift; path = SwiftCoreData/Classes/PersistentContainerError.swift; sourceTree = "<group>"; };
+		10DDCBE92D29AD4000486182 /* NSManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSManagedObject.swift; path = SwiftCoreData/Classes/NSManagedObject.swift; sourceTree = "<group>"; };
 		1314951443F9F9EB85BB7EC9EE7F947B /* Pods-SwiftCoreData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Example-umbrella.h"; sourceTree = "<group>"; };
 		176CB74BBD8DC75010CE7501A7B3F8A0 /* Pods-SwiftCoreData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoreData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		18A54A7635CAFA633774F074041E3B68 /* SwiftCoreData-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftCoreData-dummy.m"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				10DDCBE52D29AB9B00486182 /* PersistentContainerError.swift */,
 				BEC72789CFC3805D9967BD67F8230609 /* PersistentStoreDescription.swift */,
 				EFDBC314B39A45979E54CF4576B7916A /* NSManagedObjectContext.Settings.swift */,
+				10DDCBE92D29AD4000486182 /* NSManagedObject.swift */,
 				4E68005515F828270CAEB50FD87751F8 /* Pod */,
 				B08EA79166B423B8601796DFD021DF45 /* Support Files */,
 			);
@@ -389,6 +392,7 @@
 				AC872A00F6DEBF23CE79924CA2E34059 /* CoreDataStack.Log.swift in Sources */,
 				1317D293BC2E8A617CCCA10773B20B65 /* ManagedObjectModel.swift in Sources */,
 				471C18EAD30D02BB094758FF5B08A16E /* PersistentContainer.swift in Sources */,
+				10DDCBEA2D29AD4000486182 /* NSManagedObject.swift in Sources */,
 				70636F75476688B5B42F622B663F122F /* PersistentStoreDescription.swift in Sources */,
 				7B9E6A513045828912CD9BAB45B35F13 /* SwiftCoreData-dummy.m in Sources */,
 				AE41221BF1EDB0BB46ABBA5A24BBF5EC /* NSManagedObjectContext.Settings.swift in Sources */,
