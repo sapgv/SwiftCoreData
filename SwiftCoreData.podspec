@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftCoreData'
-  s.version          = '0.4.0'
+  s.version          = '0.5.0'
   s.summary          = 'SwiftCoreData is a simple library for manage Core Data Stack'
 
 # This description is used to generate tags and improve search results.
@@ -30,10 +30,11 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '17.0'
   s.ios.deployment_target = '17.0'
-
+  s.swift_version = '5.0'
+  
 #  s.source_files = 'SwiftCoreData/Classes/**/*.swift'
-#  s.source_files = 'Classes/**/*.swift'
-  s.source_files = 'SwiftCoreData/Classes/**/*.swift'
+#  s.source_files = 'SwiftCoreData/**/*'
+  s.source_files = 'SwiftCoreData/Classes/**/*'
   
   # s.resource_bundles = {
   #   'SwiftCoreData' => ['SwiftCoreData/Assets/*.png']
