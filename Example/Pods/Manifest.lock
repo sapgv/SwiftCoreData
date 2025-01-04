@@ -1,16 +1,16 @@
 PODS:
-  - SapgvCoreData (0.1.0)
+  - SwiftCoreData (0.4.0)
 
 DEPENDENCIES:
-  - SapgvCoreData (from `../`)
+  - SwiftCoreData (from `../`)
 
 EXTERNAL SOURCES:
-  SapgvCoreData:
+  SwiftCoreData:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SapgvCoreData: 90b8d99da69ac0b5ecbafaa5bc507b6a2a842c25
+  SwiftCoreData: bc8e4d4645230e2cf49c790744cae94d2eeef2f1
 
-PODFILE CHECKSUM: eef37a5b160d275553a2aefeee342aaeee5a3cac
+PODFILE CHECKSUM: d767658e1e44a2a5ea8a321fbd9a016997149179
 
 COCOAPODS: 1.16.2

@@ -1,0 +1,6 @@
+framework module SwiftCoreData {
+  umbrella header "SwiftCoreData-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,9 +1,9 @@
-# SapgvCoreData
+# SwiftCoreData
 
-[![CI Status](https://img.shields.io/travis/sapgv/SapgvCoreData.svg?style=flat)](https://travis-ci.org/sapgv/SapgvCoreData)
-[![Version](https://img.shields.io/cocoapods/v/SapgvCoreData.svg?style=flat)](https://cocoapods.org/pods/SapgvCoreData)
-[![License](https://img.shields.io/cocoapods/l/SapgvCoreData.svg?style=flat)](https://cocoapods.org/pods/SapgvCoreData)
-[![Platform](https://img.shields.io/cocoapods/p/SapgvCoreData.svg?style=flat)](https://cocoapods.org/pods/SapgvCoreData)
+[![CI Status](https://img.shields.io/travis/sapgv/SwiftCoreData.svg?style=flat)](https://travis-ci.org/sapgv/SwiftCoreData)
+[![Version](https://img.shields.io/cocoapods/v/SwiftCoreData.svg?style=flat)](https://cocoapods.org/pods/SwiftCoreData)
+[![License](https://img.shields.io/cocoapods/l/SwiftCoreData.svg?style=flat)](https://cocoapods.org/pods/SwiftCoreData)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftCoreData.svg?style=flat)](https://cocoapods.org/pods/SwiftCoreData)
 
 ## Example
 
@@ -13,11 +13,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-SapgvCoreData is available through [CocoaPods](https://cocoapods.org). To install
+  SwiftCoreData is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SapgvCoreData'
+pod 'SwiftCoreData'
 ```
 
 ## Author
@@ -26,4 +26,4 @@ sapgv, grisha.sapgv@mail.ru
 
 ## License
 
-SapgvCoreData is available under the MIT license. See the LICENSE file for more info.
+SwiftCoreData is available under the MIT license. See the LICENSE file for more info.

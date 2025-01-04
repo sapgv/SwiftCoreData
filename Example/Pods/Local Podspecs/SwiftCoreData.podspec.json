@@ -1,0 +1,22 @@
+{
+  "name": "SwiftCoreData",
+  "version": "0.4.0",
+  "summary": "A short description of SwiftCoreData.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/sapgv/SwiftCoreData",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "sapgv": "grisha.sapgv@mail.ru"
+  },
+  "source": {
+    "git": "https://github.com/sapgv/SwiftCoreData.git",
+    "tag": "0.4.0"
+  },
+  "platforms": {
+    "ios": "17.0"
+  },
+  "source_files": "SwiftCoreData/Classes/**/*"
+}

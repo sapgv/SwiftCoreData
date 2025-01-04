@@ -1,13 +1,13 @@
 //
 //  CoreDataStackInitTests.swift
-//  SapgvCoreData_Tests
+//  SwiftCoreData_Tests
 //
 //  Created by Grigory Sapogov on 29.12.2024.
 //  Copyright © 2024 CocoaPods. All rights reserved.
 //
 
 import XCTest
-import SapgvCoreData
+import SwiftCoreData
 import CoreData
 
 final class CoreDataStackInitTests: XCTestCase {
