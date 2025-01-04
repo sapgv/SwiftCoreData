@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftCoreData'
   s.version          = '0.4.0'
-  s.summary          = 'A short description of SwiftCoreData.'
+  s.summary          = 'SwiftCoreData is a simple library for manage Core Data Stack'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  SwiftCoreData is a simple library for manage Core Data Stack.
                        DESC
 
   s.homepage         = 'https://github.com/sapgv/SwiftCoreData'
@@ -28,9 +28,12 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/sapgv/SwiftCoreData.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
+  s.platform     = :ios, '17.0'
   s.ios.deployment_target = '17.0'
 
-  s.source_files = 'SwiftCoreData/Classes/**/*'
+#  s.source_files = 'SwiftCoreData/Classes/**/*.swift'
+  s.source_files = 'Classes/**/*.swift'
+#  s.source_files = 'SwiftCoreData/Classes/*.swift'
   
   # s.resource_bundles = {
   #   'SwiftCoreData' => ['SwiftCoreData/Assets/*.png']
