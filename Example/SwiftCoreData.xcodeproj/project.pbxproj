@@ -17,6 +17,7 @@
 		10DDCBE82D29ACBD00486182 /* CoreDataStackFetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBE72D29ACBD00486182 /* CoreDataStackFetchTests.swift */; };
 		10DDCBEC2D29ADDF00486182 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBEB2D29ADDF00486182 /* Common.swift */; };
 		10DDCBEE2D29AEA800486182 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBED2D29AEA800486182 /* CoreDataStack.swift */; };
+		10DDCBF02D29B17900486182 /* CoreDataStackSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBEF2D29B17900486182 /* CoreDataStackSaveTests.swift */; };
 		2E0B0D0C390A20F8FDD09CE9 /* Pods_SwiftCoreData_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C472EA03939BB923DB8EF046 /* Pods_SwiftCoreData_Tests.framework */; };
 		3DA487843603B956027D5486 /* Pods_SwiftCoreData_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62843C18A75865B858D15C3E /* Pods_SwiftCoreData_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		10DDCBE72D29ACBD00486182 /* CoreDataStackFetchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackFetchTests.swift; sourceTree = "<group>"; };
 		10DDCBEB2D29ADDF00486182 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		10DDCBED2D29AEA800486182 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		10DDCBEF2D29B17900486182 /* CoreDataStackSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackSaveTests.swift; sourceTree = "<group>"; };
 		1459012BD2725C648D82D27D /* SwiftCoreData.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftCoreData.podspec; path = ../SwiftCoreData.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		27100BE9E07D0667DF13551C /* Pods-SwiftCoreData_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoreData_Example.release.xcconfig"; path = "Target Support Files/Pods-SwiftCoreData_Example/Pods-SwiftCoreData_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4902DB4A2F131AB485F1E31B /* Pods-SwiftCoreData_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoreData_Tests.release.xcconfig"; path = "Target Support Files/Pods-SwiftCoreData_Tests/Pods-SwiftCoreData_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				108E88822D21730A00EE24D0 /* CoreDataStackInitTests.swift */,
 				1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */,
 				10DDCBE72D29ACBD00486182 /* CoreDataStackFetchTests.swift */,
+				10DDCBEF2D29B17900486182 /* CoreDataStackSaveTests.swift */,
 				108E88A92D217FAD00EE24D0 /* ModelTest.xcdatamodeld */,
 			);
 			path = Tests;
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				108E88832D21730A00EE24D0 /* CoreDataStackInitTests.swift in Sources */,
+				10DDCBF02D29B17900486182 /* CoreDataStackSaveTests.swift in Sources */,
 				108E88AB2D217FAD00EE24D0 /* ModelTest.xcdatamodeld in Sources */,
 				10DDCBE82D29ACBD00486182 /* CoreDataStackFetchTests.swift in Sources */,
 				10DDCBEE2D29AEA800486182 /* CoreDataStack.swift in Sources */,

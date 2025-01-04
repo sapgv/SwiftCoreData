@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		10DDCBE62D29AB9B00486182 /* PersistentContainerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBE52D29AB9B00486182 /* PersistentContainerError.swift */; };
 		10DDCBEA2D29AD4000486182 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBE92D29AD4000486182 /* NSManagedObject.swift */; };
+		10DDCBF22D29B1C800486182 /* CoreDataStack.Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBF12D29B1C800486182 /* CoreDataStack.Fetch.swift */; };
+		10DDCBF42D29B2A000486182 /* CoreDataStack.Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBF32D29B2A000486182 /* CoreDataStack.Save.swift */; };
+		10DDCBF62D29B51700486182 /* CoreDataStack.SaveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBF52D29B51700486182 /* CoreDataStack.SaveResult.swift */; };
+		10DDCBFA2D29B6A300486182 /* CoreDataStack.SavePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBF92D29B6A300486182 /* CoreDataStack.SavePolicy.swift */; };
 		1317D293BC2E8A617CCCA10773B20B65 /* ManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F906BD5313B70080D9AA0709A47153 /* ManagedObjectModel.swift */; };
 		13F0894CFEFA5E00D7455BC7776C254E /* Pods-SwiftCoreData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DD0FA5779C8A6E0FE3828BA5E958F /* Pods-SwiftCoreData_Example-dummy.m */; };
 		228D4875392473B3F25CA670437EC993 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
@@ -48,6 +52,10 @@
 		0C147D77DA13764DFFDB5881B6C3FA1D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		10DDCBE52D29AB9B00486182 /* PersistentContainerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentContainerError.swift; path = SwiftCoreData/Classes/PersistentContainerError.swift; sourceTree = "<group>"; };
 		10DDCBE92D29AD4000486182 /* NSManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSManagedObject.swift; path = SwiftCoreData/Classes/NSManagedObject.swift; sourceTree = "<group>"; };
+		10DDCBF12D29B1C800486182 /* CoreDataStack.Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataStack.Fetch.swift; path = SwiftCoreData/Classes/CoreDataStack.Fetch.swift; sourceTree = "<group>"; };
+		10DDCBF32D29B2A000486182 /* CoreDataStack.Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataStack.Save.swift; path = SwiftCoreData/Classes/CoreDataStack.Save.swift; sourceTree = "<group>"; };
+		10DDCBF52D29B51700486182 /* CoreDataStack.SaveResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataStack.SaveResult.swift; path = SwiftCoreData/Classes/CoreDataStack.SaveResult.swift; sourceTree = "<group>"; };
+		10DDCBF92D29B6A300486182 /* CoreDataStack.SavePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataStack.SavePolicy.swift; path = SwiftCoreData/Classes/CoreDataStack.SavePolicy.swift; sourceTree = "<group>"; };
 		1314951443F9F9EB85BB7EC9EE7F947B /* Pods-SwiftCoreData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Example-umbrella.h"; sourceTree = "<group>"; };
 		176CB74BBD8DC75010CE7501A7B3F8A0 /* Pods-SwiftCoreData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoreData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		18A54A7635CAFA633774F074041E3B68 /* SwiftCoreData-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftCoreData-dummy.m"; sourceTree = "<group>"; };
@@ -118,7 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				5BD3DF4DC774C2A14C5B873535419F6E /* CoreDataStack.swift */,
+				10DDCBF12D29B1C800486182 /* CoreDataStack.Fetch.swift */,
+				10DDCBF32D29B2A000486182 /* CoreDataStack.Save.swift */,
 				B8D17AFE456B62D3B57B57355E1C5660 /* CoreDataStack.Log.swift */,
+				10DDCBF52D29B51700486182 /* CoreDataStack.SaveResult.swift */,
+				10DDCBF92D29B6A300486182 /* CoreDataStack.SavePolicy.swift */,
 				55F906BD5313B70080D9AA0709A47153 /* ManagedObjectModel.swift */,
 				DBB50F55EC91985973CC846311776F74 /* PersistentContainer.swift */,
 				10DDCBE52D29AB9B00486182 /* PersistentContainerError.swift */,
@@ -388,13 +400,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10DDCBF42D29B2A000486182 /* CoreDataStack.Save.swift in Sources */,
 				A9C81C9E3C6DE3480A8AFFF2C90E04BC /* CoreDataStack.swift in Sources */,
+				10DDCBF62D29B51700486182 /* CoreDataStack.SaveResult.swift in Sources */,
 				AC872A00F6DEBF23CE79924CA2E34059 /* CoreDataStack.Log.swift in Sources */,
 				1317D293BC2E8A617CCCA10773B20B65 /* ManagedObjectModel.swift in Sources */,
+				10DDCBFA2D29B6A300486182 /* CoreDataStack.SavePolicy.swift in Sources */,
 				471C18EAD30D02BB094758FF5B08A16E /* PersistentContainer.swift in Sources */,
 				10DDCBEA2D29AD4000486182 /* NSManagedObject.swift in Sources */,
 				70636F75476688B5B42F622B663F122F /* PersistentStoreDescription.swift in Sources */,
 				7B9E6A513045828912CD9BAB45B35F13 /* SwiftCoreData-dummy.m in Sources */,
+				10DDCBF22D29B1C800486182 /* CoreDataStack.Fetch.swift in Sources */,
 				AE41221BF1EDB0BB46ABBA5A24BBF5EC /* NSManagedObjectContext.Settings.swift in Sources */,
 				10DDCBE62D29AB9B00486182 /* PersistentContainerError.swift in Sources */,
 			);

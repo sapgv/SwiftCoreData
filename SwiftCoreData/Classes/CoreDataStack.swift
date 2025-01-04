@@ -148,23 +148,4 @@ public class CoreDataStack {
         
     }
     
-    public func fetch<T: NSManagedObject>(
-        _ type: T.Type,
-        predicate: NSPredicate? = nil,
-        inContext context: NSManagedObjectContext
-    ) -> [T] {
-        
-        let request = NSFetchRequest<T>(entityName: T.entityName)
-        request.predicate = predicate
-        
-        do {
-            let result = try context.fetch(request)
-            return result
-        }
-        catch {
-            return []
-        }
-        
-    }
-    
 }

@@ -25,7 +25,7 @@ final class CoreDataStackFetchTests: XCTestCase {
     
     func testFetchWhenNoPersonExist() {
         
-        let array = self.sut.fetch(Person.self, inContext: sut.viewContext)
+        let array = self.sut.fetch(CDPerson.self, inContext: sut.viewContext)
         
         XCTAssertEqual(array.isEmpty, true)
         
