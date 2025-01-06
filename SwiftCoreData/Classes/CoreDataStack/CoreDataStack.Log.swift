@@ -7,7 +7,17 @@
 
 import CoreData
 
+public
 extension CoreDataStack {
+    
+    func log(state: State) {
+        switch state {
+        case let .failure(error):
+            self.log(error: error)
+        case let .success(storeDescription):
+            self.log(storeDescription: storeDescription)
+        }
+    }
     
     func log(storeDescription: NSPersistentStoreDescription) {
         #if DEBUG
@@ -15,7 +25,7 @@ extension CoreDataStack {
         #endif
     }
     
-    func log(error: NSError) {
+    func log(error: Error) {
         #if DEBUG
         print(error.localizedDescription)
         #endif

@@ -11,34 +11,29 @@ public class CoreDataStack {
     
     public let modelName: String
     
-    public var loadPersistentStoreCompletion: ((Swift.Result<NSPersistentStoreDescription, Error>) -> Void)?
+    public var loadPersistentStoreCompletion: ((State) -> Void)?
     
-    public private(set) var isStoreLoaded: Bool = false
+    public private(set) var state: State?
     
-    public private(set) lazy var container: PersistentContainer = {
+    public private(set) lazy var container: PersistentContainer = { [weak self, modelName, managedObjectModel] in
         
-        let container = PersistentContainer(modelName: self.modelName, managedObjectModel: self.managedObjectModel)
+        let container = PersistentContainer(modelName: modelName, managedObjectModel: managedObjectModel)
+        
+        guard let self = self else { return container }
         
         container.persistentStoreDescriptions = self.persistentStoreDescriptions
         
         container.loadPersistentStores { [weak self] storeDescription, error in
 
-            defer {
-                self?.isStoreLoaded = error == nil
-                self?.storeDescription = storeDescription
-            }
+            self?.storeDescription = storeDescription
             
-            self?.log(storeDescription: storeDescription)
+            let state: State = error == nil ? .success(storeDescription) : .failure(error!)
             
-            if let error = error as NSError? {
-                self?.log(error: error)
-                self?.loadPersistentStoreCompletion?(.failure(error))
-                return
-            }
-            
-            self?.loadPersistentStoreCompletion?(.success(storeDescription))
+            self?.change(state: state)
             
         }
+        
+        self.handleInNotInitialized(container: container)
         
         return container
         
@@ -146,6 +141,21 @@ public class CoreDataStack {
         context.parent = parentContext
         return context
         
+    }
+    
+}
+
+extension CoreDataStack {
+    
+    private func change(state: State) {
+        self.state = state
+        self.log(state: state)
+        self.loadPersistentStoreCompletion?(state)
+    }
+    
+    private func handleInNotInitialized(container: PersistentContainer) {
+        guard container.description.isEmpty else { return }
+        self.change(state: .failure(PersistentContainer.Error.initContainerFailure))
     }
     
 }
