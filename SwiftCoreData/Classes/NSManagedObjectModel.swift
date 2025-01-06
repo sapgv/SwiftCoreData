@@ -1,5 +1,5 @@
 //
-//  ManagedObjectModel.swift
+//  NSManagedObjectModel.swift
 //  SwiftCoreData
 //
 //  Created by Grigory Sapogov on 30.12.2024.

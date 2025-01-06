@@ -19,6 +19,12 @@ extension CoreDataStack {
         let request = NSFetchRequest<T>(entityName: T.entityName)
         request.predicate = predicate
         
+        return self.fetch(request: request, inContext: context)
+        
+    }
+    
+    func fetch<T: NSManagedObject>(request: NSFetchRequest<T>, inContext context: NSManagedObjectContext) -> [T] {
+        
         do {
             let result = try context.fetch(request)
             return result
