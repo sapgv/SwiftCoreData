@@ -39,7 +39,7 @@ final class CoreDataStackInitTests: XCTestCase {
 
         sut.loadPersistentStoreCompletion = { result in
             switch result {
-            case let .failure(error as PersistentContainerError):
+            case let .failure(error as PersistentContainer.Error):
                 XCTAssertEqual(error, .initContainerFailure)
             default:
                 XCTFail()

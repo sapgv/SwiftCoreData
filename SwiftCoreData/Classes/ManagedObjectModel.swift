@@ -13,7 +13,7 @@ extension NSManagedObjectModel {
     static func managedObjectModel(modelName: String, bundle: Bundle = .main) throws -> NSManagedObjectModel {
         let managedObjectModelURL = try modelURL(modelName: modelName, bundle: bundle)
         guard let managedObjectModel = NSManagedObjectModel(contentsOf: managedObjectModelURL) else {
-            throw PersistentContainerError.managedObjectModelNotFound
+            throw PersistentContainer.Error.managedObjectModelNotFound
         }
         return managedObjectModel
     }
@@ -21,7 +21,7 @@ extension NSManagedObjectModel {
     static func modelURL(modelName: String, bundle: Bundle) throws -> URL {
         
         guard let managedObjectModelURL = bundle.url(forResource: modelName, withExtension: "momd") else {
-            throw PersistentContainerError.invalidManagedObjectModelURL
+            throw PersistentContainer.Error.invalidManagedObjectModelURL
         }
 
         return managedObjectModelURL

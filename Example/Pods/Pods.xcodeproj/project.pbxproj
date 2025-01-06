@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		100D91292D2BCDF800C5AFB5 /* CoreDataStack.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D91282D2BCDF800C5AFB5 /* CoreDataStack.State.swift */; };
-		10DDCBE62D29AB9B00486182 /* PersistentContainerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBE52D29AB9B00486182 /* PersistentContainerError.swift */; };
+		10DDCBE62D29AB9B00486182 /* PersistentContainer.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBE52D29AB9B00486182 /* PersistentContainer.Error.swift */; };
 		1317D293BC2E8A617CCCA10773B20B65 /* ManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F906BD5313B70080D9AA0709A47153 /* ManagedObjectModel.swift */; };
 		13F0894CFEFA5E00D7455BC7776C254E /* Pods-SwiftCoreData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DD0FA5779C8A6E0FE3828BA5E958F /* Pods-SwiftCoreData_Example-dummy.m */; };
 		228D4875392473B3F25CA670437EC993 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
@@ -47,7 +47,7 @@
 		0BF91C20DB9752DAFE7A3004C31BAA5B /* Pods-SwiftCoreData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Tests-umbrella.h"; sourceTree = "<group>"; };
 		0C147D77DA13764DFFDB5881B6C3FA1D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		100D91282D2BCDF800C5AFB5 /* CoreDataStack.State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.State.swift; sourceTree = "<group>"; };
-		10DDCBE52D29AB9B00486182 /* PersistentContainerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentContainerError.swift; path = SwiftCoreData/Classes/PersistentContainerError.swift; sourceTree = "<group>"; };
+		10DDCBE52D29AB9B00486182 /* PersistentContainer.Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainer.Error.swift; sourceTree = "<group>"; };
 		1314951443F9F9EB85BB7EC9EE7F947B /* Pods-SwiftCoreData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Example-umbrella.h"; sourceTree = "<group>"; };
 		176CB74BBD8DC75010CE7501A7B3F8A0 /* Pods-SwiftCoreData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoreData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		18A54A7635CAFA633774F074041E3B68 /* SwiftCoreData-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftCoreData-dummy.m"; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		D115BFB2DB2ABE3E13A646A0F15EA225 /* Pods-SwiftCoreData_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCoreData_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D6AEFE165F3ED6CCB3B65646B2D64F19 /* Pods-SwiftCoreData_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoreData_Tests-Info.plist"; sourceTree = "<group>"; };
 		D972821C79B6461ED19CD8D277BBB6D5 /* SwiftCoreData */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftCoreData; path = SwiftCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBB50F55EC91985973CC846311776F74 /* PersistentContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PersistentContainer.swift; path = SwiftCoreData/Classes/PersistentContainer.swift; sourceTree = "<group>"; };
+		DBB50F55EC91985973CC846311776F74 /* PersistentContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		EB51A99D12B67B110878116622EB2295 /* Pods-SwiftCoreData_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftCoreData_Example-frameworks.sh"; sourceTree = "<group>"; };
 		ED77429868EDD247560D033AC3584803 /* Pods-SwiftCoreData_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SwiftCoreData_Example"; path = Pods_SwiftCoreData_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFDBC314B39A45979E54CF4576B7916A /* NSManagedObjectContext.Settings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSManagedObjectContext.Settings.swift; path = SwiftCoreData/Classes/NSManagedObjectContext.Settings.swift; sourceTree = "<group>"; };
@@ -118,9 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				100D912A2D2BCE7400C5AFB5 /* CoreDataStack */,
+				100D912B2D2BD67E00C5AFB5 /* PersistentContainer */,
 				55F906BD5313B70080D9AA0709A47153 /* ManagedObjectModel.swift */,
-				DBB50F55EC91985973CC846311776F74 /* PersistentContainer.swift */,
-				10DDCBE52D29AB9B00486182 /* PersistentContainerError.swift */,
 				BEC72789CFC3805D9967BD67F8230609 /* PersistentStoreDescription.swift */,
 				EFDBC314B39A45979E54CF4576B7916A /* NSManagedObjectContext.Settings.swift */,
 				4E68005515F828270CAEB50FD87751F8 /* Pod */,
@@ -139,6 +138,16 @@
 			);
 			name = CoreDataStack;
 			path = SwiftCoreData/Classes/CoreDataStack;
+			sourceTree = "<group>";
+		};
+		100D912B2D2BD67E00C5AFB5 /* PersistentContainer */ = {
+			isa = PBXGroup;
+			children = (
+				DBB50F55EC91985973CC846311776F74 /* PersistentContainer.swift */,
+				10DDCBE52D29AB9B00486182 /* PersistentContainer.Error.swift */,
+			);
+			name = PersistentContainer;
+			path = SwiftCoreData/Classes/PersistentContainer;
 			sourceTree = "<group>";
 		};
 		35AF60DD76168FB3CDA29C95BBAB1217 /* Pods-SwiftCoreData_Example */ = {
@@ -405,7 +414,7 @@
 				7B9E6A513045828912CD9BAB45B35F13 /* SwiftCoreData-dummy.m in Sources */,
 				100D91292D2BCDF800C5AFB5 /* CoreDataStack.State.swift in Sources */,
 				AE41221BF1EDB0BB46ABBA5A24BBF5EC /* NSManagedObjectContext.Settings.swift in Sources */,
-				10DDCBE62D29AB9B00486182 /* PersistentContainerError.swift in Sources */,
+				10DDCBE62D29AB9B00486182 /* PersistentContainer.Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

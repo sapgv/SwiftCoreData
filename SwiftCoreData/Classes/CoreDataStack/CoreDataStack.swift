@@ -155,7 +155,7 @@ extension CoreDataStack {
     
     private func handleInNotInitialized(container: PersistentContainer) {
         guard container.description.isEmpty else { return }
-        self.change(state: .failure(PersistentContainerError.initContainerFailure))
+        self.change(state: .failure(PersistentContainer.Error.initContainerFailure))
     }
     
 }
