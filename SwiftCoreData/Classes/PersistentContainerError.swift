@@ -9,7 +9,8 @@ import Foundation
 
 public enum PersistentContainerError: Error {
     
-    case loadModelFailure
+    case initContainerFailure
     case invalidManagedObjectModelURL
     case managedObjectModelNotFound
+    
 }
