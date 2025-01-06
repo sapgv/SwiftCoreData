@@ -36,3 +36,12 @@ extension CoreDataStack {
     }
     
 }
+
+public
+extension CoreDataStack {
+    
+    func request<T: NSManagedObject>(_ type: T.Type) -> FetchRequest<T> {
+        return FetchRequest<T>()
+    }
+    
+}

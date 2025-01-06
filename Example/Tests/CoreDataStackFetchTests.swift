@@ -8,6 +8,7 @@
 
 import XCTest
 import SwiftCoreData
+import CoreData
 
 final class CoreDataStackFetchTests: XCTestCase {
 
@@ -25,7 +26,10 @@ final class CoreDataStackFetchTests: XCTestCase {
     
     func testFetchWhenNoPersonExist() {
         
-        let array = self.sut.fetch(CDPerson.self, inContext: sut.viewContext)
+        let array = self.sut
+            .request(CDPerson.self)
+            .fetch(inContext: self.sut.viewContext)
+//            .fetch(CDPerson.self, inContext: self.sut.viewContext)
         
         XCTAssertEqual(array.isEmpty, true)
         
