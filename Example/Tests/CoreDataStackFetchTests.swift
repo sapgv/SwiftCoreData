@@ -27,11 +27,20 @@ final class CoreDataStackFetchTests: XCTestCase {
     func testFetchWhenNoPersonExist() {
         
         let array = self.sut
-            .request(CDPerson.self)
+            .fetchRequestManagedObject(CDPerson.self)
             .fetch(inContext: self.sut.viewContext)
-//            .fetch(CDPerson.self, inContext: self.sut.viewContext)
         
         XCTAssertEqual(array.isEmpty, true)
+    
+//        let array2 = FetchRequest<NSManagedObject>(CDPerson.self)
+//            .fetch(inContext: self.sut.viewContext)
+//        
+//        XCTAssertEqual(array2.isEmpty, true)
+//        
+//        let count = FetchRequest<NSNumber>(CDPerson.self)
+//            .fetchCount(inContext: self.sut.viewContext)
+//        
+//        XCTAssertEqual(count, 0)
         
     }
     

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CoreData
 import SwiftCoreData
 
 final class CoreDataStackSaveTests: XCTestCase {
@@ -25,7 +26,9 @@ final class CoreDataStackSaveTests: XCTestCase {
     
     func testSavePerson() {
         
-        let arrayBefore = self.sut.fetch(CDPerson.self, inContext: sut.viewContext)
+        let arrayBefore = self.sut
+            .fetchRequestManagedObject(CDPerson.self)
+            .fetch(inContext: sut.viewContext)
         
         XCTAssertEqual(arrayBefore.isEmpty, true)
         
@@ -40,12 +43,48 @@ final class CoreDataStackSaveTests: XCTestCase {
             
         }
         
-        let arrayAfter = self.sut.fetch(CDPerson.self, inContext: sut.viewContext)
+        let arrayAfter = self.sut
+            .fetchRequestManagedObject(CDPerson.self)
+            .fetch(inContext: sut.viewContext)
         
         XCTAssertEqual(arrayAfter.count, 1)
         XCTAssertEqual(arrayAfter.first?.name, "User")
         XCTAssertEqual(arrayAfter.first?.age, 100)
         
+        
+        let array = self.sut.fetchRequestManagedObject(CDPerson.self)
+//            .pre
+//            .sor
+            .fetch(inContext: self.sut.viewContext)
+        
+        XCTAssertEqual(array.isEmpty, false)
+        
+        let count = self.sut.fetchRequestCount(CDPerson.self)
+//            .pre
+//            .s
+//            .f
+            .fetchCount(inContext: self.sut.viewContext)
+        
+        XCTAssertEqual(count, 1)
+        
+//        let ids = FetchRequest<NSManagedObjectID>(CDPerson.self)
+//            .fetch(inContext: sut.viewContext)
+        
+//        XCTAssertEqual(ids.count, 1)
+        
+        let data = sut.fetchRequestDictionary(CDPerson.self)
+//            .f
+//            .f
+            .fetch(inContext: sut.viewContext)
+        
+        XCTAssertEqual(data.isEmpty, false)
+        
+        let ids = sut.fetchRequestManagedObjectID(CDPerson.self)
+//            .fe
+            .fetch(inContext: sut.viewContext)
+        
+        
+        XCTAssertEqual(ids.isEmpty, false)
     }
     
 }
