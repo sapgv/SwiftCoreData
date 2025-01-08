@@ -8,19 +8,43 @@
 import Foundation
 import CoreData
 
-//public protocol Fetchable: AnyObject {
-//    
-//    associatedtype ResultType: NSFetchRequestResult
-//    
-//    func fetch(inContext context: NSManagedObjectContext) -> [ResultType]
-//
-//    func fetchOne(inContext context: NSManagedObjectContext) -> ResultType?
-//    
-//}
-
-extension FetchRequest where Result: NSManagedObject {
+public protocol FetchableRequest: AnyObject {
     
-    public func fetch(inContext context: NSManagedObjectContext) -> [Result] {
+    associatedtype Result: NSFetchRequestResult
+    
+    var request: NSFetchRequest<Result> { get }
+    
+    var fetchLimit: Int { get set }
+    
+    var fetchBatchSize: Int { get set }
+    
+    func fetch(inContext context: NSManagedObjectContext) -> [Result]
+
+    func fetchOne(inContext context: NSManagedObjectContext) -> Result?
+    
+}
+
+public extension FetchableRequest {
+    
+    var fetchLimit: Int {
+        get {
+            self.request.fetchLimit
+        }
+        set {
+            self.request.fetchLimit = newValue
+        }
+    }
+    
+    var fetchBatchSize: Int {
+        get {
+            self.request.fetchBatchSize
+        }
+        set {
+            self.request.fetchBatchSize = newValue
+        }
+    }
+    
+    func fetch(inContext context: NSManagedObjectContext) -> [Result] {
         
         do {
             let result = try context.fetch(request)
@@ -32,7 +56,7 @@ extension FetchRequest where Result: NSManagedObject {
         
     }
     
-    public func fetchOne(inContext context: NSManagedObjectContext) -> Result? {
+    func fetchOne(inContext context: NSManagedObjectContext) -> Result? {
         
         do {
             self.request.fetchLimit = 1
@@ -47,32 +71,9 @@ extension FetchRequest where Result: NSManagedObject {
     
 }
 
-extension FetchRequest where Result == NSManagedObjectID {
-    
-    public func fetch(inContext context: NSManagedObjectContext) -> [Result] {
-        
-        do {
-            let result = try context.fetch(request)
-            return result
-        }
-        catch {
-            return []
-        }
-        
-    }
-    
-    public func fetchOne(inContext context: NSManagedObjectContext) -> Result? {
-        
-        do {
-            self.request.fetchLimit = 1
-            let result = try context.fetch(request).first
-            return result
-        }
-        catch {
-            return nil
-        }
-        
-    }
-    
-}
+extension FetchRequest: FetchableRequest {}
+
+extension FetchRequestID: FetchableRequest {}
+
+extension FetchRequestDictionary: FetchableRequest {}
 

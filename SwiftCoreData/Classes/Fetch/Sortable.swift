@@ -8,19 +8,17 @@
 import Foundation
 import CoreData
 
-public
-protocol Sortable: AnyObject {
+public protocol Sortable: AnyObject {
     
-    associatedtype ResultType: NSFetchRequestResult
+    associatedtype Result: NSFetchRequestResult
     
-    var request: NSFetchRequest<ResultType> { get }
+    var request: NSFetchRequest<Result> { get }
     
     func sortDescriptor(_ sortDescriptor: NSSortDescriptor?) -> Self
     
 }
 
-public
-extension Sortable {
+public extension Sortable {
     
     func sortDescriptor(_ sortDescriptor: NSSortDescriptor?) -> Self {
         
@@ -41,4 +39,8 @@ extension Sortable {
 }
 
 extension FetchRequest: Sortable {}
+
+extension FetchRequestID: Sortable {}
+
+extension FetchRequestDictionary: Sortable {}
 

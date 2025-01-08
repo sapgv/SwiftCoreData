@@ -27,7 +27,7 @@ final class CoreDataStackSaveTests: XCTestCase {
     func testSavePerson() {
         
         let arrayBefore = self.sut
-            .fetchRequestManagedObject(CDPerson.self)
+            .fetchRequest(CDPerson.self)
             .fetch(inContext: sut.viewContext)
         
         XCTAssertEqual(arrayBefore.isEmpty, true)
@@ -44,7 +44,7 @@ final class CoreDataStackSaveTests: XCTestCase {
         }
         
         let arrayAfter = self.sut
-            .fetchRequestManagedObject(CDPerson.self)
+            .fetchRequest(CDPerson.self)
             .fetch(inContext: sut.viewContext)
         
         XCTAssertEqual(arrayAfter.count, 1)
@@ -52,7 +52,7 @@ final class CoreDataStackSaveTests: XCTestCase {
         XCTAssertEqual(arrayAfter.first?.age, 100)
         
         
-        let array = self.sut.fetchRequestManagedObject(CDPerson.self)
+        let array = self.sut.fetchRequest(CDPerson.self)
 //            .pre
 //            .sor
             .fetch(inContext: self.sut.viewContext)
@@ -79,12 +79,14 @@ final class CoreDataStackSaveTests: XCTestCase {
         
         XCTAssertEqual(data.isEmpty, false)
         
-        let ids = sut.fetchRequestManagedObjectID(CDPerson.self)
+        let ids = sut.fetchRequestID(CDPerson.self)
 //            .fe
             .fetch(inContext: sut.viewContext)
         
         
         XCTAssertEqual(ids.isEmpty, false)
+        
+        let req = CDPerson.fetchRequest2()
     }
     
 }

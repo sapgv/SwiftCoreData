@@ -8,12 +8,11 @@
 import Foundation
 import CoreData
 
-public
-protocol Predicatable: AnyObject {
+public protocol Predicatable: AnyObject {
     
-    associatedtype ResultType: NSFetchRequestResult
+    associatedtype Result: NSFetchRequestResult
     
-    var request: NSFetchRequest<ResultType> { get }
+    var request: NSFetchRequest<Result> { get }
     
     func predicate(_ predicate: NSPredicate?) -> Self
     
@@ -21,8 +20,7 @@ protocol Predicatable: AnyObject {
     
 }
 
-public
-extension Predicatable {
+public extension Predicatable {
     
     func predicate(_ predicate: NSPredicate?) -> Self {
         
@@ -60,6 +58,9 @@ extension Predicatable {
 
 extension FetchRequest: Predicatable  {}
 
-//extension FetchRequest: Predicatable where Predicatable.ResultType == FetchRequest.Result {}
-//
-//extension FetchRequest: Predicatable where ResultType == NSNumber {}
+extension FetchRequestID: Predicatable  {}
+
+extension FetchRequestDictionary: Predicatable  {}
+
+extension FetchRequestCount: Predicatable  {}
+

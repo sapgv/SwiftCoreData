@@ -11,11 +11,9 @@
 		10243E642D2D3007008A5A5F /* Predicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10243E632D2D3007008A5A5F /* Predicatable.swift */; };
 		10243E662D2D3020008A5A5F /* Sortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10243E652D2D3020008A5A5F /* Sortable.swift */; };
 		10243E682D2D3122008A5A5F /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10243E672D2D3122008A5A5F /* Fetchable.swift */; };
-		10243E6C2D2D9CFF008A5A5F /* FetchRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10243E6B2D2D9CFF008A5A5F /* FetchRequestResult.swift */; };
 		10243E6E2D2D9F39008A5A5F /* FetchableCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10243E6D2D2D9F39008A5A5F /* FetchableCount.swift */; };
+		104001872D2E720C00D6AD26 /* SetupableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104001862D2E720C00D6AD26 /* SetupableRequest.swift */; };
 		10598D0F2D2C1B58006115A1 /* FetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10598D0D2D2C1624006115A1 /* FetchRequest.swift */; };
-		10598D102D2C1B5F006115A1 /* FetchRequestOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10598D052D2C14E2006115A1 /* FetchRequestOLD.swift */; };
-		10598D112D2C1B63006115A1 /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10598D072D2C1525006115A1 /* Queryable.swift */; };
 		13F0894CFEFA5E00D7455BC7776C254E /* Pods-SwiftCoreData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DD0FA5779C8A6E0FE3828BA5E958F /* Pods-SwiftCoreData_Example-dummy.m */; };
 		35958324E288144CDC5D6F98CE0D7D70 /* PersistentContainer.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D35B66DC776FA563BB89F89D6CB6BF /* PersistentContainer.Error.swift */; };
 		5D3955133D2423DE3D2676CECD16A13B /* Pods-SwiftCoreData_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FA45BACF6062928FB8C312D134BAFD /* Pods-SwiftCoreData_Tests-dummy.m */; };
@@ -63,10 +61,8 @@
 		10243E632D2D3007008A5A5F /* Predicatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predicatable.swift; sourceTree = "<group>"; };
 		10243E652D2D3020008A5A5F /* Sortable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sortable.swift; sourceTree = "<group>"; };
 		10243E672D2D3122008A5A5F /* Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
-		10243E6B2D2D9CFF008A5A5F /* FetchRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequestResult.swift; sourceTree = "<group>"; };
 		10243E6D2D2D9F39008A5A5F /* FetchableCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableCount.swift; sourceTree = "<group>"; };
-		10598D052D2C14E2006115A1 /* FetchRequestOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequestOLD.swift; sourceTree = "<group>"; };
-		10598D072D2C1525006115A1 /* Queryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queryable.swift; sourceTree = "<group>"; };
+		104001862D2E720C00D6AD26 /* SetupableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupableRequest.swift; sourceTree = "<group>"; };
 		10598D0D2D2C1624006115A1 /* FetchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequest.swift; sourceTree = "<group>"; };
 		1314951443F9F9EB85BB7EC9EE7F947B /* Pods-SwiftCoreData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Example-umbrella.h"; sourceTree = "<group>"; };
 		176CB74BBD8DC75010CE7501A7B3F8A0 /* Pods-SwiftCoreData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoreData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -141,14 +137,12 @@
 		10598D022D2C0EED006115A1 /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
-				10598D072D2C1525006115A1 /* Queryable.swift */,
-				10598D052D2C14E2006115A1 /* FetchRequestOLD.swift */,
 				10598D0D2D2C1624006115A1 /* FetchRequest.swift */,
-				10243E6B2D2D9CFF008A5A5F /* FetchRequestResult.swift */,
 				10243E632D2D3007008A5A5F /* Predicatable.swift */,
 				10243E652D2D3020008A5A5F /* Sortable.swift */,
 				10243E672D2D3122008A5A5F /* Fetchable.swift */,
 				10243E6D2D2D9F39008A5A5F /* FetchableCount.swift */,
+				104001862D2E720C00D6AD26 /* SetupableRequest.swift */,
 			);
 			name = Fetch;
 			path = SwiftCoreData/Classes/Fetch;
@@ -466,9 +460,7 @@
 			files = (
 				10598D0F2D2C1B58006115A1 /* FetchRequest.swift in Sources */,
 				93CA2A660000357439081F5F52A3F46A /* CoreDataStack.swift in Sources */,
-				10598D102D2C1B5F006115A1 /* FetchRequestOLD.swift in Sources */,
 				FC4AFE1905E246F9F2D19070B1AC5938 /* CoreDataStack.Log.swift in Sources */,
-				10243E6C2D2D9CFF008A5A5F /* FetchRequestResult.swift in Sources */,
 				10243E6E2D2D9F39008A5A5F /* FetchableCount.swift in Sources */,
 				DA65B2524291418B12EE36117DD949CC /* CoreDataStack.Save.swift in Sources */,
 				10243E682D2D3122008A5A5F /* Fetchable.swift in Sources */,
@@ -476,13 +468,13 @@
 				7816032928418A21FE6FFCD2B644FCFB /* CoreDataStack.SavePolicy.swift in Sources */,
 				E18406A9AD07A169335EB3EC523F8859 /* CoreDataStack.SaveResult.swift in Sources */,
 				D223E33A7368E4127D951AE82D9610EF /* CoreDataStack.State.swift in Sources */,
-				10598D112D2C1B63006115A1 /* Queryable.swift in Sources */,
 				963AFF12F147A63C0FD8BB397B7501AF /* NSManagedObjectModel.swift in Sources */,
 				10243E662D2D3020008A5A5F /* Sortable.swift in Sources */,
 				024843B0633CC4A804CBF59A5CF5357E /* NSManagedObject.swift in Sources */,
 				D360AE53B18DEEECB7D5139BB390D52C /* NSManagedObjectContext.Settings.swift in Sources */,
 				D7B824140E336E104BCE0724185BC4AF /* PersistentContainer.swift in Sources */,
 				35958324E288144CDC5D6F98CE0D7D70 /* PersistentContainer.Error.swift in Sources */,
+				104001872D2E720C00D6AD26 /* SetupableRequest.swift in Sources */,
 				6FA848666ECDF1893EC5F6067E7F25A8 /* PersistentStoreDescription.swift in Sources */,
 				B3821A083C1405E5F9EE02CC8741B609 /* SwiftCoreData-dummy.m in Sources */,
 			);

@@ -8,15 +8,19 @@
 import Foundation
 import CoreData
 
-//public protocol FetchableCount: AnyObject {
-//    
-//    func fetchCount(inContext context: NSManagedObjectContext) -> Int
-//    
-//}
-
-extension FetchRequest where Result == NSNumber {
+public protocol FetchableCount: AnyObject {
     
-    public func fetchCount(inContext context: NSManagedObjectContext) -> Int {
+    associatedtype Result: NSFetchRequestResult
+    
+    var request: NSFetchRequest<Result> { get }
+    
+    func fetchCount(inContext context: NSManagedObjectContext) -> Int
+    
+}
+
+public extension FetchableCount {
+    
+     func fetchCount(inContext context: NSManagedObjectContext) -> Int {
         
         do {
             let result = try context.count(for: self.request)
@@ -29,3 +33,6 @@ extension FetchRequest where Result == NSNumber {
     }
     
 }
+
+extension FetchRequestCount: FetchableCount {}
+    

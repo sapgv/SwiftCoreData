@@ -8,41 +8,66 @@
 import Foundation
 import CoreData
 
-public class FetchRequest<Result: NSFetchRequestResult> {
+public class FetchRequest<T: NSManagedObject> {
     
-    public private(set) var request: NSFetchRequest<Result>
+    public private(set) var request: NSFetchRequest<T>
     
-    public convenience init<T: NSManagedObject>(
-        _ type: T.Type
-    ) {
-        self.init(type, resultType: Result.resultType)
+    public init(_ type: T.Type) {
+        self.request = NSFetchRequest<T>(entityName: T.entityName)
+        self.request.resultType = .managedObjectResultType
     }
     
-    public init<T: NSManagedObject>(_ type: T.Type, resultType: NSFetchRequestResultType) {
-        self.request = NSFetchRequest<Result>(entityName: T.entityName)
-        self.request.resultType = resultType
+}
+
+public class FetchRequestID {
+    
+    public private(set) var request: NSFetchRequest<NSManagedObjectID>
+    
+    public init<T: NSManagedObject>(_ type: T.Type) {
+        self.request = NSFetchRequest<NSManagedObjectID>(entityName: T.entityName)
+        self.request.resultType = .managedObjectIDResultType
+    }
+    
+}
+
+public class FetchRequestDictionary {
+    
+    public private(set) var request: NSFetchRequest<NSDictionary>
+    
+    public init<T: NSManagedObject>(_ type: T.Type) {
+        self.request = NSFetchRequest<NSDictionary>(entityName: T.entityName)
+        self.request.resultType = .dictionaryResultType
+    }
+    
+}
+
+public class FetchRequestCount {
+    
+    public private(set) var request: NSFetchRequest<NSNumber>
+    
+    public init<T: NSManagedObject>(_ type: T.Type) {
+        self.request = NSFetchRequest<NSNumber>(entityName: T.entityName)
+        self.request.resultType = .countResultType
     }
     
 }
 
 public extension CoreDataStack {
     
-    func fetchRequestManagedObject<T: NSManagedObject>(_ type: T.Type) -> FetchRequest<T> {
+    func fetchRequest<T: NSManagedObject>(_ type: T.Type) -> FetchRequest<T> {
         return FetchRequest<T>(type)
     }
     
-    func fetchRequestManagedObjectID<T: NSManagedObject>(_ type: T.Type) -> FetchRequest<NSManagedObjectID> {
-        return FetchRequest<NSManagedObjectID>(type)
+    func fetchRequestID<T: NSManagedObject>(_ type: T.Type) -> FetchRequestID {
+        return FetchRequestID(type)
     }
     
-    func fetchRequestDictionary<T: NSManagedObject>(_ type: T.Type) -> FetchRequest<NSDictionary> {
-        return FetchRequest<NSDictionary>(type)
+    func fetchRequestDictionary<T: NSManagedObject>(_ type: T.Type) -> FetchRequestDictionary {
+        return FetchRequestDictionary(type)
     }
     
-    func fetchRequestCount<T: NSManagedObject>(_ type: T.Type) -> FetchRequest<NSNumber> {
-        return FetchRequest<NSNumber>(type)
+    func fetchRequestCount<T: NSManagedObject>(_ type: T.Type) -> FetchRequestCount {
+        return FetchRequestCount(type)
     }
     
 }
-
-
