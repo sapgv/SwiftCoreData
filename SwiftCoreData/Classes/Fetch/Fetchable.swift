@@ -28,26 +28,19 @@ public extension FetchableRequest {
     
     func fetch(inContext context: NSManagedObjectContext) -> [Result] {
         
-        do {
-            let result = try context.fetch(request)
-            return result
-        }
-        catch {
-            return []
-        }
+        let result = try? context.fetch(request)
+        
+        return result ?? []
         
     }
     
     func fetchOne(inContext context: NSManagedObjectContext) -> Result? {
         
-        do {
-            self.request.fetchLimit = 1
-            let result = try context.fetch(request).first
-            return result
-        }
-        catch {
-            return nil
-        }
+        self.request.fetchLimit = 1
+        
+        let result = try? context.fetch(request).first
+        
+        return result
         
     }
     

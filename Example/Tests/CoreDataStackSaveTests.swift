@@ -32,59 +32,43 @@ final class CoreDataStackSaveTests: XCTestCase {
         
         XCTAssertEqual(arrayBefore.isEmpty, true)
         
-        let cdPerson = CDPerson(context: sut.viewContext)
+        let count = 10
         
-        cdPerson.name = "User"
-        cdPerson.age = 100
-        
-        sut.save(inContext: sut.viewContext) { result in
-            
-            XCTAssertNil(result.error)
-            
+        self.sut.createPersons(count: count, inContext: sut.viewContext) { error in
+            XCTAssertNil(error)
         }
         
         let arrayAfter = self.sut
             .fetchRequest(CDPerson.self)
+            .sortDescriptor(NSSortDescriptor(keyPath: \CDPerson.age, ascending: true))
             .fetch(inContext: sut.viewContext)
         
-        XCTAssertEqual(arrayAfter.count, 1)
-        XCTAssertEqual(arrayAfter.first?.name, "User")
-        XCTAssertEqual(arrayAfter.first?.age, 100)
+        XCTAssertEqual(arrayAfter.count, count)
         
+        for i in 0..<count {
+            XCTAssertEqual(arrayAfter[i].name, "User \(i)")
+            XCTAssertEqual(arrayAfter[i].age, Int16(i))
+        }
         
-        let array = self.sut.fetchRequest(CDPerson.self)
-//            .pre
-//            .sor
-            .fetch(inContext: self.sut.viewContext)
+    }
+    
+}
+
+extension CoreDataStack {
+    
+    func createPersons(count: Int = 10, inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
         
-        XCTAssertEqual(array.isEmpty, false)
+        for i in 0..<count {
+            let cdPerson = CDPerson(context: context)
+            cdPerson.name = "User \(i)"
+            cdPerson.age = Int16(i)
+        }
         
-        let count = self.sut.fetchRequestCount(CDPerson.self)
-//            .pre
-//            .s
-//            .f
-            .fetchCount(inContext: self.sut.viewContext)
-        
-        XCTAssertEqual(count, 1)
-        
-//        let ids = FetchRequest<NSManagedObjectID>(CDPerson.self)
-//            .fetch(inContext: sut.viewContext)
-        
-//        XCTAssertEqual(ids.count, 1)
-        
-        let data = sut.fetchRequestDictionary(CDPerson.self)
-//            .f
-//            .f
-            .fetch(inContext: sut.viewContext)
-        
-        XCTAssertEqual(data.isEmpty, false)
-        
-        let ids = sut.fetchRequestID(CDPerson.self)
-//            .fe
-            .fetch(inContext: sut.viewContext)
-        
-        
-        XCTAssertEqual(ids.isEmpty, false)
+        self.save(inContext: context) { result in
+            
+            completion(result.error)
+            
+        }
         
     }
     

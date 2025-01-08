@@ -31,6 +31,9 @@ public extension Sortable {
             let sortDescriptors = existedSortDescriptors + [sortDescriptor]
             self.request.sortDescriptors = sortDescriptors
         }
+        else {
+            self.request.sortDescriptors = [sortDescriptor]
+        }
         
         return self
         

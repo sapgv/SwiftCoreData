@@ -22,13 +22,9 @@ public extension FetchableCount {
     
      func fetchCount(inContext context: NSManagedObjectContext) -> Int {
         
-        do {
-            let result = try context.count(for: self.request)
-            return result
-        }
-        catch {
-            return 0
-        }
+         let result = try? context.count(for: self.request)
+         
+         return result ?? 0
         
     }
     
