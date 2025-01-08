@@ -14,35 +14,17 @@ public protocol FetchableRequest: AnyObject {
     
     var request: NSFetchRequest<Result> { get }
     
-    var fetchLimit: Int { get set }
-    
-    var fetchBatchSize: Int { get set }
-    
     func fetch(inContext context: NSManagedObjectContext) -> [Result]
 
     func fetchOne(inContext context: NSManagedObjectContext) -> Result?
+
+    func setupLimit(_ fetchLimit: Int) -> Self
+    
+    func setupBatchSize(_ fetchBatchSize: Int) -> Self
     
 }
 
 public extension FetchableRequest {
-    
-    var fetchLimit: Int {
-        get {
-            self.request.fetchLimit
-        }
-        set {
-            self.request.fetchLimit = newValue
-        }
-    }
-    
-    var fetchBatchSize: Int {
-        get {
-            self.request.fetchBatchSize
-        }
-        set {
-            self.request.fetchBatchSize = newValue
-        }
-    }
     
     func fetch(inContext context: NSManagedObjectContext) -> [Result] {
         
@@ -67,6 +49,16 @@ public extension FetchableRequest {
             return nil
         }
         
+    }
+    
+    func setupLimit(_ fetchLimit: Int) -> Self {
+        self.request.fetchLimit = fetchLimit
+        return self
+    }
+    
+    func setupBatchSize(_ fetchBatchSize: Int) -> Self {
+        self.request.fetchBatchSize = fetchBatchSize
+        return self
     }
     
 }

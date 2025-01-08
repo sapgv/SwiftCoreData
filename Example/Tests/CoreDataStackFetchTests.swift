@@ -16,7 +16,7 @@ final class CoreDataStackFetchTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        self.sut = CoreDataStack.createSUT()
+        self.sut = CoreDataStack.createCoreDataStackInMemory()
     }
     
     override func tearDown() {
@@ -32,16 +32,6 @@ final class CoreDataStackFetchTests: XCTestCase {
         
         XCTAssertEqual(array.isEmpty, true)
     
-//        let array2 = FetchRequest<NSManagedObject>(CDPerson.self)
-//            .fetch(inContext: self.sut.viewContext)
-//        
-//        XCTAssertEqual(array2.isEmpty, true)
-//        
-//        let count = FetchRequest<NSNumber>(CDPerson.self)
-//            .fetchCount(inContext: self.sut.viewContext)
-//        
-//        XCTAssertEqual(count, 0)
-        
     }
     
 }

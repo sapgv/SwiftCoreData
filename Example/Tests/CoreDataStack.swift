@@ -11,8 +11,12 @@ import SwiftCoreData
 
 extension CoreDataStack {
     
-    static func createSUT(inMemory: Bool = true) -> CoreDataStack {
-        CoreDataStack(modelName: "ModelTest", bundle: createBundle(), inMemory: inMemory)
+    static func createCoreDataStack() -> CoreDataStack {
+        CoreDataStack(modelName: "ModelTest", bundle: createBundle())
+    }
+    
+    static func createCoreDataStackInMemory() -> CoreDataStack {
+        CoreDataStack(modelName: "ModelTest", bundle: createBundle(), inMemory: true)
     }
     
     static func createBundle() -> Bundle {

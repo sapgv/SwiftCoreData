@@ -16,7 +16,7 @@ final class CoreDataStackSaveTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        self.sut = CoreDataStack.createSUT()
+        self.sut = CoreDataStack.createCoreDataStackInMemory()
     }
     
     override func tearDown() {
@@ -86,7 +86,6 @@ final class CoreDataStackSaveTests: XCTestCase {
         
         XCTAssertEqual(ids.isEmpty, false)
         
-        let req = CDPerson.fetchRequest2()
     }
     
 }
