@@ -51,12 +51,23 @@ public extension PersistentStoreDescription {
 public extension URL {
     
     func appendPath(modelName: String) -> URL {
+        
+        #if os(iOS)
         if #available(iOS 16.0, *) {
             return self.appending(path: modelName, directoryHint: .notDirectory)
         }
         else {
             return self.appendingPathComponent(modelName, isDirectory: false)
         }
+        #elseif os(macOS)
+        if #available(macOS 13.0, *) {
+            return self.appending(path: modelName, directoryHint: .notDirectory)
+        }
+        else {
+            return self.appendingPathComponent(modelName, isDirectory: false)
+        }
+        #endif
+        
     }
     
 }
