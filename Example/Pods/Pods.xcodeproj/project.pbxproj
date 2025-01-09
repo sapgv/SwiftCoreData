@@ -14,6 +14,7 @@
 		108E1A0A2D30323D00E49594 /* FetchRequestDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A092D30323D00E49594 /* FetchRequestDictionary.swift */; };
 		108E1A0C2D30329600E49594 /* FetchRequestCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A0B2D30329600E49594 /* FetchRequestCount.swift */; };
 		10C107102D30412200DC935E /* Faultable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1070F2D30412100DC935E /* Faultable.swift */; };
+		10C107122D30438800DC935E /* BatchDeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C107112D30438800DC935E /* BatchDeleteRequest.swift */; };
 		11ACF12E70C40C82BA8FF0B4143D75FE /* CoreDataStack.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A5DDB404391BBEFDEF5A1B32692517 /* CoreDataStack.State.swift */; };
 		12F9656306CB063613C4594A0D4D0441 /* SetupableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A20F8241F7053F3D1C32BFF7570FC2 /* SetupableRequest.swift */; };
 		13F0894CFEFA5E00D7455BC7776C254E /* Pods-SwiftCoreData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DD0FA5779C8A6E0FE3828BA5E958F /* Pods-SwiftCoreData_Example-dummy.m */; };
@@ -72,6 +73,7 @@
 		108E1A092D30323D00E49594 /* FetchRequestDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequestDictionary.swift; sourceTree = "<group>"; };
 		108E1A0B2D30329600E49594 /* FetchRequestCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequestCount.swift; sourceTree = "<group>"; };
 		10C1070F2D30412100DC935E /* Faultable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faultable.swift; sourceTree = "<group>"; };
+		10C107112D30438800DC935E /* BatchDeleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDeleteRequest.swift; sourceTree = "<group>"; };
 		10D987B57079CA97EDDC5674DEE47C25 /* Predicatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Predicatable.swift; sourceTree = "<group>"; };
 		12A5DDB404391BBEFDEF5A1B32692517 /* CoreDataStack.State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreDataStack.State.swift; sourceTree = "<group>"; };
 		1314951443F9F9EB85BB7EC9EE7F947B /* Pods-SwiftCoreData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				108E1A092D30323D00E49594 /* FetchRequestDictionary.swift */,
 				108E1A0B2D30329600E49594 /* FetchRequestCount.swift */,
 				3319BC8A594B1D5B23DE9E75351DC4D1 /* DeleteRequest.swift */,
+				10C107112D30438800DC935E /* BatchDeleteRequest.swift */,
 			);
 			name = Request;
 			path = SwiftCoreData/Classes/Request;
@@ -494,6 +497,7 @@
 				FFA9D0A14ECC62FF4B43B7EF169A6B65 /* PersistentStoreDescription.swift in Sources */,
 				7640F1068E47D1A3A97F819857BDE225 /* Predicatable.swift in Sources */,
 				12F9656306CB063613C4594A0D4D0441 /* SetupableRequest.swift in Sources */,
+				10C107122D30438800DC935E /* BatchDeleteRequest.swift in Sources */,
 				179CFA49E99FD8BB1F24C981587FEF83 /* Sortable.swift in Sources */,
 				B55373C1BC0F87ACAC0593D611724117 /* SwiftCoreData-dummy.m in Sources */,
 			);

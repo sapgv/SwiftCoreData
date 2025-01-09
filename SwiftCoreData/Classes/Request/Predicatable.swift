@@ -66,3 +66,5 @@ extension FetchRequestCount: Predicatable  {}
 
 extension DeleteRequest: Predicatable  {}
 
+extension BatchDeleteRequest: Predicatable  {}
+

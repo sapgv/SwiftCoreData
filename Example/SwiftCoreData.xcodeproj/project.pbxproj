@@ -16,6 +16,7 @@
 		108E1A002D3028D800E49594 /* DeletableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19FF2D3028D800E49594 /* DeletableTests.swift */; };
 		108E88832D21730A00EE24D0 /* CoreDataStackInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E88822D21730A00EE24D0 /* CoreDataStackInitTests.swift */; };
 		108E88AB2D217FAD00EE24D0 /* ModelTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 108E88A92D217FAD00EE24D0 /* ModelTest.xcdatamodeld */; };
+		10C107142D3048CE00DC935E /* BatchDeletableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C107132D3048CE00DC935E /* BatchDeletableTests.swift */; };
 		10DDCBD82D29912800486182 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBD62D29912800486182 /* Model.xcdatamodeld */; };
 		10DDCBDA2D29940600486182 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		10DDCBDE2D29942E00486182 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DDCBDC2D29942E00486182 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		108E19FF2D3028D800E49594 /* DeletableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletableTests.swift; sourceTree = "<group>"; };
 		108E88822D21730A00EE24D0 /* CoreDataStackInitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackInitTests.swift; sourceTree = "<group>"; };
 		108E88AA2D217FAD00EE24D0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		10C107132D3048CE00DC935E /* BatchDeletableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDeletableTests.swift; sourceTree = "<group>"; };
 		10DDCBD72D29912800486182 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		10DDCBDD2D29942E00486182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftCoreData/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10DDCBE12D29944600486182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = SwiftCoreData/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				108E19F82D2FFBB900E49594 /* SetupableRequestTests.swift */,
 				10DDCBEF2D29B17900486182 /* CoreDataStackSaveTests.swift */,
 				108E19FF2D3028D800E49594 /* DeletableTests.swift */,
+				10C107132D3048CE00DC935E /* BatchDeletableTests.swift */,
 				108E88A92D217FAD00EE24D0 /* ModelTest.xcdatamodeld */,
 			);
 			path = Tests;
@@ -389,6 +392,7 @@
 				10DDCBEE2D29AEA800486182 /* CoreDataStack.swift in Sources */,
 				108E19F52D2FF64600E49594 /* SortableTests.swift in Sources */,
 				10DDCBEC2D29ADDF00486182 /* Common.swift in Sources */,
+				10C107142D3048CE00DC935E /* BatchDeletableTests.swift in Sources */,
 				108E19F92D2FFBB900E49594 /* SetupableRequestTests.swift in Sources */,
 				1057A86E2D23E1BC009206D3 /* CoreDataStackContextTests.swift in Sources */,
 			);
