@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftCoreData'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'SwiftCoreData is a simple library for manage Core Data Stack'
 
 # This description is used to generate tags and improve search results.
@@ -28,8 +28,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/sapgv/SwiftCoreData.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.platform     = :ios, '17.0'
-  s.ios.deployment_target = '17.0'
+  s.ios.deployment_target = '13.0'
+  s.osx.deployment_target = '13.0'
   s.swift_version = '5.0'
   
   s.source_files = 'SwiftCoreData/Classes/**/*'
