@@ -52,3 +52,12 @@ public class DeleteRequest<T: NSManagedObject> {
     
 }
 
+public extension CoreDataStack {
+    
+    func deleteRequest<T: NSManagedObject>(_ type: T.Type) -> DeleteRequest<T> {
+        return DeleteRequest(type)
+    }
+    
+}
+
+
