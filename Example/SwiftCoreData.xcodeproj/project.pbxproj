@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		1057A86E2D23E1BC009206D3 /* CoreDataStackContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */; };
+		108E19F12D2FF30600E49594 /* FetchableRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F02D2FF30600E49594 /* FetchableRequestTests.swift */; };
+		108E19F32D2FF5AC00E49594 /* FetchableCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F22D2FF5AC00E49594 /* FetchableCountTests.swift */; };
+		108E19F52D2FF64600E49594 /* SortableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F42D2FF64600E49594 /* SortableTests.swift */; };
+		108E19F72D2FF7FC00E49594 /* PredicatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F62D2FF7FC00E49594 /* PredicatableTests.swift */; };
+		108E19F92D2FFBB900E49594 /* SetupableRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F82D2FFBB900E49594 /* SetupableRequestTests.swift */; };
 		108E88832D21730A00EE24D0 /* CoreDataStackInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E88822D21730A00EE24D0 /* CoreDataStackInitTests.swift */; };
 		108E88AB2D217FAD00EE24D0 /* ModelTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 108E88A92D217FAD00EE24D0 /* ModelTest.xcdatamodeld */; };
 		10DDCBD82D29912800486182 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBD62D29912800486182 /* Model.xcdatamodeld */; };
 		10DDCBDA2D29940600486182 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		10DDCBDE2D29942E00486182 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DDCBDC2D29942E00486182 /* Main.storyboard */; };
 		10DDCBE22D29944600486182 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10DDCBE02D29944600486182 /* LaunchScreen.xib */; };
-		10DDCBE82D29ACBD00486182 /* CoreDataStackFetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBE72D29ACBD00486182 /* CoreDataStackFetchTests.swift */; };
 		10DDCBEC2D29ADDF00486182 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBEB2D29ADDF00486182 /* Common.swift */; };
 		10DDCBEE2D29AEA800486182 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBED2D29AEA800486182 /* CoreDataStack.swift */; };
 		10DDCBF02D29B17900486182 /* CoreDataStackSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DDCBEF2D29B17900486182 /* CoreDataStackSaveTests.swift */; };
@@ -36,12 +40,16 @@
 
 /* Begin PBXFileReference section */
 		1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackContextTests.swift; sourceTree = "<group>"; };
+		108E19F02D2FF30600E49594 /* FetchableRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableRequestTests.swift; sourceTree = "<group>"; };
+		108E19F22D2FF5AC00E49594 /* FetchableCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableCountTests.swift; sourceTree = "<group>"; };
+		108E19F42D2FF64600E49594 /* SortableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortableTests.swift; sourceTree = "<group>"; };
+		108E19F62D2FF7FC00E49594 /* PredicatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredicatableTests.swift; sourceTree = "<group>"; };
+		108E19F82D2FFBB900E49594 /* SetupableRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupableRequestTests.swift; sourceTree = "<group>"; };
 		108E88822D21730A00EE24D0 /* CoreDataStackInitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackInitTests.swift; sourceTree = "<group>"; };
 		108E88AA2D217FAD00EE24D0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		10DDCBD72D29912800486182 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		10DDCBDD2D29942E00486182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftCoreData/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10DDCBE12D29944600486182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = SwiftCoreData/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		10DDCBE72D29ACBD00486182 /* CoreDataStackFetchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackFetchTests.swift; sourceTree = "<group>"; };
 		10DDCBEB2D29ADDF00486182 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		10DDCBED2D29AEA800486182 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		10DDCBEF2D29B17900486182 /* CoreDataStackSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackSaveTests.swift; sourceTree = "<group>"; };
@@ -143,7 +151,11 @@
 				10DDCBED2D29AEA800486182 /* CoreDataStack.swift */,
 				108E88822D21730A00EE24D0 /* CoreDataStackInitTests.swift */,
 				1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */,
-				10DDCBE72D29ACBD00486182 /* CoreDataStackFetchTests.swift */,
+				108E19F02D2FF30600E49594 /* FetchableRequestTests.swift */,
+				108E19F22D2FF5AC00E49594 /* FetchableCountTests.swift */,
+				108E19F42D2FF64600E49594 /* SortableTests.swift */,
+				108E19F62D2FF7FC00E49594 /* PredicatableTests.swift */,
+				108E19F82D2FFBB900E49594 /* SetupableRequestTests.swift */,
 				10DDCBEF2D29B17900486182 /* CoreDataStackSaveTests.swift */,
 				108E88A92D217FAD00EE24D0 /* ModelTest.xcdatamodeld */,
 			);
@@ -364,12 +376,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108E19F12D2FF30600E49594 /* FetchableRequestTests.swift in Sources */,
 				108E88832D21730A00EE24D0 /* CoreDataStackInitTests.swift in Sources */,
 				10DDCBF02D29B17900486182 /* CoreDataStackSaveTests.swift in Sources */,
+				108E19F32D2FF5AC00E49594 /* FetchableCountTests.swift in Sources */,
+				108E19F72D2FF7FC00E49594 /* PredicatableTests.swift in Sources */,
 				108E88AB2D217FAD00EE24D0 /* ModelTest.xcdatamodeld in Sources */,
-				10DDCBE82D29ACBD00486182 /* CoreDataStackFetchTests.swift in Sources */,
 				10DDCBEE2D29AEA800486182 /* CoreDataStack.swift in Sources */,
+				108E19F52D2FF64600E49594 /* SortableTests.swift in Sources */,
 				10DDCBEC2D29ADDF00486182 /* Common.swift in Sources */,
+				108E19F92D2FFBB900E49594 /* SetupableRequestTests.swift in Sources */,
 				1057A86E2D23E1BC009206D3 /* CoreDataStackContextTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
