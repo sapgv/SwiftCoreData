@@ -1,6 +1,6 @@
 {
   "name": "SwiftCoreData",
-  "version": "0.6.2",
+  "version": "1.0.1",
   "summary": "SwiftCoreData is a simple library for manage Core Data Stack",
   "description": "SwiftCoreData is a simple library for manage Core Data Stack.",
   "homepage": "https://github.com/sapgv/SwiftCoreData",
@@ -13,10 +13,11 @@
   },
   "source": {
     "git": "https://github.com/sapgv/SwiftCoreData.git",
-    "tag": "0.6.2"
+    "tag": "1.0.1"
   },
   "platforms": {
-    "ios": "17.0"
+    "ios": "13.0",
+    "osx": "13.0"
   },
   "swift_versions": "5.0",
   "source_files": "SwiftCoreData/Classes/**/*",

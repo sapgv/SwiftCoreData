@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '17.0'
+platform :ios, '16.0'
 
 target 'SwiftCoreData_Example' do
   pod 'SwiftCoreData', :path => '../'

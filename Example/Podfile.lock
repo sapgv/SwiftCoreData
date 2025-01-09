@@ -1,5 +1,5 @@
 PODS:
-  - SwiftCoreData (0.6.2)
+  - SwiftCoreData (1.0.1)
 
 DEPENDENCIES:
   - SwiftCoreData (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SwiftCoreData: f861d8d17c9db1f11879e07b6e410e1e9b30cabb
+  SwiftCoreData: 7b3f0d98d1f1ba61ad84b7a5192eff03d01f3c30
 
-PODFILE CHECKSUM: d767658e1e44a2a5ea8a321fbd9a016997149179
+PODFILE CHECKSUM: 2bd8d8b2607ad0e3e40cba9b8154c3e5895eed05
 
 COCOAPODS: 1.16.2

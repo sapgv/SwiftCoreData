@@ -28,8 +28,7 @@ public class PersistentStoreDescription: NSPersistentStoreDescription {
     
 }
 
-public
-extension PersistentStoreDescription {
+public extension PersistentStoreDescription {
     
     static let sqlStoreType = "SQLite"
     
@@ -38,13 +37,26 @@ extension PersistentStoreDescription {
     static func applicationSupportStoreURL(modelName: String) -> URL {
         
         FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-            .appending(path: modelName, directoryHint: .notDirectory)
+            .appendPath(modelName: modelName)
             .appendingPathExtension("sqlite")
         
     }
     
     static func inMemoryStoreURL() -> URL {
         URL(fileURLWithPath: "/dev/null")
+    }
+    
+}
+
+public extension URL {
+    
+    func appendPath(modelName: String) -> URL {
+        if #available(iOS 16.0, *) {
+            return self.appending(path: modelName, directoryHint: .notDirectory)
+        }
+        else {
+            return self.appendingPathComponent(modelName, isDirectory: false)
+        }
     }
     
 }
