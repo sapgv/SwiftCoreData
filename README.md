@@ -85,6 +85,20 @@ coreDataStack.deleteRequest(CDPerson.self)
                 //Handle error
             }
 ```
+or
+```swift
+let coreDataStack = CoreDataStack(modelName: "NameOfModel")
+
+let person: CDPerson = ... //some CDPerson or any NSManagedObject
+
+context.delete(person)
+
+coreDataStack.save(inContext: context) { result: SaveResult in
+  if let error = result.error {
+    //Handle error
+  }
+}
+```
 
 ## Author
 
