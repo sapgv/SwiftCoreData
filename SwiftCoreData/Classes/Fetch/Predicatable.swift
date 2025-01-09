@@ -64,3 +64,5 @@ extension FetchRequestDictionary: Predicatable  {}
 
 extension FetchRequestCount: Predicatable  {}
 
+extension DeleteRequest: Predicatable  {}
+

@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-public protocol FetchableRequest: AnyObject {
+public protocol Fetchable: AnyObject {
     
     associatedtype Result: NSFetchRequestResult
     
@@ -24,7 +24,7 @@ public protocol FetchableRequest: AnyObject {
     
 }
 
-public extension FetchableRequest {
+public extension Fetchable {
     
     func fetch(inContext context: NSManagedObjectContext) -> [Result] {
         
@@ -56,9 +56,11 @@ public extension FetchableRequest {
     
 }
 
-extension FetchRequest: FetchableRequest {}
+extension FetchRequest: Fetchable {}
 
-extension FetchRequestID: FetchableRequest {}
+extension FetchRequestID: Fetchable {}
 
-extension FetchRequestDictionary: FetchableRequest {}
+extension FetchRequestDictionary: Fetchable {}
+
+extension DeleteRequest: Fetchable {}
 

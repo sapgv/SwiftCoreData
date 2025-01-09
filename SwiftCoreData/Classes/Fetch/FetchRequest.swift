@@ -70,4 +70,8 @@ public extension CoreDataStack {
         return FetchRequestCount(type)
     }
     
+    func deleteRequest<T: NSManagedObject>(_ type: T.Type) -> DeleteRequest<T> {
+        return DeleteRequest(type)
+    }
+    
 }
