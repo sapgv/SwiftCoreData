@@ -29,7 +29,9 @@ public class DeleteRequest<T: NSManagedObject> {
     
     public func delete(inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
 
-        let array = self.fetch(inContext: context)
+        let array = self
+            .returnsObjectsAsFaults(true)
+            .fetch(inContext: context)
         
         guard !array.isEmpty else {
             completion(nil)
@@ -51,6 +53,8 @@ public class DeleteRequest<T: NSManagedObject> {
     }
     
 }
+
+extension DeleteRequest: Deletable {}
 
 public extension CoreDataStack {
     

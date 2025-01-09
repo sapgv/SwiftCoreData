@@ -13,6 +13,7 @@
 		108E1A082D30321800E49594 /* FetchRequestID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A072D30321800E49594 /* FetchRequestID.swift */; };
 		108E1A0A2D30323D00E49594 /* FetchRequestDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A092D30323D00E49594 /* FetchRequestDictionary.swift */; };
 		108E1A0C2D30329600E49594 /* FetchRequestCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A0B2D30329600E49594 /* FetchRequestCount.swift */; };
+		10C107102D30412200DC935E /* Faultable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1070F2D30412100DC935E /* Faultable.swift */; };
 		11ACF12E70C40C82BA8FF0B4143D75FE /* CoreDataStack.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A5DDB404391BBEFDEF5A1B32692517 /* CoreDataStack.State.swift */; };
 		12F9656306CB063613C4594A0D4D0441 /* SetupableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A20F8241F7053F3D1C32BFF7570FC2 /* SetupableRequest.swift */; };
 		13F0894CFEFA5E00D7455BC7776C254E /* Pods-SwiftCoreData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DD0FA5779C8A6E0FE3828BA5E958F /* Pods-SwiftCoreData_Example-dummy.m */; };
@@ -70,6 +71,7 @@
 		108E1A072D30321800E49594 /* FetchRequestID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequestID.swift; sourceTree = "<group>"; };
 		108E1A092D30323D00E49594 /* FetchRequestDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequestDictionary.swift; sourceTree = "<group>"; };
 		108E1A0B2D30329600E49594 /* FetchRequestCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequestCount.swift; sourceTree = "<group>"; };
+		10C1070F2D30412100DC935E /* Faultable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faultable.swift; sourceTree = "<group>"; };
 		10D987B57079CA97EDDC5674DEE47C25 /* Predicatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Predicatable.swift; sourceTree = "<group>"; };
 		12A5DDB404391BBEFDEF5A1B32692517 /* CoreDataStack.State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreDataStack.State.swift; sourceTree = "<group>"; };
 		1314951443F9F9EB85BB7EC9EE7F947B /* Pods-SwiftCoreData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				DC51B1B383DBFD20716ED21D64AD7E46 /* Sortable.swift */,
 				108E1A032D30310900E49594 /* Limitable.swift */,
 				108E1A052D30314D00E49594 /* Batchable.swift */,
+				10C1070F2D30412100DC935E /* Faultable.swift */,
 				D3A20F8241F7053F3D1C32BFF7570FC2 /* SetupableRequest.swift */,
 				2B1559EA86A8310ACCB3A7F1058218A5 /* FetchRequest.swift */,
 				108E1A072D30321800E49594 /* FetchRequestID.swift */,
@@ -469,6 +472,7 @@
 				7F738C18B968DED1DF52AC3347895F45 /* CoreDataStack.swift in Sources */,
 				A62F1CB11E56CCEED4DA0D00ADB77574 /* CoreDataStack.Log.swift in Sources */,
 				31A52773C4CFC6DCBFAEA8D4479FDE47 /* CoreDataStack.Save.swift in Sources */,
+				10C107102D30412200DC935E /* Faultable.swift in Sources */,
 				2DF7B095DDF2F1C6E0628D9B2C2FAF0F /* CoreDataStack.SavePolicy.swift in Sources */,
 				E84D06D1F0BA0F75C6ED0C2348F941DF /* CoreDataStack.SaveResult.swift in Sources */,
 				108E1A062D30314D00E49594 /* Batchable.swift in Sources */,
