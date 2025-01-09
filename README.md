@@ -99,6 +99,17 @@ coreDataStack.save(inContext: context) { result: SaveResult in
   }
 }
 ```
+or
+```swift
+let coreDataStack = CoreDataStack(modelName: "NameOfModel")
+
+coreDataStack.batchDeleteRequest(CDPerson.self)
+            .predicate(NSPredicate(format: "age == %i", Int16(0))) //optionally
+            .merge(into: [viewContext]) //optionally
+            .clean(inContext: privateContext) { error in
+                //Handle error
+            }
+```
 
 ## Author
 
