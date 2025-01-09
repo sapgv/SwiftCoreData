@@ -75,6 +75,17 @@ coreDataStack.save(inContext: context) { result: SaveResult in
 }
 ```
 
+### Delete
+```swift
+let coreDataStack = CoreDataStack(modelName: "NameOfModel")
+
+coreDataStack.deleteRequest(CDPerson.self)
+              .predicate(NSPredicate(format: "age == %i", 5)) //optionally
+              .delete(inContext: context) { error in
+                //Handle error
+            }
+```
+
 ## Author
 
 Grigory Sapogov, grisha.sapgv@mail.ru
