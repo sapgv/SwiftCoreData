@@ -14,10 +14,13 @@ final class BatchDeletableTests: XCTestCase {
 
     var sut: CoreDataStack!
     
+    let usernameBefore = "User"
+    
     override func setUp() {
         super.setUp()
         self.sut = CoreDataStack.createCoreDataStack()
         self.sut.deleteRequest(CDPerson.self).delete(inContext: self.sut.viewContext, completion: { _ in })
+        self.createPerson()
     }
     
     override func tearDown() {
@@ -31,23 +34,16 @@ final class BatchDeletableTests: XCTestCase {
         
         let viewContext = self.sut.createContext(concurrencyType: .mainQueueConcurrencyType)
         
-        let count = 10
+        let person = self.sut.fetchRequest(CDPerson.self)
+            .predicate(NSPredicate(format: "name == %@", usernameBefore))
+            .fetchOne(inContext: viewContext)
         
-        self.createPersons(count: count, inContext: privateContext) { error in
-            XCTAssertNil(error)
-        }
-
-        let arrayBefore = self.sut
-            .fetchRequest(CDPerson.self)
-            .returnsObjectsAsFaults(false)
-            .fetch(inContext: viewContext)
-        
-        XCTAssertEqual(arrayBefore.count, count)
+        XCTAssertEqual(person?.name, usernameBefore)
         
         let exp = expectation(description: "Delete")
         
         self.sut.batchDeleteRequest(CDPerson.self)
-            .predicate(NSPredicate(format: "age == %i", Int16(0)))
+            .predicate(NSPredicate(format: "name == %@", usernameBefore))
             .delete(inContext: privateContext) { error in
                 defer { exp.fulfill() }
                 XCTAssertNil(error)
@@ -55,9 +51,7 @@ final class BatchDeletableTests: XCTestCase {
 
         wait(for: [exp])
         
-        let arrayDeleted = arrayBefore.filter({ $0.isDeleted })
-        
-        XCTAssertEqual(arrayDeleted.count, 0)
+        XCTAssertEqual(person?.isDeleted, false)
         
     }
     
@@ -67,23 +61,16 @@ final class BatchDeletableTests: XCTestCase {
         
         let viewContext = self.sut.createContext(concurrencyType: .mainQueueConcurrencyType)
         
-        let count = 10
+        let person = self.sut.fetchRequest(CDPerson.self)
+            .predicate(NSPredicate(format: "name == %@", usernameBefore))
+            .fetchOne(inContext: viewContext)
         
-        self.createPersons(count: count, inContext: privateContext) { error in
-            XCTAssertNil(error)
-        }
-
-        let arrayBefore = self.sut
-            .fetchRequest(CDPerson.self)
-            .returnsObjectsAsFaults(false)
-            .fetch(inContext: viewContext)
-        
-        XCTAssertEqual(arrayBefore.count, count)
+        XCTAssertEqual(person?.name, usernameBefore)
         
         let exp = expectation(description: "Delete")
         
         self.sut.batchDeleteRequest(CDPerson.self)
-            .predicate(NSPredicate(format: "age == %i", Int16(0)))
+            .predicate(NSPredicate(format: "name == %@", usernameBefore))
             .merge(into: [viewContext])
             .delete(inContext: privateContext) { error in
                 defer { exp.fulfill() }
@@ -92,9 +79,7 @@ final class BatchDeletableTests: XCTestCase {
 
         wait(for: [exp])
         
-        let arrayDeleted = arrayBefore.filter({ $0.isDeleted })
-        
-        XCTAssertEqual(arrayDeleted.count, 1)
+        XCTAssertEqual(person?.isDeleted, true)
         
     }
     
@@ -102,19 +87,13 @@ final class BatchDeletableTests: XCTestCase {
 
 extension BatchDeletableTests {
     
-    func createPersons(count: Int = 10, inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
+    func createPerson() {
         
-        for i in 0..<count {
-            let cdPerson = CDPerson(context: context)
-            cdPerson.name = "User \(i)"
-            cdPerson.age = Int16(i)
-        }
+        let person = CDPerson(context: self.sut.viewContext)
+        person.name = usernameBefore
+        person.age = 10
         
-        self.sut.save(inContext: context) { result in
-            
-            completion(result.error)
-            
-        }
+        self.sut.save(inContext: self.sut.viewContext) { _ in }
         
     }
     
