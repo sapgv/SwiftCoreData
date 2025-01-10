@@ -1,33 +1,35 @@
 //
-//  BatchDeleteRequest.swift
+//  BatchUpdateRequest.swift
 //  SwiftCoreData
 //
-//  Created by Grigory Sapogov on 09.01.2025.
+//  Created by Grigory Sapogov on 10.01.2025.
 //
 
 import Foundation
 import CoreData
 
-public protocol BatchDeletable {
+public protocol BatchUpdatable {
     
     var request: NSFetchRequest<NSFetchRequestResult> { get }
     
-    func delete(inContext context: NSManagedObjectContext, completion: (Error?) -> Void)
+    func update(inContext context: NSManagedObjectContext, completion: (Error?) -> Void)
     
     func merge(into contexts: [NSManagedObjectContext]) -> Self
     
+    func propertiesToUpdate(_ properties: [AnyHashable: Any]?) -> Self
+    
 }
 
-public class BatchDeleteRequest<T: NSManagedObject> {
+public class BatchUpdateRequest<T: NSManagedObject> {
     
     public private(set) var request: NSFetchRequest<NSFetchRequestResult>
     
     private var mergeContexts: Set<NSManagedObjectContext>
     
-    public private(set) lazy var deleteRequest: NSBatchDeleteRequest = {
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: self.request)
-        deleteRequest.resultType = .resultTypeObjectIDs
-        return deleteRequest
+    public private(set) lazy var updateRequest: NSBatchUpdateRequest = {
+        let updateRequest = NSBatchUpdateRequest(entityName: T.entityName)
+        updateRequest.resultType = .updatedObjectIDsResultType
+        return updateRequest
     }()
     
     public init(_ type: T.Type, mergeInto mergeContexts: [NSManagedObjectContext] = []) {
@@ -35,21 +37,21 @@ public class BatchDeleteRequest<T: NSManagedObject> {
         self.mergeContexts = Set<NSManagedObjectContext>(mergeContexts)
     }
     
-    public func delete(inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
+    public func update(inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
 
         do {
             
-            let results = try context.execute(deleteRequest) as! NSBatchDeleteResult
+            let results = try context.execute(updateRequest) as! NSBatchUpdateResult
             
             let changes: [AnyHashable: Any] = [
-                NSDeletedObjectsKey: results.result as! [NSManagedObjectID]
+                NSUpdatedObjectsKey: results.result as! [NSManagedObjectID]
             ]
             
             self.merge(changes: changes)
             
             completion(nil)
             
-        } 
+        }
         catch {
             completion(error)
         }
@@ -61,6 +63,11 @@ public class BatchDeleteRequest<T: NSManagedObject> {
         return self
     }
     
+    public func propertiesToUpdate(_ properties: [AnyHashable: Any]?) -> Self {
+        self.updateRequest.propertiesToUpdate = properties
+        return self
+    }
+    
     public func merge(changes: [AnyHashable: Any]) {
         guard !self.mergeContexts.isEmpty else { return }
         let into = Array(self.mergeContexts)
@@ -69,13 +76,13 @@ public class BatchDeleteRequest<T: NSManagedObject> {
     
 }
 
-extension BatchDeleteRequest: BatchDeletable {}
+extension BatchUpdateRequest: BatchUpdatable {}
 
 public extension CoreDataStack {
     
-    func batchDeleteRequest<T: NSManagedObject>(_ type: T.Type) -> BatchDeleteRequest<T> {
+    func batchUpdateRequest<T: NSManagedObject>(_ type: T.Type) -> BatchUpdateRequest<T> {
         let mergeInto: [NSManagedObjectContext] = self.viewContext.automaticallyMergesChangesFromParent ? [self.viewContext] : []
-        return BatchDeleteRequest(type, mergeInto: mergeInto)
+        return BatchUpdateRequest(type, mergeInto: mergeInto)
     }
     
 }

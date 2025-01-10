@@ -44,11 +44,11 @@ final class BatchDeletableTests: XCTestCase {
         
         XCTAssertEqual(arrayBefore.count, count)
         
-        let exp = expectation(description: "Clean persons")
+        let exp = expectation(description: "Delete")
         
         self.sut.batchDeleteRequest(CDPerson.self)
             .predicate(NSPredicate(format: "age == %i", Int16(0)))
-            .clean(inContext: privateContext) { error in
+            .delete(inContext: privateContext) { error in
                 defer { exp.fulfill() }
                 XCTAssertNil(error)
             }
@@ -80,12 +80,12 @@ final class BatchDeletableTests: XCTestCase {
         
         XCTAssertEqual(arrayBefore.count, count)
         
-        let exp = expectation(description: "Clean persons")
+        let exp = expectation(description: "Delete")
         
         self.sut.batchDeleteRequest(CDPerson.self)
             .predicate(NSPredicate(format: "age == %i", Int16(0)))
             .merge(into: [viewContext])
-            .clean(inContext: privateContext) { error in
+            .delete(inContext: privateContext) { error in
                 defer { exp.fulfill() }
                 XCTAssertNil(error)
             }
@@ -114,16 +114,6 @@ extension BatchDeletableTests {
             
             completion(result.error)
             
-        }
-        
-    }
-    
-    func createPersonsWithoutSave(count: Int = 10, inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
-        
-        for i in 0..<count {
-            let cdPerson = CDPerson(context: context)
-            cdPerson.name = "User \(i)"
-            cdPerson.age = Int16(i)
         }
         
     }

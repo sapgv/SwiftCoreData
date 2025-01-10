@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		102C5AEE2D310AD500FA0828 /* BatchUpdatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C5AED2D310AD500FA0828 /* BatchUpdatableTests.swift */; };
 		1057A86E2D23E1BC009206D3 /* CoreDataStackContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */; };
 		108E19F12D2FF30600E49594 /* FetchableRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F02D2FF30600E49594 /* FetchableRequestTests.swift */; };
 		108E19F32D2FF5AC00E49594 /* FetchableCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F22D2FF5AC00E49594 /* FetchableCountTests.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		102C5AED2D310AD500FA0828 /* BatchUpdatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchUpdatableTests.swift; sourceTree = "<group>"; };
 		1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackContextTests.swift; sourceTree = "<group>"; };
 		108E19F02D2FF30600E49594 /* FetchableRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableRequestTests.swift; sourceTree = "<group>"; };
 		108E19F22D2FF5AC00E49594 /* FetchableCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableCountTests.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				10DDCBEF2D29B17900486182 /* CoreDataStackSaveTests.swift */,
 				108E19FF2D3028D800E49594 /* DeletableTests.swift */,
 				10C107132D3048CE00DC935E /* BatchDeletableTests.swift */,
+				102C5AED2D310AD500FA0828 /* BatchUpdatableTests.swift */,
 				108E88A92D217FAD00EE24D0 /* ModelTest.xcdatamodeld */,
 			);
 			path = Tests;
@@ -387,6 +390,7 @@
 				108E88832D21730A00EE24D0 /* CoreDataStackInitTests.swift in Sources */,
 				10DDCBF02D29B17900486182 /* CoreDataStackSaveTests.swift in Sources */,
 				108E19F32D2FF5AC00E49594 /* FetchableCountTests.swift in Sources */,
+				102C5AEE2D310AD500FA0828 /* BatchUpdatableTests.swift in Sources */,
 				108E19F72D2FF7FC00E49594 /* PredicatableTests.swift in Sources */,
 				108E88AB2D217FAD00EE24D0 /* ModelTest.xcdatamodeld in Sources */,
 				10DDCBEE2D29AEA800486182 /* CoreDataStack.swift in Sources */,

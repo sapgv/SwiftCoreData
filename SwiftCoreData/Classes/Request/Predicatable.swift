@@ -68,3 +68,5 @@ extension DeleteRequest: Predicatable  {}
 
 extension BatchDeleteRequest: Predicatable  {}
 
+extension BatchUpdateRequest: Predicatable  {}
+

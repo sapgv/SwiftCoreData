@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		102C5AEC2D3109B500FA0828 /* BatchUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C5AEB2D3109B500FA0828 /* BatchUpdateRequest.swift */; };
 		108E1A022D30304D00E49594 /* FetchableOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A012D30304D00E49594 /* FetchableOne.swift */; };
 		108E1A042D30310900E49594 /* Limitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A032D30310900E49594 /* Limitable.swift */; };
 		108E1A062D30314D00E49594 /* Batchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A052D30314D00E49594 /* Batchable.swift */; };
@@ -66,6 +67,7 @@
 		002C8E486EE617B3CDB3C2C041937F0D /* SwiftCoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCoreData.release.xcconfig; sourceTree = "<group>"; };
 		0535FCD29E5FEFE263BA75F538A10AD7 /* SwiftCoreData-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCoreData-umbrella.h"; sourceTree = "<group>"; };
 		0BF91C20DB9752DAFE7A3004C31BAA5B /* Pods-SwiftCoreData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Tests-umbrella.h"; sourceTree = "<group>"; };
+		102C5AEB2D3109B500FA0828 /* BatchUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchUpdateRequest.swift; sourceTree = "<group>"; };
 		108E1A012D30304D00E49594 /* FetchableOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableOne.swift; sourceTree = "<group>"; };
 		108E1A032D30310900E49594 /* Limitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limitable.swift; sourceTree = "<group>"; };
 		108E1A052D30314D00E49594 /* Batchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batchable.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				108E1A0B2D30329600E49594 /* FetchRequestCount.swift */,
 				3319BC8A594B1D5B23DE9E75351DC4D1 /* DeleteRequest.swift */,
 				10C107112D30438800DC935E /* BatchDeleteRequest.swift */,
+				102C5AEB2D3109B500FA0828 /* BatchUpdateRequest.swift */,
 			);
 			name = Request;
 			path = SwiftCoreData/Classes/Request;
@@ -480,6 +483,7 @@
 				E84D06D1F0BA0F75C6ED0C2348F941DF /* CoreDataStack.SaveResult.swift in Sources */,
 				108E1A062D30314D00E49594 /* Batchable.swift in Sources */,
 				108E1A0C2D30329600E49594 /* FetchRequestCount.swift in Sources */,
+				102C5AEC2D3109B500FA0828 /* BatchUpdateRequest.swift in Sources */,
 				11ACF12E70C40C82BA8FF0B4143D75FE /* CoreDataStack.State.swift in Sources */,
 				108E1A082D30321800E49594 /* FetchRequestID.swift in Sources */,
 				D1A3DD0FCA0F76533CADC899D39B98F4 /* DeleteRequest.swift in Sources */,
