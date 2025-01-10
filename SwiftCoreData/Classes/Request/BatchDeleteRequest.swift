@@ -22,7 +22,7 @@ public class BatchDeleteRequest<T: NSManagedObject> {
     
     public private(set) var request: NSFetchRequest<NSFetchRequestResult>
     
-    private var mergeContexts: [NSManagedObjectContext]
+    private var mergeContexts: Set<NSManagedObjectContext>
     
     private var deleteRequest: NSBatchDeleteRequest {
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: self.request)
@@ -32,7 +32,7 @@ public class BatchDeleteRequest<T: NSManagedObject> {
     
     public init(_ type: T.Type, mergeInto mergeContexts: [NSManagedObjectContext] = []) {
         self.request = NSFetchRequest<NSFetchRequestResult>(entityName: T.entityName)
-        self.mergeContexts = mergeContexts
+        self.mergeContexts = Set<NSManagedObjectContext>(mergeContexts)
     }
     
     public func clean(inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
@@ -57,13 +57,14 @@ public class BatchDeleteRequest<T: NSManagedObject> {
     }
     
     public func merge(into contexts: [NSManagedObjectContext]) -> Self {
-        self.mergeContexts = contexts
+        self.mergeContexts = self.mergeContexts.union(Set(contexts))
         return self
     }
     
     public func merge(changes: [AnyHashable: Any]) {
         guard !self.mergeContexts.isEmpty else { return }
-        NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: self.mergeContexts)
+        let into = Array(self.mergeContexts)
+        NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: into)
     }
     
 }
