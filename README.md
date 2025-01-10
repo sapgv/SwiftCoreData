@@ -106,11 +106,22 @@ let coreDataStack = CoreDataStack(modelName: "NameOfModel")
 coreDataStack.batchDeleteRequest(CDPerson.self)
             .predicate(NSPredicate(format: "age == %i", Int16(0))) //optionally
             .merge(into: [viewContext]) //optionally
-            .clean(inContext: privateContext) { error in
+            .delete(inContext: privateContext) { error in
                 //Handle error
             }
 ```
+### Update
+```swift
+let coreDataStack = CoreDataStack(modelName: "NameOfModel")
 
+coreDataStack.batchUpdateRequest(CDPerson.self)
+            .propertiesToUpdate(["name": "new username"])
+            .predicate(NSPredicate(format: "age == %i", Int16(0))) //optionally
+            .merge(into: [viewContext]) //optionally
+            .update(inContext: privateContext) { error in
+                //Handle error
+            }
+```
 ## Author
 
 Grigory Sapogov, grisha.sapgv@mail.ru
