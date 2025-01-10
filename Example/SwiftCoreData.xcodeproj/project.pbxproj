@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		102C5AEE2D310AD500FA0828 /* BatchUpdatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C5AED2D310AD500FA0828 /* BatchUpdatableTests.swift */; };
+		104ACB0D2D31746B003E4343 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104ACB0B2D31746B003E4343 /* PersonCell.swift */; };
+		104ACB0E2D31746B003E4343 /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104ACB0C2D31746B003E4343 /* PersonCell.xib */; };
+		104ACB102D31759B003E4343 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104ACB0F2D31759B003E4343 /* Extensions.swift */; };
+		104ACB122D317877003E4343 /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104ACB112D317877003E4343 /* PersonListViewModel.swift */; };
 		1057A86E2D23E1BC009206D3 /* CoreDataStackContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */; };
 		108E19F12D2FF30600E49594 /* FetchableRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F02D2FF30600E49594 /* FetchableRequestTests.swift */; };
 		108E19F32D2FF5AC00E49594 /* FetchableCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F22D2FF5AC00E49594 /* FetchableCountTests.swift */; };
@@ -28,7 +32,7 @@
 		2E0B0D0C390A20F8FDD09CE9 /* Pods_SwiftCoreData_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C472EA03939BB923DB8EF046 /* Pods_SwiftCoreData_Tests.framework */; };
 		3DA487843603B956027D5486 /* Pods_SwiftCoreData_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62843C18A75865B858D15C3E /* Pods_SwiftCoreData_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* PersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* PersonListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,10 @@
 
 /* Begin PBXFileReference section */
 		102C5AED2D310AD500FA0828 /* BatchUpdatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchUpdatableTests.swift; sourceTree = "<group>"; };
+		104ACB0B2D31746B003E4343 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		104ACB0C2D31746B003E4343 /* PersonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
+		104ACB0F2D31759B003E4343 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		104ACB112D317877003E4343 /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
 		1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackContextTests.swift; sourceTree = "<group>"; };
 		108E19F02D2FF30600E49594 /* FetchableRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableRequestTests.swift; sourceTree = "<group>"; };
 		108E19F22D2FF5AC00E49594 /* FetchableCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableCountTests.swift; sourceTree = "<group>"; };
@@ -66,7 +74,7 @@
 		607FACD01AFB9204008FA782 /* SwiftCoreData_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCoreData_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftCoreData/Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SwiftCoreData/AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SwiftCoreData/ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* PersonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonListViewController.swift; path = SwiftCoreData/PersonListViewController.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SwiftCoreData/Images.xcassets; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* SwiftCoreData_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCoreData_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +105,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		104ACB082D317410003E4343 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				10DDCBD62D29912800486182 /* Model.xcdatamodeld */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		104ACB092D317435003E4343 /* PersonListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				104ACB112D317877003E4343 /* PersonListViewModel.swift */,
+				607FACD71AFB9204008FA782 /* PersonListViewController.swift */,
+			);
+			name = PersonListViewController;
+			sourceTree = "<group>";
+		};
+		104ACB0A2D31743A003E4343 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				104ACB0B2D31746B003E4343 /* PersonCell.swift */,
+				104ACB0C2D31746B003E4343 /* PersonCell.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		1B88CCF7634E72E521E138EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +164,9 @@
 		607FACD21AFB9204008FA782 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				10DDCBDC2D29942E00486182 /* Main.storyboard */,
-				10DDCBE02D29944600486182 /* LaunchScreen.xib */,
-				10DDCBD62D29912800486182 /* Model.xcdatamodeld */,
+				104ACB0A2D31743A003E4343 /* UI */,
+				104ACB082D317410003E4343 /* Core Data */,
+				104ACB092D317435003E4343 /* PersonListViewController */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = ExampleApp;
@@ -144,7 +175,12 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				10DDCBDC2D29942E00486182 /* Main.storyboard */,
+				10DDCBE02D29944600486182 /* LaunchScreen.xib */,
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				104ACB0F2D31759B003E4343 /* Extensions.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -292,6 +328,7 @@
 			files = (
 				10DDCBDA2D29940600486182 /* Images.xcassets in Resources */,
 				10DDCBE22D29944600486182 /* LaunchScreen.xib in Resources */,
+				104ACB0E2D31746B003E4343 /* PersonCell.xib in Resources */,
 				10DDCBDE2D29942E00486182 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,9 +412,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				104ACB102D31759B003E4343 /* Extensions.swift in Sources */,
+				607FACD81AFB9204008FA782 /* PersonListViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				104ACB0D2D31746B003E4343 /* PersonCell.swift in Sources */,
 				10DDCBD82D29912800486182 /* Model.xcdatamodeld in Sources */,
+				104ACB122D317877003E4343 /* PersonListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,8 +716,7 @@
 				10DDCBD72D29912800486182 /* Model.xcdatamodel */,
 			);
 			currentVersion = 10DDCBD72D29912800486182 /* Model.xcdatamodel */;
-			name = Model.xcdatamodeld;
-			path = SwiftCoreData/Model.xcdatamodeld;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
