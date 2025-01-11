@@ -27,7 +27,7 @@ final class SetupableRequestTests: XCTestCase {
     func testFetchRequestWhenSetup() {
         
         var request = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
         
         let predicateBefore: NSPredicate? = nil
         
@@ -48,7 +48,7 @@ final class SetupableRequestTests: XCTestCase {
     func testFetchRequestIDWhenSetup() {
         
         var request = self.sut
-            .fetchRequestID(CDPerson.self)
+            .fetchRequestID(CDPersonTest.self)
         
         let predicateBefore: NSPredicate? = nil
         
@@ -69,7 +69,7 @@ final class SetupableRequestTests: XCTestCase {
     func testFetchRequestDictionaryWhenSetup() {
         
         var request = self.sut
-            .fetchRequestDictionary(CDPerson.self)
+            .fetchRequestDictionary(CDPersonTest.self)
         
         let predicateBefore: NSPredicate? = nil
         
@@ -90,7 +90,7 @@ final class SetupableRequestTests: XCTestCase {
     func testFetchRequestCountWhenSetup() {
         
         var request = self.sut
-            .fetchRequestCount(CDPerson.self)
+            .fetchRequestCount(CDPersonTest.self)
         
         let predicateBefore: NSPredicate? = nil
         

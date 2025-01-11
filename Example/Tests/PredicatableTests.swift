@@ -33,7 +33,7 @@ final class PredicatableTests: XCTestCase {
         }
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
         
         XCTAssertEqual(array.count, count)
@@ -49,7 +49,7 @@ final class PredicatableTests: XCTestCase {
         }
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "age == %i", Int16(0)))
             .fetch(inContext: self.sut.viewContext)
         
@@ -66,7 +66,7 @@ final class PredicatableTests: XCTestCase {
         }
         
         let person = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "age == %i", Int16(0)))
             .fetchOne(inContext: self.sut.viewContext)
         
@@ -86,7 +86,7 @@ final class PredicatableTests: XCTestCase {
         }
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "age == %i", Int16(0)))
             .predicate(nil)
             .fetch(inContext: self.sut.viewContext)
@@ -104,7 +104,7 @@ final class PredicatableTests: XCTestCase {
         }
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "name CONTAINS[cd] %@", "us"))
             .predicate(NSPredicate(format: "name CONTAINS[cd] %@", "er"))
             .fetch(inContext: self.sut.viewContext)
@@ -126,7 +126,7 @@ final class PredicatableTests: XCTestCase {
         ]
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "name CONTAINS[cd] %@", "us"))
             .predicates(predicates)
             .fetch(inContext: self.sut.viewContext)
@@ -142,7 +142,7 @@ extension PredicatableTests {
     func createPersons(count: Int = 10, inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
         
         for i in 0..<count {
-            let cdPerson = CDPerson(context: context)
+            let cdPerson = CDPersonTest(context: context)
             cdPerson.name = "User \(i)"
             cdPerson.age = Int16(i)
         }

@@ -27,14 +27,14 @@ final class DeletableTests: XCTestCase {
     func testDeletePersonsWhenNotExistedBefore() {
         
         let arrayBefore = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
         
         XCTAssertEqual(arrayBefore.isEmpty, true)
         
         let exp = expectation(description: "Delete persons")
         
-        self.sut.deleteRequest(CDPerson.self)
+        self.sut.deleteRequest(CDPersonTest.self)
             .delete(inContext: self.sut.viewContext) { error in
                 defer { exp.fulfill() }
                 XCTAssertNil(error)
@@ -43,7 +43,7 @@ final class DeletableTests: XCTestCase {
         wait(for: [exp])
         
         let arrayAfter = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
         
         XCTAssertEqual(arrayAfter.isEmpty, true)
@@ -59,14 +59,14 @@ final class DeletableTests: XCTestCase {
         }
         
         let arrayBefore = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
         
         XCTAssertEqual(arrayBefore.count, count)
         
         let exp = expectation(description: "Delete persons")
         
-        self.sut.deleteRequest(CDPerson.self)
+        self.sut.deleteRequest(CDPersonTest.self)
             .delete(inContext: self.sut.viewContext) { error in
                 defer { exp.fulfill() }
                 XCTAssertNil(error)
@@ -75,7 +75,7 @@ final class DeletableTests: XCTestCase {
         wait(for: [exp])
         
         let arrayAfter = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
         
         XCTAssertEqual(arrayAfter.isEmpty, true)
@@ -91,14 +91,14 @@ final class DeletableTests: XCTestCase {
         }
         
         let arrayBefore = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
         
         XCTAssertEqual(arrayBefore.count, count)
         
         let exp = expectation(description: "Delete persons")
         
-        self.sut.deleteRequest(CDPerson.self)
+        self.sut.deleteRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "age == %i", Int16(0)))
             .delete(inContext: self.sut.viewContext) { error in
                 defer { exp.fulfill() }
@@ -108,7 +108,7 @@ final class DeletableTests: XCTestCase {
         wait(for: [exp])
         
         let arrayAfter = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
         
         let countAfter = count - 1
@@ -124,7 +124,7 @@ extension DeletableTests {
     func createPersons(count: Int = 10, inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
         
         for i in 0..<count {
-            let cdPerson = CDPerson(context: context)
+            let cdPerson = CDPersonTest(context: context)
             cdPerson.name = "User \(i)"
             cdPerson.age = Int16(i)
         }

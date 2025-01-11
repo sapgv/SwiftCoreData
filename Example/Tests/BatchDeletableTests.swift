@@ -19,7 +19,7 @@ final class BatchDeletableTests: XCTestCase {
     override func setUp() {
         super.setUp()
         self.sut = CoreDataStack.createCoreDataStack()
-        self.sut.deleteRequest(CDPerson.self).delete(inContext: self.sut.viewContext, completion: { _ in })
+        self.sut.deleteRequest(CDPersonTest.self).delete(inContext: self.sut.viewContext, completion: { _ in })
         self.createPerson()
     }
     
@@ -34,7 +34,7 @@ final class BatchDeletableTests: XCTestCase {
         
         let viewContext = self.sut.createContext(concurrencyType: .mainQueueConcurrencyType)
         
-        let person = self.sut.fetchRequest(CDPerson.self)
+        let person = self.sut.fetchRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "name == %@", usernameBefore))
             .fetchOne(inContext: viewContext)
         
@@ -42,7 +42,7 @@ final class BatchDeletableTests: XCTestCase {
         
         let exp = expectation(description: "Delete")
         
-        self.sut.batchDeleteRequest(CDPerson.self)
+        self.sut.batchDeleteRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "name == %@", usernameBefore))
             .delete(inContext: privateContext) { error in
                 defer { exp.fulfill() }
@@ -61,7 +61,7 @@ final class BatchDeletableTests: XCTestCase {
         
         let viewContext = self.sut.createContext(concurrencyType: .mainQueueConcurrencyType)
         
-        let person = self.sut.fetchRequest(CDPerson.self)
+        let person = self.sut.fetchRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "name == %@", usernameBefore))
             .fetchOne(inContext: viewContext)
         
@@ -69,7 +69,7 @@ final class BatchDeletableTests: XCTestCase {
         
         let exp = expectation(description: "Delete")
         
-        self.sut.batchDeleteRequest(CDPerson.self)
+        self.sut.batchDeleteRequest(CDPersonTest.self)
             .predicate(NSPredicate(format: "name == %@", usernameBefore))
             .merge(into: [viewContext])
             .delete(inContext: privateContext) { error in
@@ -89,7 +89,7 @@ extension BatchDeletableTests {
     
     func createPerson() {
         
-        let person = CDPerson(context: self.sut.viewContext)
+        let person = CDPersonTest(context: self.sut.viewContext)
         person.name = usernameBefore
         person.age = 10
         
