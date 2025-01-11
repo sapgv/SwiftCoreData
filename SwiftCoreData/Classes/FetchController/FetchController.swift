@@ -12,7 +12,7 @@ public class FetchController<T: NSManagedObject>: NSObject, NSFetchedResultsCont
     
     public private(set) var reloadActions: [FetchControllerReloadAction] = []
     
-    public weak var reloadDelegate: FetchControllerReloadDelegate?
+    public weak var reloadActionDelegate: FetchControllerReloadActionDelegate?
     
     public var fetchedObjects: [T]? {
         self.fetchResultController.fetchedObjects
@@ -100,8 +100,8 @@ public class FetchController<T: NSManagedObject>: NSObject, NSFetchedResultsCont
     
     //MARK: - NSFetchedResultsControllerDelegate
     
-    public func actionsDelegate(_ delegate: FetchControllerReloadDelegate?) -> Self {
-        self.reloadDelegate = delegate
+    public func reloadActionDelegate(_ delegate: FetchControllerReloadActionDelegate?) -> Self {
+        self.reloadActionDelegate = delegate
         return self
     }
     
@@ -110,7 +110,7 @@ public class FetchController<T: NSManagedObject>: NSObject, NSFetchedResultsCont
     }
     
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.reloadDelegate?.handle(actions: reloadActions)
+        self.reloadActionDelegate?.handle(actions: reloadActions)
         reloadActions.removeAll()
     }
     

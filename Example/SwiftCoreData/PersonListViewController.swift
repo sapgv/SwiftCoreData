@@ -44,7 +44,7 @@ extension PersonListViewController {
     
     private func setupFetchController() {
         
-        self.fetchController.reloadDelegate = self.tableView
+        self.fetchController.reloadActionDelegate = self
         
     }
     
@@ -52,29 +52,25 @@ extension PersonListViewController {
         
         self.viewModel.refreshListCompletion = { [weak self] error in
             
-            self?.fetch()
+            self?.log(error)
             
         }
         
         self.viewModel.cleanListCompletion = { [weak self] error in
             
-            self?.fetch()
+            self?.log(error)
             
         }
         
-        self.viewModel.newPersonCompletion = { error in
+        self.viewModel.newPersonCompletion = { [weak self] error in
             
-            if let error {
-                print(error.localizedDescription)
-            }
+            self?.log(error)
             
         }
         
-        self.viewModel.deletePersonCompletion = { error in
+        self.viewModel.deletePersonCompletion = { [weak self] error in
             
-            if let error {
-                print(error.localizedDescription)
-            }
+            self?.log(error)
             
         }
         
@@ -201,6 +197,50 @@ extension PersonListViewController {
         
         self.viewModel.newPerson()
         
+    }
+    
+}
+
+//MARK: - FetchControllerReloadDelegate
+
+extension PersonListViewController: FetchControllerReloadActionDelegate {
+    
+    func handle(actions: [FetchControllerReloadAction]) {
+        
+        self.tableView.handle(actions: actions)
+        
+        self.animateBackgroundColorUpdatedCells(actions: actions)
+        
+    }
+    
+    private func animateBackgroundColorUpdatedCells(actions: [FetchControllerReloadAction]) {
+        
+        actions
+            .filter { action in
+                switch action {
+                case .insertRows(_), .reloadRows(_):
+                    return true
+                default:
+                    return false
+                }
+            }
+            .indexPaths
+            .compactMap { self.tableView.cellForRow(at: $0) }
+            .forEach { cell in
+                cell.animateBackgroundColor()
+            }
+        
+    }
+    
+}
+
+//MARK: - Log
+
+extension PersonListViewController {
+    
+    private func log(_ error: Error?) {
+        guard let error = error else { return }
+        print(error.localizedDescription)
     }
     
 }

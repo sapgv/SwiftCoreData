@@ -13,6 +13,7 @@
 		104ACB102D31759B003E4343 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104ACB0F2D31759B003E4343 /* Extensions.swift */; };
 		104ACB122D317877003E4343 /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104ACB112D317877003E4343 /* PersonListViewModel.swift */; };
 		1057A86E2D23E1BC009206D3 /* CoreDataStackContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */; };
+		1082971C2D32B7E800AF9515 /* Extensions.UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082971B2D32B7E800AF9515 /* Extensions.UITableViewCell.swift */; };
 		108E19F12D2FF30600E49594 /* FetchableRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F02D2FF30600E49594 /* FetchableRequestTests.swift */; };
 		108E19F32D2FF5AC00E49594 /* FetchableCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F22D2FF5AC00E49594 /* FetchableCountTests.swift */; };
 		108E19F52D2FF64600E49594 /* SortableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E19F42D2FF64600E49594 /* SortableTests.swift */; };
@@ -52,6 +53,7 @@
 		104ACB0F2D31759B003E4343 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		104ACB112D317877003E4343 /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
 		1057A86D2D23E1BC009206D3 /* CoreDataStackContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackContextTests.swift; sourceTree = "<group>"; };
+		1082971B2D32B7E800AF9515 /* Extensions.UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.UITableViewCell.swift; sourceTree = "<group>"; };
 		108E19F02D2FF30600E49594 /* FetchableRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableRequestTests.swift; sourceTree = "<group>"; };
 		108E19F22D2FF5AC00E49594 /* FetchableCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableCountTests.swift; sourceTree = "<group>"; };
 		108E19F42D2FF64600E49594 /* SortableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortableTests.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 				104ACB0F2D31759B003E4343 /* Extensions.swift */,
+				1082971B2D32B7E800AF9515 /* Extensions.UITableViewCell.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1082971C2D32B7E800AF9515 /* Extensions.UITableViewCell.swift in Sources */,
 				104ACB102D31759B003E4343 /* Extensions.swift in Sources */,
 				607FACD81AFB9204008FA782 /* PersonListViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,

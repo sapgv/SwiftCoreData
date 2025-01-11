@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		102C5AEC2D3109B500FA0828 /* BatchUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C5AEB2D3109B500FA0828 /* BatchUpdateRequest.swift */; };
 		104ACB062D316A56003E4343 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104ACB052D316A56003E4343 /* FetchController.swift */; };
+		1082971A2D32B24900AF9515 /* NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108297192D32B24900AF9515 /* NSFetchedResultsControllerDelegate.swift */; };
+		1082971E2D32BBAF00AF9515 /* FetchControllerReloadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082971D2D32BBAF00AF9515 /* FetchControllerReloadAction.swift */; };
 		108E1A022D30304D00E49594 /* FetchableOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A012D30304D00E49594 /* FetchableOne.swift */; };
 		108E1A042D30310900E49594 /* Limitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A032D30310900E49594 /* Limitable.swift */; };
 		108E1A062D30314D00E49594 /* Batchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A052D30314D00E49594 /* Batchable.swift */; };
@@ -17,7 +19,7 @@
 		108E1A0C2D30329600E49594 /* FetchRequestCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A0B2D30329600E49594 /* FetchRequestCount.swift */; };
 		10C107102D30412200DC935E /* Faultable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1070F2D30412100DC935E /* Faultable.swift */; };
 		10C107122D30438800DC935E /* BatchDeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C107112D30438800DC935E /* BatchDeleteRequest.swift */; };
-		10FB377E2D326C6400D102BE /* FetchControllerReloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB377D2D326C6400D102BE /* FetchControllerReloadDelegate.swift */; };
+		10FB377E2D326C6400D102BE /* FetchControllerReloadActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB377D2D326C6400D102BE /* FetchControllerReloadActionDelegate.swift */; };
 		11ACF12E70C40C82BA8FF0B4143D75FE /* CoreDataStack.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A5DDB404391BBEFDEF5A1B32692517 /* CoreDataStack.State.swift */; };
 		12F9656306CB063613C4594A0D4D0441 /* SetupableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A20F8241F7053F3D1C32BFF7570FC2 /* SetupableRequest.swift */; };
 		13F0894CFEFA5E00D7455BC7776C254E /* Pods-SwiftCoreData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DD0FA5779C8A6E0FE3828BA5E958F /* Pods-SwiftCoreData_Example-dummy.m */; };
@@ -71,6 +73,8 @@
 		0BF91C20DB9752DAFE7A3004C31BAA5B /* Pods-SwiftCoreData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Tests-umbrella.h"; sourceTree = "<group>"; };
 		102C5AEB2D3109B500FA0828 /* BatchUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchUpdateRequest.swift; sourceTree = "<group>"; };
 		104ACB052D316A56003E4343 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
+		108297192D32B24900AF9515 /* NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
+		1082971D2D32BBAF00AF9515 /* FetchControllerReloadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchControllerReloadAction.swift; sourceTree = "<group>"; };
 		108E1A012D30304D00E49594 /* FetchableOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableOne.swift; sourceTree = "<group>"; };
 		108E1A032D30310900E49594 /* Limitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limitable.swift; sourceTree = "<group>"; };
 		108E1A052D30314D00E49594 /* Batchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batchable.swift; sourceTree = "<group>"; };
@@ -80,7 +84,7 @@
 		10C1070F2D30412100DC935E /* Faultable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faultable.swift; sourceTree = "<group>"; };
 		10C107112D30438800DC935E /* BatchDeleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDeleteRequest.swift; sourceTree = "<group>"; };
 		10D987B57079CA97EDDC5674DEE47C25 /* Predicatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Predicatable.swift; sourceTree = "<group>"; };
-		10FB377D2D326C6400D102BE /* FetchControllerReloadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchControllerReloadDelegate.swift; sourceTree = "<group>"; };
+		10FB377D2D326C6400D102BE /* FetchControllerReloadActionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchControllerReloadActionDelegate.swift; sourceTree = "<group>"; };
 		12A5DDB404391BBEFDEF5A1B32692517 /* CoreDataStack.State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreDataStack.State.swift; sourceTree = "<group>"; };
 		1314951443F9F9EB85BB7EC9EE7F947B /* Pods-SwiftCoreData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Example-umbrella.h"; sourceTree = "<group>"; };
 		176CB74BBD8DC75010CE7501A7B3F8A0 /* Pods-SwiftCoreData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoreData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -162,7 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				104ACB052D316A56003E4343 /* FetchController.swift */,
-				10FB377D2D326C6400D102BE /* FetchControllerReloadDelegate.swift */,
+				1082971D2D32BBAF00AF9515 /* FetchControllerReloadAction.swift */,
+				10FB377D2D326C6400D102BE /* FetchControllerReloadActionDelegate.swift */,
+				108297192D32B24900AF9515 /* NSFetchedResultsControllerDelegate.swift */,
 			);
 			name = FetchController;
 			path = SwiftCoreData/Classes/FetchController;
@@ -495,9 +501,10 @@
 				31A52773C4CFC6DCBFAEA8D4479FDE47 /* CoreDataStack.Save.swift in Sources */,
 				10C107102D30412200DC935E /* Faultable.swift in Sources */,
 				2DF7B095DDF2F1C6E0628D9B2C2FAF0F /* CoreDataStack.SavePolicy.swift in Sources */,
-				10FB377E2D326C6400D102BE /* FetchControllerReloadDelegate.swift in Sources */,
+				10FB377E2D326C6400D102BE /* FetchControllerReloadActionDelegate.swift in Sources */,
 				E84D06D1F0BA0F75C6ED0C2348F941DF /* CoreDataStack.SaveResult.swift in Sources */,
 				108E1A062D30314D00E49594 /* Batchable.swift in Sources */,
+				1082971A2D32B24900AF9515 /* NSFetchedResultsControllerDelegate.swift in Sources */,
 				108E1A0C2D30329600E49594 /* FetchRequestCount.swift in Sources */,
 				104ACB062D316A56003E4343 /* FetchController.swift in Sources */,
 				102C5AEC2D3109B500FA0828 /* BatchUpdateRequest.swift in Sources */,
@@ -511,6 +518,7 @@
 				2C3A1EAEFFD06F40F264129CF1A659C7 /* FetchRequest.swift in Sources */,
 				108E1A0A2D30323D00E49594 /* FetchRequestDictionary.swift in Sources */,
 				C239D88F80382574950C8E1B53FD9380 /* NSManagedObject.swift in Sources */,
+				1082971E2D32BBAF00AF9515 /* FetchControllerReloadAction.swift in Sources */,
 				A28EA893CC0EFD3880F8AE014E7F182A /* NSManagedObjectContext.Settings.swift in Sources */,
 				B188296F7C5B99958A4D5195A391441E /* NSManagedObjectModel.swift in Sources */,
 				94FDFC6DE25788D10116051C569786A5 /* PersistentContainer.swift in Sources */,
