@@ -4,15 +4,26 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftCoreData.svg?style=flat)](https://cocoapods.org/pods/SwiftCoreData)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftCoreData.svg?style=flat)](https://cocoapods.org/pods/SwiftCoreData)
 
-## Example
+SwiftCoreData is a library to manage CoreDataStack
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Features
+- Fetch
+- Delete
+- Save
+- Batch delete / Batch update
+- FetchController
 
-## Requirements
+## Example App
+
+|  |  | 
+|----------------|-----------------|
+| <img src="https://github.com/sapgv/SwiftCoreData/blob/main/1.png" width="200"> |  <img src="https://github.com/sapgv/SwiftCoreData/blob/main/2.png" width="200"> |
 
 ## Installation
 
-  SwiftCoreData is available through [CocoaPods](https://cocoapods.org). To install
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+SwiftCoreData is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
