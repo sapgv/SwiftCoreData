@@ -19,6 +19,8 @@ final class PersonListViewModel {
     
     var cleanListCompletion: ((Error?) -> Void)?
     
+    var newPersonCompletion: ((Error?) -> Void)?
+    
     func refreshList() {
         
         coreDataStack.performBackgroundTask { privateContext in
@@ -51,6 +53,27 @@ final class PersonListViewModel {
                 
             }
 
+        }
+        
+    }
+    
+    func newPerson() {
+        
+        coreDataStack.performBackgroundTask { privateContext in
+            
+            let cdPerson = CDPerson(context: privateContext)
+            let i = Int.random(in: 50...60)
+            cdPerson.name = "Person \(i)"
+            cdPerson.age = i.int16
+            
+            coreDataStack.save(inContext: privateContext) { result in
+                
+                DispatchQueue.main.async {
+                    self.newPersonCompletion?(result.error)
+                }
+                
+            }
+                               
         }
         
     }

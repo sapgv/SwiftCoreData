@@ -8,7 +8,11 @@
 import Foundation
 import CoreData
 
-public class FetchController<T: NSManagedObject> {
+public class FetchController<T: NSManagedObject>: NSObject, NSFetchedResultsControllerDelegate {
+    
+    public private(set) var reloadActions: [FetchControllerReloadAction] = []
+    
+    public weak var reloadDelegate: FetchControllerReloadDelegate?
     
     public var fetchedObjects: [T]? {
         self.fetchResultController.fetchedObjects
@@ -30,9 +34,14 @@ public class FetchController<T: NSManagedObject> {
         self.fetchResultController.cacheName
     }
     
-    public lazy var delegate: NSFetchedResultsControllerDelegate? = {
-        self.fetchResultController.delegate
-    }()
+    public var delegate: NSFetchedResultsControllerDelegate? {
+        get {
+            self.fetchResultController.delegate
+        }
+        set {
+            self.fetchResultController.delegate = newValue
+        }
+    }
     
     public private(set) lazy var request: NSFetchRequest<T> = {
         self.fetchResultController.fetchRequest
@@ -63,6 +72,8 @@ public class FetchController<T: NSManagedObject> {
             sectionNameKeyPath: sectionNameKeyPath,
             cacheName: cacheName
         )
+        super.init()
+        self.fetchResultController.delegate = self
     }
     
     public func performFetch() {
@@ -85,6 +96,59 @@ public class FetchController<T: NSManagedObject> {
     
     public func deleteCache(withName name: String?) {
         NSFetchedResultsController<T>.deleteCache(withName: name)
+    }
+    
+    //MARK: - NSFetchedResultsControllerDelegate
+    
+    public func actionsDelegate(_ delegate: FetchControllerReloadDelegate?) -> Self {
+        self.reloadDelegate = delegate
+        return self
+    }
+    
+    public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        reloadActions.removeAll()
+    }
+    
+    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.reloadDelegate?.handle(actions: reloadActions)
+        reloadActions.removeAll()
+    }
+    
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch (type) {
+        case .insert:
+            if let indexPath = newIndexPath {
+                reloadActions.append(.insertRows([indexPath]))
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                reloadActions.append(.deleteRows([indexPath]))
+            }
+        case .update:
+            if let indexPath = indexPath {
+                reloadActions.append(.reloadRows([indexPath]))
+            }
+        case .move:
+            if let indexPath = indexPath {
+                reloadActions.append(.deleteRows([indexPath]))
+            }
+            if let indexPath = newIndexPath {
+                reloadActions.append(.insertRows([indexPath]))
+            }
+        default:
+            reloadActions.append(.reloadData)
+        }
+    }
+    
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .insert:
+            reloadActions.append(.insertSections(IndexSet(integer: sectionIndex)))
+        case .delete:
+            reloadActions.append(.deleteSections(IndexSet(integer: sectionIndex)))
+        default:
+            break
+        }
     }
     
 }

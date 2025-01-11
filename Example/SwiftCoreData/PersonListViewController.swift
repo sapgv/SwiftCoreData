@@ -19,7 +19,9 @@ class PersonListViewController: UIViewController {
         let fetchController = FetchController(
             CDPerson.self,
             context: viewModel.viewContext,
-            sortDescriptors: [NSSortDescriptor(keyPath: \CDPerson.age, ascending: true)]
+            sortDescriptors: [NSSortDescriptor(keyPath: \CDPerson.age, ascending: true)],
+            sectionNameKeyPath: "name",
+            cacheName: nil
         )
         return fetchController
     }()
@@ -29,6 +31,7 @@ class PersonListViewController: UIViewController {
         self.title = "Persons"
         self.view.backgroundColor = .white
         self.setupNavigationItems()
+        self.setupFetchController()
         self.setupViewModel()
         self.setupTableView()
         self.layoutView()
@@ -38,6 +41,12 @@ class PersonListViewController: UIViewController {
 }
 
 extension PersonListViewController {
+    
+    private func setupFetchController() {
+        
+        self.fetchController.reloadDelegate = self.tableView
+        
+    }
     
     private func setupViewModel() {
         
@@ -50,6 +59,14 @@ extension PersonListViewController {
         self.viewModel.cleanListCompletion = { [weak self] error in
             
             self?.fetch()
+            
+        }
+        
+        self.viewModel.newPersonCompletion = { error in
+            
+            if let error {
+                print(error.localizedDescription)
+            }
             
         }
         
@@ -69,7 +86,11 @@ extension PersonListViewController {
         
         let cleanButton = UIBarButtonItem(title: "Clean", style: .plain, target: self, action: #selector(cleanList))
         
-        self.navigationItem.leftBarButtonItems = [cleanButton, refreshButton]
+        let newButton = UIBarButtonItem(title: "New", style: .plain, target: self, action: #selector(newPerson))
+        
+        self.navigationItem.leftBarButtonItems = [refreshButton, cleanButton]
+        
+        self.navigationItem.rightBarButtonItems = [newButton]
         
     }
     
@@ -90,8 +111,16 @@ extension PersonListViewController {
 
 extension PersonListViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        self.fetchController.sections?.count ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.fetchController.fetchedObjects?.count ?? 0
+        guard let sections = self.fetchController.sections else {
+            return self.fetchController.fetchedObjects?.count ?? 0
+        }
+        let sectionInfo = sections[section]
+        return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,6 +128,11 @@ extension PersonListViewController: UITableViewDataSource {
         let cdPerson = self.fetchController.object(at: indexPath)
         cell.setup(name: cdPerson.name, age: cdPerson.age.int)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let sections = self.fetchController.sections else { return nil }
+        return sections[section].name
     }
     
 }
@@ -135,6 +169,13 @@ extension PersonListViewController {
     private func cleanList() {
         
         self.viewModel.cleanList()
+        
+    }
+    
+    @objc
+    private func newPerson() {
+        
+        self.viewModel.newPerson()
         
     }
     

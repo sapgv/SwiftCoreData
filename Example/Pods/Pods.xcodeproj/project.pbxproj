@@ -17,6 +17,7 @@
 		108E1A0C2D30329600E49594 /* FetchRequestCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E1A0B2D30329600E49594 /* FetchRequestCount.swift */; };
 		10C107102D30412200DC935E /* Faultable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1070F2D30412100DC935E /* Faultable.swift */; };
 		10C107122D30438800DC935E /* BatchDeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C107112D30438800DC935E /* BatchDeleteRequest.swift */; };
+		10FB377E2D326C6400D102BE /* FetchControllerReloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FB377D2D326C6400D102BE /* FetchControllerReloadDelegate.swift */; };
 		11ACF12E70C40C82BA8FF0B4143D75FE /* CoreDataStack.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A5DDB404391BBEFDEF5A1B32692517 /* CoreDataStack.State.swift */; };
 		12F9656306CB063613C4594A0D4D0441 /* SetupableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A20F8241F7053F3D1C32BFF7570FC2 /* SetupableRequest.swift */; };
 		13F0894CFEFA5E00D7455BC7776C254E /* Pods-SwiftCoreData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DD0FA5779C8A6E0FE3828BA5E958F /* Pods-SwiftCoreData_Example-dummy.m */; };
@@ -79,6 +80,7 @@
 		10C1070F2D30412100DC935E /* Faultable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faultable.swift; sourceTree = "<group>"; };
 		10C107112D30438800DC935E /* BatchDeleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDeleteRequest.swift; sourceTree = "<group>"; };
 		10D987B57079CA97EDDC5674DEE47C25 /* Predicatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Predicatable.swift; sourceTree = "<group>"; };
+		10FB377D2D326C6400D102BE /* FetchControllerReloadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchControllerReloadDelegate.swift; sourceTree = "<group>"; };
 		12A5DDB404391BBEFDEF5A1B32692517 /* CoreDataStack.State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreDataStack.State.swift; sourceTree = "<group>"; };
 		1314951443F9F9EB85BB7EC9EE7F947B /* Pods-SwiftCoreData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCoreData_Example-umbrella.h"; sourceTree = "<group>"; };
 		176CB74BBD8DC75010CE7501A7B3F8A0 /* Pods-SwiftCoreData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCoreData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				104ACB052D316A56003E4343 /* FetchController.swift */,
+				10FB377D2D326C6400D102BE /* FetchControllerReloadDelegate.swift */,
 			);
 			name = FetchController;
 			path = SwiftCoreData/Classes/FetchController;
@@ -492,6 +495,7 @@
 				31A52773C4CFC6DCBFAEA8D4479FDE47 /* CoreDataStack.Save.swift in Sources */,
 				10C107102D30412200DC935E /* Faultable.swift in Sources */,
 				2DF7B095DDF2F1C6E0628D9B2C2FAF0F /* CoreDataStack.SavePolicy.swift in Sources */,
+				10FB377E2D326C6400D102BE /* FetchControllerReloadDelegate.swift in Sources */,
 				E84D06D1F0BA0F75C6ED0C2348F941DF /* CoreDataStack.SaveResult.swift in Sources */,
 				108E1A062D30314D00E49594 /* Batchable.swift in Sources */,
 				108E1A0C2D30329600E49594 /* FetchRequestCount.swift in Sources */,
