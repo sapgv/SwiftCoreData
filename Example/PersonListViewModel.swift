@@ -63,8 +63,12 @@ final class PersonListViewModel {
         
         coreDataStack.performBackgroundTask { privateContext in
             
-            let cdPerson = CDPerson(context: privateContext)
             let i = Int.random(in: 50...60)
+            
+            let cdPerson = coreDataStack.fetchRequest(CDPerson.self)
+                .predicate(NSPredicate(format: "age == %i", i))
+                .fetchOne(inContext: privateContext) ?? CDPerson(context: privateContext)
+            
             cdPerson.name = "Person \(i)"
             cdPerson.age = i.int16
             
@@ -83,6 +87,7 @@ final class PersonListViewModel {
     func deletePerson(_ cdPerson: CDPerson) {
         
         coreDataStack.performBackgroundTask { privateContext in
+            
             coreDataStack.deleteRequest(CDPerson.self)
                 .predicate(NSPredicate(format: "SELF == %@", cdPerson.objectID))
                 .delete(inContext: privateContext) { error in
