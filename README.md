@@ -122,6 +122,20 @@ coreDataStack.batchUpdateRequest(CDPerson.self)
                 //Handle error
             }
 ```
+
+### FetchController
+```swift
+let fetchController = FetchController(
+            CDPerson.self,
+            context: viewContext,
+            sortDescriptors: [NSSortDescriptor(keyPath: \CDPerson.age, ascending: true)], //required sortDescriptors
+            sectionNameKeyPath: nil, //optionally
+            cacheName: nil //optionally
+        )
+
+fetchController.performFetch()
+tableView.reloadData()
+```
 ## Author
 
 Grigory Sapogov, grisha.sapgv@mail.ru
