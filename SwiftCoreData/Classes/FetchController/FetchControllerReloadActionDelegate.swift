@@ -5,6 +5,7 @@
 //  Created by Grigory Sapogov on 11.01.2025.
 //
 
+#if os(iOS)
 import UIKit
 import CoreData
 
@@ -95,3 +96,5 @@ public extension FetchControllerReloadActionDelegate where Self: UICollectionVie
     }
     
 }
+
+#endif
