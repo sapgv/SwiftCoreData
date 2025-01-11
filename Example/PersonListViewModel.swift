@@ -21,6 +21,8 @@ final class PersonListViewModel {
     
     var newPersonCompletion: ((Error?) -> Void)?
     
+    var deletePersonCompletion: ((Error?) -> Void)?
+    
     func refreshList() {
         
         coreDataStack.performBackgroundTask { privateContext in
@@ -74,6 +76,21 @@ final class PersonListViewModel {
                 
             }
                                
+        }
+        
+    }
+    
+    func deletePerson(_ cdPerson: CDPerson) {
+        
+        coreDataStack.performBackgroundTask { privateContext in
+            coreDataStack.deleteRequest(CDPerson.self)
+                .predicate(NSPredicate(format: "SELF == %@", cdPerson.objectID))
+                .delete(inContext: privateContext) { error in
+                    DispatchQueue.main.async {
+                        self.deletePersonCompletion?(error)
+                    }
+                }
+            
         }
         
     }

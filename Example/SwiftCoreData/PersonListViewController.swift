@@ -70,6 +70,14 @@ extension PersonListViewController {
             
         }
         
+        self.viewModel.deletePersonCompletion = { error in
+            
+            if let error {
+                print(error.localizedDescription)
+            }
+            
+        }
+        
     }
     
     private func setupTableView() {
@@ -141,6 +149,22 @@ extension PersonListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            
+            let cdPerson = self.fetchController.object(at: indexPath)
+            
+            self.viewModel.deletePerson(cdPerson)
+            
+        }
+        
+        let config = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        return config
+        
     }
     
 }
