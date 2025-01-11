@@ -117,26 +117,30 @@ public class FetchController<T: NSManagedObject>: NSObject, NSFetchedResultsCont
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch (type) {
         case .insert:
-            if let indexPath = newIndexPath {
-                reloadActions.append(.insertRows([indexPath]))
+            if let newIndexPath = newIndexPath {
+                reloadActions.append(.insertRows([newIndexPath]))
             }
+            break
         case .delete:
             if let indexPath = indexPath {
                 reloadActions.append(.deleteRows([indexPath]))
             }
+            break
         case .update:
             if let indexPath = indexPath {
                 reloadActions.append(.reloadRows([indexPath]))
             }
+            break
         case .move:
             if let indexPath = indexPath {
                 reloadActions.append(.deleteRows([indexPath]))
             }
-            if let indexPath = newIndexPath {
-                reloadActions.append(.insertRows([indexPath]))
+            if let newIndexPath = newIndexPath {
+                reloadActions.append(.insertRows([newIndexPath]))
             }
+            break
         default:
-            reloadActions.append(.reloadData)
+            break
         }
     }
     
@@ -144,8 +148,10 @@ public class FetchController<T: NSManagedObject>: NSObject, NSFetchedResultsCont
         switch type {
         case .insert:
             reloadActions.append(.insertSections(IndexSet(integer: sectionIndex)))
+            break
         case .delete:
             reloadActions.append(.deleteSections(IndexSet(integer: sectionIndex)))
+            break
         default:
             break
         }
