@@ -6,7 +6,6 @@
 //
 #if os(iOS)
 import UIKit
-#endif
 import CoreData
 
 extension UITableView: NSFetchedResultsControllerDelegate {

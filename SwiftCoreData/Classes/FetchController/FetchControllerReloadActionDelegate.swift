@@ -16,6 +16,7 @@ public protocol FetchControllerReloadActionDelegate: AnyObject {
     
 }
 
+#if os(iOS)
 extension UITableView: FetchControllerReloadActionDelegate {
     
     public func handle(actions: [FetchControllerReloadAction]) {
@@ -97,5 +98,5 @@ public extension FetchControllerReloadActionDelegate where Self: UICollectionVie
     }
     
 }
-
+#endif
 
