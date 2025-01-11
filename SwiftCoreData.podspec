@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftCoreData'
-  s.version          = '1.0.9'
+  s.version          = '1.0.10'
   s.summary          = 'SwiftCoreData is a simple library for manage Core Data Stack'
 
 # This description is used to generate tags and improve search results.
