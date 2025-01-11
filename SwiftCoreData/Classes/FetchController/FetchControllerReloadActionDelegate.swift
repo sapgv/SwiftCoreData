@@ -7,6 +7,7 @@
 
 #if os(iOS)
 import UIKit
+#endif
 import CoreData
 
 public protocol FetchControllerReloadActionDelegate: AnyObject {
@@ -97,4 +98,4 @@ public extension FetchControllerReloadActionDelegate where Self: UICollectionVie
     
 }
 
-#endif
+
