@@ -5,7 +5,7 @@
 //  Created by Grigory Sapogov on 11.01.2025.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 public protocol FetchControllerReloadActionDelegate: AnyObject {
