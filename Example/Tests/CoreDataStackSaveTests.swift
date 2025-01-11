@@ -27,7 +27,7 @@ final class CoreDataStackSaveTests: XCTestCase {
     func testSavePerson() {
         
         let arrayBefore = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: sut.viewContext)
         
         XCTAssertEqual(arrayBefore.isEmpty, true)
@@ -39,8 +39,8 @@ final class CoreDataStackSaveTests: XCTestCase {
         }
         
         let arrayAfter = self.sut
-            .fetchRequest(CDPerson.self)
-            .sortDescriptor(NSSortDescriptor(keyPath: \CDPerson.age, ascending: true))
+            .fetchRequest(CDPersonTest.self)
+            .sortDescriptor(NSSortDescriptor(keyPath: \CDPersonTest.age, ascending: true))
             .fetch(inContext: sut.viewContext)
         
         XCTAssertEqual(arrayAfter.count, count)
@@ -59,7 +59,7 @@ extension CoreDataStack {
     func createPersons(count: Int = 10, inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
         
         for i in 0..<count {
-            let cdPerson = CDPerson(context: context)
+            let cdPerson = CDPersonTest(context: context)
             cdPerson.name = "User \(i)"
             cdPerson.age = Int16(i)
         }

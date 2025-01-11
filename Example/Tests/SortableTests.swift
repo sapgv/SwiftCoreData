@@ -33,7 +33,7 @@ final class SortableTests: XCTestCase {
         }
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
             .compactMap { Int($0.age) }
         
@@ -52,8 +52,8 @@ final class SortableTests: XCTestCase {
         }
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
-            .sortDescriptor(NSSortDescriptor(keyPath: \CDPerson.age, ascending: true))
+            .fetchRequest(CDPersonTest.self)
+            .sortDescriptor(NSSortDescriptor(keyPath: \CDPersonTest.age, ascending: true))
             .fetch(inContext: self.sut.viewContext)
             .compactMap { Int($0.age) }
         
@@ -71,8 +71,8 @@ final class SortableTests: XCTestCase {
         }
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
-            .sortDescriptor(NSSortDescriptor(keyPath: \CDPerson.age, ascending: false))
+            .fetchRequest(CDPersonTest.self)
+            .sortDescriptor(NSSortDescriptor(keyPath: \CDPersonTest.age, ascending: false))
             .fetch(inContext: self.sut.viewContext)
             .compactMap { Int($0.age) }
         
@@ -90,8 +90,8 @@ final class SortableTests: XCTestCase {
         }
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
-            .sortDescriptor(NSSortDescriptor(keyPath: \CDPerson.age, ascending: false))
+            .fetchRequest(CDPersonTest.self)
+            .sortDescriptor(NSSortDescriptor(keyPath: \CDPersonTest.age, ascending: false))
             .sortDescriptor(nil)
             .fetch(inContext: self.sut.viewContext)
             .compactMap { Int($0.age) }
@@ -110,7 +110,7 @@ extension SortableTests {
     func createPersons(count: Int = 10, inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
         
         for i in 0..<count {
-            let cdPerson = CDPerson(context: context)
+            let cdPerson = CDPersonTest(context: context)
             cdPerson.name = "User \(i)"
             cdPerson.age = Int16(i)
         }

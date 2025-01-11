@@ -27,7 +27,7 @@ final class FetchableRequestTests: XCTestCase {
     func testFetchPersonsWhenEmpty() {
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
         
         XCTAssertEqual(array.isEmpty, true)
@@ -37,7 +37,7 @@ final class FetchableRequestTests: XCTestCase {
     func testFetchPersonWhenNil() {
         
         let person = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetchOne(inContext: self.sut.viewContext)
         
         XCTAssertNil(person)
@@ -53,7 +53,7 @@ final class FetchableRequestTests: XCTestCase {
         }
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetch(inContext: self.sut.viewContext)
         
         XCTAssertEqual(array.count, count)
@@ -69,7 +69,7 @@ final class FetchableRequestTests: XCTestCase {
         }
         
         let person = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .fetchOne(inContext: self.sut.viewContext)
         
         XCTAssertNotNil(person)
@@ -87,7 +87,7 @@ final class FetchableRequestTests: XCTestCase {
         let fetchLimit = 2
         
         let array = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .setupLimit(fetchLimit)
             .fetch(inContext: self.sut.viewContext)
         
@@ -106,7 +106,7 @@ final class FetchableRequestTests: XCTestCase {
         let fetchBatchSize = 2
         
         let request = self.sut
-            .fetchRequest(CDPerson.self)
+            .fetchRequest(CDPersonTest.self)
             .setupBatchSize(fetchBatchSize)
         
         XCTAssertEqual(request.request.fetchBatchSize, fetchBatchSize)
@@ -120,7 +120,7 @@ extension FetchableRequestTests {
     func createPersons(count: Int = 10, inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
         
         for i in 0..<count {
-            let cdPerson = CDPerson(context: context)
+            let cdPerson = CDPersonTest(context: context)
             cdPerson.name = "User \(i)"
             cdPerson.age = Int16(i)
         }

@@ -27,7 +27,7 @@ final class FetchableCountTests: XCTestCase {
     func testFetchPersonsWhenCountZero() {
         
         let result = self.sut
-            .fetchRequestCount(CDPerson.self)
+            .fetchRequestCount(CDPersonTest.self)
             .fetchCount(inContext: self.sut.viewContext)
         
         XCTAssertEqual(result, 0)
@@ -43,7 +43,7 @@ final class FetchableCountTests: XCTestCase {
         }
         
         let result = self.sut
-            .fetchRequestCount(CDPerson.self)
+            .fetchRequestCount(CDPersonTest.self)
             .fetchCount(inContext: self.sut.viewContext)
         
         XCTAssertEqual(result, count)
@@ -57,7 +57,7 @@ extension FetchableCountTests {
     func createPersons(count: Int = 10, inContext context: NSManagedObjectContext, completion: (Error?) -> Void) {
         
         for i in 0..<count {
-            let cdPerson = CDPerson(context: context)
+            let cdPerson = CDPersonTest(context: context)
             cdPerson.name = "User \(i)"
             cdPerson.age = Int16(i)
         }
