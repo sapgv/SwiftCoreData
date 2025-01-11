@@ -10,12 +10,12 @@ import UIKit
 
 extension UITableViewCell {
     
-    func animateBackgroundColor(_ color: UIColor = .green) {
+    func animateBackgroundColor(_ color: UIColor) {
         
         let colorBefore = self.contentView.backgroundColor
         
         UIView.animate(withDuration: 0.5, animations: {
-            self.contentView.backgroundColor = color.withAlphaComponent(0.3)
+            self.contentView.backgroundColor = color
         }) { _ in
             UIView.animate(withDuration: 0.5) {
                 self.contentView.backgroundColor = colorBefore

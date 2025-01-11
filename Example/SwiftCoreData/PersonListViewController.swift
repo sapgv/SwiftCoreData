@@ -216,18 +216,20 @@ extension PersonListViewController: FetchControllerReloadActionDelegate {
     private func animateBackgroundColorUpdatedCells(actions: [FetchControllerReloadAction]) {
         
         actions
-            .filter { action in
+            .compactMap { action in
                 switch action {
-                case .insertRows(_), .reloadRows(_):
-                    return true
+                case let .insertRows(array):
+                    return array
+                case let .moveRows(_, indexPath):
+                    return [indexPath]
                 default:
-                    return false
+                    return []
                 }
             }
-            .indexPaths
+            .flatMap { $0 }
             .compactMap { self.tableView.cellForRow(at: $0) }
             .forEach { cell in
-                cell.animateBackgroundColor()
+                cell.animateBackgroundColor(.green.withAlphaComponent(0.3))
             }
         
     }

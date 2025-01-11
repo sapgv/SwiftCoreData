@@ -36,13 +36,10 @@ extension UITableView: NSFetchedResultsControllerDelegate {
             }
             break;
         case .move:
-            if let indexPath = indexPath {
-                deleteRows(at: [indexPath], with: .fade)
+            if let indexPath, let newIndexPath {
+                moveRow(at: indexPath, to: newIndexPath)
             }
-            if let indexPath = newIndexPath {
-                insertRows(at: [indexPath], with: .fade)
-            }
-            break;
+            break
         default:
             break
         }
@@ -88,13 +85,10 @@ extension UICollectionView: NSFetchedResultsControllerDelegate {
                 }
                 break;
             case .move:
-                if let indexPath = indexPath {
-                    deleteItems(at: [indexPath])
+                if let indexPath, let newIndexPath {
+                    moveItem(at: indexPath, to: newIndexPath)
                 }
-                if let indexPath = newIndexPath {
-                    insertItems(at: [indexPath])
-                }
-                break;
+                break
             default:
                 break
             }

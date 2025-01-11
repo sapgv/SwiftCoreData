@@ -11,18 +11,32 @@ public enum FetchControllerReloadAction: Equatable {
     
     case insertRows([IndexPath])
     case deleteRows([IndexPath])
-    case reloadRows([IndexPath])
+    case updateRows([IndexPath])
+    case moveRows(IndexPath, IndexPath)
     case insertSections(IndexSet)
     case deleteSections(IndexSet)
-    case reloadData
     
-    public var indexPaths: [IndexPath] {
+    public var insertedIndexPaths: [IndexPath] {
         switch self {
         case let .insertRows(array):
             return array
+        default:
+            return []
+        }
+    }
+    
+    public var deletedIndexPaths: [IndexPath] {
+        switch self {
         case let .deleteRows(array):
             return array
-        case let .reloadRows(array):
+        default:
+            return []
+        }
+    }
+    
+    public var updatedIndexPaths: [IndexPath] {
+        switch self {
+        case let .updateRows(array):
             return array
         default:
             return []
@@ -44,8 +58,16 @@ public enum FetchControllerReloadAction: Equatable {
 
 public extension Array where Element == FetchControllerReloadAction {
     
-    var indexPaths: [IndexPath] {
-        flatMap { $0.indexPaths }
+    var insertedIndexPaths: [IndexPath] {
+        flatMap { $0.insertedIndexPaths }
+    }
+    
+    var deletedIndexPaths: [IndexPath] {
+        flatMap { $0.deletedIndexPaths }
+    }
+    
+    var updatedIndexPaths: [IndexPath] {
+        flatMap { $0.updatedIndexPaths }
     }
     
     var indexSet: [IndexSet] {

@@ -128,15 +128,12 @@ public class FetchController<T: NSManagedObject>: NSObject, NSFetchedResultsCont
             break
         case .update:
             if let indexPath = indexPath {
-                reloadActions.append(.reloadRows([indexPath]))
+                reloadActions.append(.updateRows([indexPath]))
             }
             break
         case .move:
-            if let indexPath = indexPath {
-                reloadActions.append(.deleteRows([indexPath]))
-            }
-            if let newIndexPath = newIndexPath {
-                reloadActions.append(.insertRows([newIndexPath]))
+            if let indexPath, let newIndexPath {
+                reloadActions.append(.moveRows(indexPath, newIndexPath))
             }
             break
         default:
