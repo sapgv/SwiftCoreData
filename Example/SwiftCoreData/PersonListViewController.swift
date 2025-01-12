@@ -209,29 +209,39 @@ extension PersonListViewController: FetchControllerReloadActionDelegate {
         
         self.tableView.handle(actions: actions)
         
-        self.animateBackgroundColorUpdatedCells(actions: actions)
+        self.scrollToUpdatedCell(actions: actions)
         
     }
     
-    private func animateBackgroundColorUpdatedCells(actions: [FetchControllerReloadAction]) {
+    private func scrollToUpdatedCell(actions: [FetchControllerReloadAction]) {
         
-        actions
+        print(actions)
+        
+        let indexPath = actions
             .compactMap { action in
                 switch action {
                 case let .insertRows(array):
                     return array
                 case let .moveRows(_, indexPath):
                     return [indexPath]
+                case let .updateRows(array):
+                    return array
                 default:
-                    return []
+                    return nil
                 }
             }
             .flatMap { $0 }
-            .compactMap { self.tableView.cellForRow(at: $0) }
-            .forEach { cell in
-                cell.animateBackgroundColor(.green.withAlphaComponent(0.3))
-            }
+            .last
         
+        guard let indexPath else { return }
+        
+        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            guard let cell = self.tableView.cellForRow(at: indexPath) else { return }
+            cell.animateBackgroundColor(.green.withAlphaComponent(0.3))
+        }
+                
     }
     
 }
