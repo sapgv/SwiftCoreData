@@ -63,7 +63,7 @@ final class PersonListViewModel {
         
         coreDataStack.performBackgroundTask { privateContext in
             
-            let i = Int.random(in: 50...60)
+            let i = Int.random(in: 30...50)
             
             let cdPerson = coreDataStack.fetchRequest(CDPerson.self)
                 .predicate(NSPredicate(format: "age == %i", i))
