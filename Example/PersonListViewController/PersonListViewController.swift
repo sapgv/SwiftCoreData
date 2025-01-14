@@ -105,9 +105,9 @@ extension PersonListViewController {
         self.view.addSubview(tableView)
         
         self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
-        self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        self.tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-        self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         
     }
     
@@ -215,9 +215,7 @@ extension PersonListViewController: FetchControllerReloadActionDelegate {
     
     private func scrollToUpdatedCell(actions: [FetchControllerReloadAction]) {
         
-        print(actions)
-        
-        let indexPath = actions
+        let indexPaths = actions
             .compactMap { action in
                 switch action {
                 case let .insertRows(array):
@@ -231,15 +229,19 @@ extension PersonListViewController: FetchControllerReloadActionDelegate {
                 }
             }
             .flatMap { $0 }
-            .last
         
-        guard let indexPath else { return }
+        guard let lastIndexPath = indexPaths.last else { return }
         
-        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        self.tableView.scrollToRow(at: lastIndexPath, at: .top, animated: true)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            guard let cell = self.tableView.cellForRow(at: indexPath) else { return }
-            cell.animateBackgroundColor(.green.withAlphaComponent(0.3))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+
+            let cells = indexPaths.compactMap {
+                self.tableView.cellForRow(at: $0)
+            }
+            
+            cells.forEach({ $0.animateBackgroundColor(.green.withAlphaComponent(0.3)) })
+            
         }
                 
     }
